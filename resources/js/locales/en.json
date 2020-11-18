@@ -1,0 +1,775 @@
+ {
+  "headerMenu": [
+    {
+      "title": "Announcements",
+      "to": "/announcements"
+    },
+    {
+      "title": "AWE?",
+      "to": "/"
+    },
+    {
+      "title": "Recommendations",
+      "to": "/recommendations"
+    }
+  ],
+   "headerSubtitleText": [
+     {
+       "text": "AWE - a decentralized platform for the monetization of the standards of the year, implemented in the course of physical and intellectual performance. I met my income, satisfying the needs (viral problems) of a per-block business format."
+     },
+     {
+       "text": "Automatic synchronization of all processes (a message, communication, registration: housekeeping, results, payments) in one middle. External contactless remote cycle."
+     }
+   ],
+   "galleryOne": [
+     {
+       "title": "Run",
+       "showList": false,
+       "colorImage": "1-image.png",
+       "list": [
+         {
+           "text": "Tasks"
+         },
+         {
+           "text": "Offers"
+         },
+         {
+           "text": "Developments"
+         },
+         {
+           "text": "Services"
+         },
+         {
+           "text": "Investment portfolio in time."
+         }
+       ]
+     },
+     {
+       "title": "Control.",
+       "showList": false,
+       "colorImage": "controll.png",
+       "list": [
+         {
+           "text": "Processes remote."
+         },
+         {
+           "text": " Automated finances."
+         },
+         {
+           "text": "Time"
+         },
+         {
+           "text": "Contractors / customer decentralized"
+         },
+         {
+           "text": "Steps"
+         },
+         {
+           "text": "Fix results innovative"
+         }
+       ]
+     },
+     {
+       "title": "Earn.",
+       "showList": false,
+       "colorImage": "earn.png",
+       "list": [
+         {
+           "text": "Save resources"
+         },
+         {
+           "text": "Monetize content"
+         },
+         {
+           "text": "Complete Tasks"
+         },
+         {
+           "text": "Sell your time"
+         },
+         {
+           "text": "Resale service / Time"
+         }
+       ]
+     }
+   ],
+   "galleryTwo": [
+     {
+       "title": "Accessibility",
+       "showList": false,
+       "list": [
+         {
+           "text": "24/7 - 365"
+         },
+         {
+           "text": "Anywhere"
+         },
+         {
+           "text": "Whenever you want"
+         },
+         {
+           "text": "However you want"
+         },
+         {
+           "text": "Investment time backpack."
+         }
+       ],
+       "colorImage": "world.png"
+     },
+     {
+       "title": "No",
+       "showList": false,
+       "list": [
+         {
+           "text": "Without restrictions:"
+         },
+         {
+           "text": "By age"
+         },
+         {
+           "text": "Gender"
+         },
+         {
+           "text": "Race"
+         },
+         {
+           "text": "Religion"
+         },
+         {
+           "text": "Language barrier"
+         }
+       ],
+       "colorImage": "pink-bg.png"
+     },
+     {
+       "title": "Performer",
+       "showList": false,
+       "list": [
+         {
+           "text": "Get time / services"
+         }
+       ],
+       "colorImage": "worck.png"
+     },
+     {
+       "title": "Customer",
+       "showList": false,
+       "list": [
+         {
+           "text": "Sell time / services"
+         }
+       ],
+       "colorImage": "happy.png"
+     }
+   ],
+   "Capabilities": "Possibilities",
+   "guarantiesName": "Guaranties",
+   "guaranties": [
+     {
+       "text": "100% payment upon execution. Holding payment until obligations are fulfilled"
+     },
+     {
+       "text": "Fixation, immutability of the agreed obligations"
+     },
+     {
+       "text": "Decentralized arbitration, rating (performer / customer), performer competence"
+     }
+   ],
+   "valuesName": "Values",
+   "values": [
+     {
+       "text": "Best offer price / quality / speed. Saving resources time / money"
+     },
+     {
+       "text": "Without intermediaries. No commissions. No overpayments"
+     },
+     {
+       "text": "The fastest possible solution to problems (income / satisfaction)"
+     }
+   ],
+   "comfortName": "comfort",
+   "comfort": [
+     {
+       "text": "Remote, contactless solution to any need (intellectual, physical))"
+     },
+     {
+       "text": "Automation of all processes of search, communication, control, confirmation, verification of payment events"
+     },
+     {
+       "text": "Synchronization of the best tools in one workspace. Full cycle of implementation. 100% remote control."
+     }
+   ],
+   "ourTeamBig": "AWE",
+   "ourTeamSmall": "Team",
+   "teamList": [
+     {
+       "name": "John Doe",
+       "position": "manager",
+       "avatar": "1-person.png"
+     },
+     {
+       "name": "John Doe",
+       "position": "developer",
+       "avatar": "2-person.png"
+     },
+     {
+       "name": "John Doe",
+       "position": "developer",
+       "avatar": "3-person.png"
+     },
+     {
+       "name": "John Doe",
+       "position": "designer",
+       "avatar": "8-person.png"
+     },
+     {
+       "name": "John Doe",
+       "position": "developer",
+       "video": "#"
+     },
+     {
+       "name": "John Doe",
+       "position": "manager",
+       "avatar": "5-person.png"
+     },
+     {
+       "name": "John Doe",
+       "position": "manager",
+       "avatar": "6-person.png"
+     },
+     {
+       "name": "John Doe",
+       "position": "developer",
+       "avatar": "7-person.png"
+     },
+     {
+       "name": "John Doe",
+       "position": "developer",
+       "avatar": "4-person.png"
+     }
+   ],
+   "aboutUsBig": "US",
+   "aboutUsSmall": "ABOUT",
+   "aboutUsTextBlock": {
+     "title": "About Us",
+     "textBold": "The point of using Lorem Ipsum is that it has a more-or- less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+     "textBlockOne": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.",
+     "textBlockTwo": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy."
+   },
+   "aboutUsImageBlock": "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.",
+   "announcementsTitleSmall": "Announcements",
+   "announcementsTitleBig": "2020",
+   "announcementsTitle": "features announced",
+   "announcementsList": [
+     {
+       "imgPath": "announceImg.png",
+       "step": "1-st quarter",
+       "title": "Many desktop publishing packages and web page editors ",
+       "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet."
+     },
+     {
+       "imgPath": "announceImg.png",
+       "step": "2-nd quarter",
+       "title": "Many desktop publishing packages and web page editors ",
+       "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet."
+     },
+     {
+       "imgPath": "announceImg.png",
+       "step": "3-rd quarter",
+       "title": "Many desktop publishing packages and web page editors ",
+       "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet."
+     }
+   ],
+   "blockText": "bright year for negative events. Ethnic military conflicts, migration, the COVID-19 pandemic, state lockdowns, financial crises, cataclysms, isolation. Complete paralysis of the service sector, the inability to solve everyday problems, a drop in the quality of life.\n          How to return to the usual way of life. After all, technologies do not stand still and probably this is what prompted us to develop a product that would minimize the consequences of the above events. ADAPTATION.",
+   "blockTextScoreTitle": "Goal.",
+   "blockTextScoreText": "to create a service that will be able to provide the participants in the relationship with a solution to their problems by adapting to the circumstances that have come with the ability to exclude the consequences of negative trends in the future when more radical restrictive measures come.",
+   "blockTextAWETitle": "Получилась AWE",
+   "blockTextAWEText": "decentralized platform of digitized infrastructure. Contactless, automatic, remote execution of tasks, both physical and intellectual, to meet the needs of the parties INCOME / PROBLEM SOLVING. Complete cycle in one space.",
+   "blockTextPriorities": "Our priorities: CONTACT-FREE. COMFORT. IMPROVING THE QUALITY OF LIFE. SAFETY. MAXIMUM EFFICIENCY ...",
+   "blockTextPrioritiesUnderlinedText": "A space without negativity, fakes, fraud",
+   "blockTextPrioritiesText": "The ability to receive income / service regardless of restrictive actions related to external factors, circumstances ...",
+   "blockEndText": "Life goes on ...",
+   "footerNavigation": [
+     {
+       "title": "Team DNA",
+       "path": "/our-team"
+     },
+     {
+       "title": "About us",
+       "path": "/about-us"
+     },
+     {
+       "title": "Goals and priorities",
+       "path": "/announcements"
+     },
+     {
+       "title": "Privacy policy",
+       "path": "/privat-policy"
+     },
+     {
+       "title": "Our details",
+       "path": "/"
+     },
+     {
+       "title": "Recommendations",
+       "path": "/"
+     }
+   ],
+   "offersTitleBig": "You",
+   "offersTitleSmall": "for",
+   "offersProfiles": "Profiles",
+   "offersButton": "Details",
+   "offersList": [
+     {
+       "plan": "BASE",
+       "price": "Free",
+       "backgroundImage": "SVG/base.svg",
+       "bgSmall":"SVG/base1.svg",
+       "avatar": "SVG/Emoji_base.svg",
+       "values": [
+         {
+           "text": "Creation / participation of public"
+         },
+         {
+           "text": "Tasks / suggestions"
+         },
+         {
+           "text": "Achievements gallery"
+         },
+         {
+           "text": "Rating"
+         },
+         {
+           "text": "Reviews"
+         }
+       ]
+     },
+     {
+       "plan": "PRO",
+       "price": "5$ /per year",
+       "backgroundImage": "SVG/pro.svg",
+       "bgSmall":"SVG/pro1.svg",
+       "avatar": "SVG/Emoji_pro.svg",
+       "values": [
+         {
+           "text": "Internal wallet"
+         },
+         {
+           "text": "Automated payment system"
+         },
+         {
+           "text": "Decentralized arbitration"
+         },
+         {
+           "text": "Task / proposal pricing"
+         },
+         {
+           "text": "Chat / consultation monetization"
+         }
+       ]
+     },
+     {
+       "plan": "ULTRA",
+       "price": "25$ /per year",
+       "backgroundImage": "SVG/ultra.svg",
+       "bgSmall":"SVG/ultra1.svg",
+       "avatar": "SVG/Emoji_ultra.svg",
+       "values": [
+         {
+           "text": "Profile verification"
+         },
+         {
+           "text": "Personalized tasks / suggestions"
+         },
+         {
+           "text": "International tasks"
+         },
+         {
+           "text": "International wallet"
+         },
+         {
+           "text": "Smart contract"
+         },
+         {
+           "text": "Content monetization"
+         },
+         {
+           "text": "AI forecasting analytics"
+         },
+         {
+           "text": "ML personal assistant"
+         }
+       ]
+     }
+   ],
+   "offersListValues": {
+     "BASIC": [
+       {
+         "roleName": "Supplier",
+         "roleValues": {
+           "canCreateProfile": true,
+           "verification": false,
+           "canCreateTask": false,
+           "takeTaskOnMap": true,
+           "canSetTaskToSpecificSupplier": false,
+           "moreLess": "",
+           "arbitration": false,
+           "shareBonuses": false,
+           "smartContractTemplate": false,
+           "blackList": "",
+           "groupTask": true,
+           "createGroupTask": false,
+           "botHelp": false,
+           "digitalSignature": false,
+           "publicAgreement": "",
+           "createPrivatTask": false,
+           "workGallery": "",
+           "numberOfSimultaneousTasks": "",
+           "innerWallet": false,
+           "auction": false
+         }
+       },
+       {
+         "roleName": "Customer",
+         "roleValues": {
+           "canCreateProfile": true,
+           "verification": false,
+           "canCreateTask": true,
+           "takeTaskOnMap": false,
+           "canSetTaskToSpecificSupplier": true,
+           "moreLess": "",
+           "arbitration": false,
+           "shareBonuses": false,
+           "smartContractTemplate": false,
+           "blackList": "",
+           "groupTask": false,
+           "createGroupTask": false,
+           "botHelp": false,
+           "digitalSignature": false,
+           "publicAgreement": "",
+           "createPrivatTask": false,
+           "workGallery": "",
+           "numberOfSimultaneousTasks": "",
+           "innerWallet": false,
+           "auction": false
+         }
+       }
+     ],
+     "PRO": [
+       {
+         "roleName": "Supplier",
+         "roleValues": {
+           "canCreateProfile": true,
+           "verification": true,
+           "canCreateTask": false,
+           "takeTaskOnMap": true,
+           "canSetTaskToSpecificSupplier": false,
+           "moreLess": "",
+           "arbitration": true,
+           "shareBonuses": false,
+           "smartContractTemplate": "",
+           "blackList": "",
+           "groupTask": true,
+           "createGroupTask": false,
+           "botHelp": false,
+           "digitalSignature": "",
+           "publicAgreement": "",
+           "createPrivatTask": false,
+           "workGallery": "",
+           "numberOfSimultaneousTasks": "",
+           "innerWallet": true,
+           "auction": true
+         }
+       },
+       {
+         "roleName": "Customer",
+         "roleValues": {
+           "canCreateProfile": true,
+           "verification": true,
+           "canCreateTask": true,
+           "takeTaskOnMap": "",
+           "canSetTaskToSpecificSupplier": true,
+           "moreLess": "",
+           "arbitration": true,
+           "shareBonuses": false,
+           "smartContractTemplate": "",
+           "blackList": "",
+           "groupTask": false,
+           "createGroupTask": true,
+           "botHelp": false,
+           "digitalSignature": "",
+           "publicAgreement": "",
+           "createPrivatTask": false,
+           "workGallery": "",
+           "numberOfSimultaneousTasks": "",
+           "innerWallet": false,
+           "auction": false
+         }
+       }
+     ],
+     "ULTRA": [
+       {
+         "roleName": "Supplier",
+         "roleValues": {
+           "canCreateProfile": true,
+           "verification": true,
+           "canCreateTask": false,
+           "takeTaskOnMap": true,
+           "canSetTaskToSpecificSupplier": false,
+           "moreLess": "",
+           "arbitration": true,
+           "shareBonuses": true,
+           "smartContractTemplate": true,
+           "blackList": "",
+           "groupTask": true,
+           "createGroupTask": false,
+           "botHelp": true,
+           "digitalSignature": "",
+           "publicAgreement": "",
+           "createPrivatTask": false,
+           "workGallery": "",
+           "numberOfSimultaneousTasks": "",
+           "innerWallet": true,
+           "auction": true
+         }
+       },
+       {
+         "roleName": "Customer",
+         "roleValues": {
+           "canCreateProfile": true,
+           "verification": true,
+           "canCreateTask": true,
+           "takeTaskOnMap": "",
+           "canSetTaskToSpecificSupplier": true,
+           "moreLess": "",
+           "arbitration": true,
+           "shareBonuses": true,
+           "smartContractTemplate": true,
+           "blackList": "",
+           "groupTask": false,
+           "createGroupTask": true,
+           "botHelp": true,
+           "digitalSignature": "",
+           "publicAgreement": "",
+           "createPrivatTask": true,
+           "workGallery": "",
+           "numberOfSimultaneousTasks": "",
+           "innerWallet": false,
+           "auction": false
+         }
+       }
+     ]
+   },
+   "offersListConditions": [
+     "Profile creation",
+     "Verification",
+     "Create tasks",
+     "Take part in the task outlined on the map",
+     "Send the task to a specific performer",
+     "More / Less",
+     "Arbitration",
+     "Share bonuses",
+     "Smart contract template",
+     "Blocking participants (black / list)",
+     "Participation in a group task",
+     "Creating a group task",
+     "Risk pricing bot (AI) forecasting tips",
+     "Digital signature",
+     "Public agreement",
+     "Create a closed task",
+     "Gallery of works",
+     "Number of simultaneous tasks",
+     "Inner wallet",
+     "Auction"
+   ],
+   "blackMainHeaderTextOne": "Available",
+   "blackMainHeaderTextOneNumber": "1 500 000 000 00 N/h",
+   "blackMainHeaderTextTwo": "Reserved",
+   "blackMainHeaderTextTwoNumber": "0 000 002 526 25 N/h",
+   "blackMainHeaderTextThree": "TEST MODE",
+   "blackMainHeaderTextThreeTime": "until 29.12.2020",
+   "blackMainHeaderListReserved": "Reserved",
+   "blackMainHeaderList": [
+     {
+       "title": "Profiles amount",
+       "plan": "BASE",
+       "value": "Free",
+       "closeIcon": true,
+       "reserved": false
+     },
+     {
+       "title": "Profiles generated",
+       "plan": "PRO",
+       "value": "0002562",
+       "closeIcon": false,
+       "reserved": true
+     },
+     {
+       "title": "Profiles generated",
+       "plan": "ULTRA",
+       "value": "001251",
+       "closeIcon": false,
+       "reserved": true
+     }
+   ],
+   "blackValueList": [
+     {
+       "title": "BLOCKCHAIN",
+       "sublist": [
+         {
+           "text": "It is a long established"
+         },
+         {
+           "text": "Act that a reader will be"
+         },
+         {
+           "text": "Content of a page when"
+         },
+         {
+           "text": "Looking at its layout"
+         }
+       ]
+     },
+     {
+       "title": "AI",
+       "sublist": [
+         {
+           "text": "It is a long established"
+         },
+         {
+           "text": "Act that a reader will be"
+         },
+         {
+           "text": "Content of a page when"
+         },
+         {
+           "text": "Looking at its layout"
+         }
+       ]
+     },
+     {
+       "title": "SMART CONTRACT",
+       "sublist": [
+         {
+           "text": "It is a long established"
+         },
+         {
+           "text": "Act that a reader will be"
+         },
+         {
+           "text": "Content of a page when"
+         },
+         {
+           "text": "Looking at its layout"
+         }
+       ]
+     },
+     {
+       "title": "ML",
+       "sublist": [
+         {
+           "text": "It is a long established"
+         },
+         {
+           "text": "Act that a reader will be"
+         },
+         {
+           "text": "Content of a page when"
+         },
+         {
+           "text": "Looking at its layout"
+         }
+       ]
+     }
+   ],
+   "blackGallery": [
+     {
+       "title": "Доступність",
+       "showList": false,
+       "list": [
+         {
+           "text": "24/7 - 365"
+         },
+         {
+           "text": "Де завгодно"
+         },
+         {
+           "text": "Коли загодно"
+         },
+         {
+           "text": "Як завгодно"
+         },
+         {
+           "text": "Інвестиціїний рюкзак часу."
+         }
+       ],
+       "colorImage": "1.svg"
+     },
+     {
+       "title": "lorem",
+       "showList": false,
+       "list": [
+         {
+           "text": "Без обмежень:"
+         },
+         {
+           "text": "По віку"
+         },
+         {
+           "text": "Статі"
+         },
+         {
+           "text": "Расі"
+         },
+         {
+           "text": "Вірі"
+         },
+         {
+           "text": "Мовного барєру"
+         }
+       ],
+       "colorImage": "2.svg"
+     },
+     {
+       "title": "Виконавець",
+       "showList": false,
+       "list": [
+         {
+           "text": "Здобувай час/ послуги"
+         }
+       ],
+       "colorImage": "3.svg"
+     },
+     {
+       "title": "No",
+       "showList": false,
+       "list": [
+         {
+           "text": "Продавай час / послуги"
+         }
+       ],
+       "colorImage": "4-black.png"
+     },
+     {
+       "title": "Доступність",
+       "showList": false,
+       "list": [
+         {
+           "text": "24/7 - 365"
+         },
+         {
+           "text": "Де завгодно"
+         },
+         {
+           "text": "Коли загодно"
+         },
+         {
+           "text": "Як завгодно"
+         },
+         {
+           "text": "Інвестиціїний рюкзак часу."
+         }
+       ],
+       "colorImage": "5-black.png"
+     }
+   ]
+ }

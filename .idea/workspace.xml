@@ -15,47 +15,206 @@
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:composer" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:composer" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:symfony" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11251dca-49d4-4bad-9d23-4294f3722996" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Layoutes/admin.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Layoutes/black.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Layoutes/white.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/AppStore.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/Cog.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/Cog.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/DNA.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/Emoji_base.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/Emoji_pro.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/Emoji_ultra.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/GooglePlay.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/Group.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/Nh.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/Vector.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/_.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/advantages.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/arrow-down-sign-to-navigate.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/arrows.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/atom.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/base-small.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/base.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/base1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/cash.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/coin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/counter.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/dott.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/list.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/lock.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/lockdown.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/logo-black.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/pay.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/photo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/play.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/pro-small.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/pro.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/pro1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/roket.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/tools.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/ultra-small.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/ultra.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/ultra1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/unicorn.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/SVG/world.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/announceImg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/arrow-down-white.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/AppStore-green.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/AppStore.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/GooglePlay-green.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/GooglePlay.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/check.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/close.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/complete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/coube-white.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/dots-horisontal.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/dots-vertical.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/evolution.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/faceboock-black.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/green-line.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/help-circle.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/infinity.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/instagram-black.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/payment-black.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/blackSVGs/youtube-black.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/change-image.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/check-mark-black-outline.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/check-mark.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/edit.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/enable.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/faceboock.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/fonts/Axiforma-Medium.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/fonts/zekton/zekton-rg.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/gallery/1-image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/gallery/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/gallery/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/gallery/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/gallery/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/gallery/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/gallery/clock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/gallery/controll.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/gallery/earn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/gallery/happy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/gallery/map.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/gallery/pink-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/gallery/worck.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/gallery/world.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/galleryBlack/1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/galleryBlack/2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/galleryBlack/3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/galleryBlack/4-black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/galleryBlack/5-black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/galleryBlack/play.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/group.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/home.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/instagram.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/key.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/map_fon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/phone_black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/rocket.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/screen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/sideImg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/sideImgFull.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/slider_images/category.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/slider_images/map.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/slider_images/my_profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/smile.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/team_list/1-person.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/team_list/2-person.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/team_list/3-person.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/team_list/4-person.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/team_list/5-person.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/team_list/6-person.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/team_list/7-person.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/team_list/8-person.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/text.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/unicorn1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/unicorn2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/unicorn_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/unicorn_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/world.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/writing.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/x-mark.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/assets/youtube.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/admin/admin-header.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/admin/blogEdit.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/admin/blogList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/admin/blogPreview.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/admin/warningModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/black/canvas.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/black/countryList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/black/investorsInfo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/black/main_paiges/black__footer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/black/main_paiges/black__header.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/black/main_paiges/main__actions.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/black/main_paiges/main__gallery.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/black/main_paiges/main__head.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/black/main_paiges/main__info.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/black/main_paiges/main__sandbox.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/black/modal/form.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/black/modal/investorsActionModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/black/modal/investorsInfoModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/black/modal/profileOfferList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/black/modal/profileOfferModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/black/modal/tokenOfferModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/black/sandBox.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/aboutUsText.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/announcementsList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/main_paiges/cards.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/main_paiges/covid.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/main_paiges/gallery.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/main_paiges/grid.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/main_paiges/info.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/main_paiges/main-header.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/main_paiges/offers.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/main_paiges/video.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/main_paiges/white__footer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/main_paiges/white__header.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/modal/modal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/modal/offersDetailModal.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/modal/offersValueList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/modal/offersValueNames.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/slider/header-slider.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/white/teamList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/i18n.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/locales/en.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/locales/rus.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/locales/ukr.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/pages/AWE_Black_paiges/ForInvestors.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/pages/AWE_White_paiges/AboutUs.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/pages/AWE_White_paiges/Announcements.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/pages/AWE_White_paiges/OurTeam.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/pages/AWE_White_paiges/PrivatePolicy.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/pages/Admin_paiges/AdminPanel.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/pages/Admin_paiges/logIn.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/pages/main_paiges/aweBlack.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/pages/main_paiges/aweWhite.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/plugins/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/Dashboard.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/Home.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/Login.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/Register.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,12 +325,22 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/pages" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/pages" />
+      <recent name="$PROJECT_DIR$/resources/js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -182,6 +351,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605621094446</updated>
       <workItem from="1605621095613" duration="2811000" />
+      <workItem from="1605690635065" duration="12463000" />
     </task>
     <servers />
   </component>
@@ -198,19 +368,29 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2475" y="218" width="800" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605622643682">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2475" y="218" width="800" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1605622643682" />
-    <state x="2563" y="300" width="634" height="514" key="find.popup" timestamp="1605622457004">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="696" y="284" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605691634226">
+      <screen x="0" y="23" width="1920" height="1015" />
     </state>
+    <state x="696" y="284" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.1015/-1920.23.1920.1057@0.23.1920.1015" timestamp="1605691634226" />
+    <state x="643" y="305" width="634" height="580" key="find.popup" timestamp="1605704008302">
+      <screen x="0" y="23" width="1920" height="1015" />
+    </state>
+    <state x="643" y="305" width="634" height="580" key="find.popup/0.23.1920.1015/-1920.23.1920.1057@0.23.1920.1015" timestamp="1605704008302" />
     <state x="2563" y="300" width="634" height="514" key="find.popup/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1605622457004" />
     <state x="2543" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1605621974553">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2543" y="264" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1605621974553" />
+    <state x="688" y="443" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1605691035417">
+      <screen x="0" y="23" width="1920" height="1015" />
+    </state>
+    <state x="688" y="443" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.23.1920.1015/-1920.23.1920.1057@0.23.1920.1015" timestamp="1605691035417" />
   </component>
 </project>
