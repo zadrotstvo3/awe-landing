@@ -1,6 +1,19 @@
 <template>
   <div>
     <admin-header />
+    <div class="language-panel">
+        <ul class="language-panel__list">
+            <li
+                class="language-panel__item"
+                v-for="(lang, index) in languageSelect"
+                :key="index"
+                :class="[lang === $i18n.locale ? 'language-panel__active': '']"
+                @click="changeLanguage(lang)"
+            >
+                {{lang.toUpperCase()}}
+            </li>
+        </ul>
+    </div>
     <div class="panel" id="page-wrap">
       <blogList
           :sendPreviewItem="showPreviewItem"
@@ -38,66 +51,75 @@ name: "adminPanel",
   },
   data(){
     return {
-      previewItem: '',
-      editItem: '',
-      blogList: '',
+        previewItem: '',
+        editItem: '',
+        blogList: '',
+        languageSelect: ['en', 'ru', 'uk']
     }
   },
   created(){
-    const list = this.$t('announcementsList')
-    this.blogList = list.map((item) => {
-      return {
-        description: item.description,
-        imgPath: item.imgPath,
-        step: item.step,
-        title: item.title,
-        isActive: false
-      }
-    })
+    this.setListLocale(this.$t('announcementsList'))
   },
   methods: {
-    showPreviewItem(item){
-      this.previewItem = ''
-      this.editItem = ''
-      this.previewItem = item
-    },
-    showEdtItem(item) {
-      this.previewItem = ''
-      this.editItem = item
-    },
-    createNewArticle() {
-      const newItem = {
-        description: '',
-        imgPath: '',
-        step: '',
-        title: '',
-        isActive: false
-      }
-      this.previewItem = ''
-      this.editItem = newItem
-    },
-    addToList(item){
-      this.blogList.push(item)
-      this.previewItem = ''
-      this.editItem = ''
-    },
-    deleteArticle(item){
-      if(item){
-        const index = this.blogList.indexOf(item)
-        if(index > -1){
-          this.blogList.splice(index, 1)
+        setListLocale(list){
+            this.blogList = list.map((item) => {
+                return {
+                    description: item.description,
+                    imgPath: item.imgPath,
+                    step: item.step,
+                    title: item.title,
+                    isActive: false
+                }
+            })
+        },
+        showPreviewItem(item){
           this.previewItem = ''
           this.editItem = ''
-        }
+          this.previewItem = item
+        },
+        showEdtItem(item) {
+          this.previewItem = ''
+          this.editItem = item
+        },
+        createNewArticle() {
+          const newItem = {
+            description: '',
+            imgPath: '',
+            step: '',
+            title: '',
+            isActive: false
+          }
+          this.previewItem = ''
+          this.editItem = newItem
+        },
+        addToList(item){
+          this.blogList.push(item)
+          this.previewItem = ''
+          this.editItem = ''
+        },
+        deleteArticle(item){
+          if(item){
+            const index = this.blogList.indexOf(item)
+            if(index > -1){
+              this.blogList.splice(index, 1)
+              this.previewItem = ''
+              this.editItem = ''
+            }
+          }
+        },
+        addActiveClass(item){
+          this.blogList.forEach((article) =>
+              article === item ?
+                  article.isActive = true :
+                  article.isActive = false
+          )
+        },
+      changeLanguage(lang){
+          this.$i18n.locale = lang
+          this.previewItem = ''
+          this.editItem = ''
+          this.setListLocale(this.$t('announcementsList'))
       }
-    },
-    addActiveClass(item){
-      this.blogList.forEach((article) =>
-          article === item ?
-              article.isActive = true :
-              article.isActive = false
-      )
-    },
   }
 }
 </script>
@@ -106,9 +128,30 @@ name: "adminPanel",
 .panel {
   width: 100%;
   height:100vh;
-  padding: 35px;
+  padding: 0 35px;
   display: flex;
   justify-content: space-between;
+}
+.language-panel {
+    display: flex;
+    justify-content: flex-end;
+    padding:  35px;
+    margin-left: 50px;
+    &__list {
+        width: 100%;
+        max-width: 150px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        list-style: none;
+        opacity: .4;
+        cursor: pointer;
+    }
+    &__active {
+        text-decoration: underline;
+        opacity: 1;
+    }
 }
 @media only screen and (max-width: 770px) {
   .panel {

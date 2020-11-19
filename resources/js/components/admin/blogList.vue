@@ -134,4 +134,9 @@ export default {
 .activeClass {
   border: 2px solid black;
 }
+@media only screen and (max-width: 770px) {
+    .blog-list {
+        margin: 0;
+    }
+}
 </style>

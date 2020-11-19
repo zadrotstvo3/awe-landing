@@ -53,7 +53,7 @@ const routes = [
         // beforeEnter: (to, from, next) => {
         //     const token = localStorage.getItem('Token')
         //     if(token){
-        //         next()
+        //         next('/admin-panel')
         //     }
         // }
     },

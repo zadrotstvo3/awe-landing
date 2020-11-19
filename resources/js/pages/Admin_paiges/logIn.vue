@@ -31,9 +31,10 @@ export default {
   methods: {
     submitLogIn(){
       if(this.userName === 'admin' && this.userPassword === 'admin'){
-        this.$router.push('/admin-panel')
+            this.$axios.get('/airlock/csrf-cookie').then(response => {console.log(response)})
+            this.$router.push('/admin-panel')
       } else {
-        return  this.error = true
+            return  this.error = true
       }
     }
   }
@@ -48,7 +49,7 @@ export default {
   justify-content: center;
   align-items: center;
   color: black;
-  
+
   &__form {
     width: 100%;
     max-width: 450px;

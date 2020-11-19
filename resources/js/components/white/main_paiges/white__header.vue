@@ -24,11 +24,11 @@
           :class="[toggleLangMenu ? 'lang-active' : 'lang-hidden']"
       >
         <li class="lang__item"
-            v-for="lang in languages"
-            :key="lang.name"
-            :class="[lang.name === $i18n.locale ? 'lang__active': '']"
+            v-for="(lang, index) in languages"
+            :key="index"
+            :class="[lang === $i18n.locale ? 'lang__active': '']"
             @click="changeLanguage(lang)"
-        >{{ lang.name.toUpperCase() }}
+        >{{ lang.toUpperCase() }}
         </li>
       </ul>
     </div>
@@ -64,11 +64,11 @@
       <div class="mobile-lang">
         <ul class="lang">
           <li class="lang__item"
-              v-for="lang in languages"
-              :key="lang.name"
-              :class="[lang.name === $i18n.locale ? 'lang__active': '']"
+              v-for="(lang, index) in languages"
+              :key="index"
+              :class="[lang === $i18n.locale ? 'lang__active': '']"
               @click="changeLanguage(lang)"
-          >{{ lang.name.toUpperCase() }}
+          >{{ lang.toUpperCase() }}
           </li>
         </ul>
       </div>
@@ -85,9 +85,9 @@ export default {
       isMenuShown: false,
       isPageActive: false,
       languages: [
-        {name:'en', isActive: true},
-        {name:'uk', isActive: false},
-        {name:'ru', isActive: false}
+        'en',
+        'uk',
+        'ru'
       ],
       activeLang: this.$i18n.locale,
       toggleLangMenu: false
@@ -114,11 +114,8 @@ export default {
     changeLanguage(lang){
       this.languages.map(item => {
         if(lang === item){
-          item.isActive = true
-          this.$i18n.locale = item.name;
-          this.activeLang = item.name
-        } else {
-          item.isActive = false
+            this.$i18n.locale = item
+            this.activeLang = item
         }
       })
       this.toggleLangMenu = false

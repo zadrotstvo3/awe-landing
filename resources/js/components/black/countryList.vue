@@ -47,8 +47,8 @@ export default {
     }
   },
   async created() {
-    const country = await fetch('https://restcountries.eu/rest/v2/all')
-        .then((resp)=> resp.json())
+    const country = await this.$axios.get('https://restcountries.eu/rest/v2/all')
+        .then((resp)=> resp.data || '')
         .catch(error => console.log(error))
     this.createCountyList(country)
   },
@@ -113,9 +113,8 @@ export default {
       border: 1px solid black;
     }
     &:hover {
-      cursor: pointer;
-      border-color: transparent;
-      box-shadow: 0 0 15px 0 #fff;
+        cursor: pointer;
+        transform: scale(1.1);
     }
   }
   &__info {

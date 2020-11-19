@@ -2259,16 +2259,7 @@ __webpack_require__.r(__webpack_exports__);
       windowWidth: window.innerWidth,
       isMenuShown: false,
       isPageActive: false,
-      languages: [{
-        name: 'en',
-        isActive: true
-      }, {
-        name: 'uk',
-        isActive: false
-      }, {
-        name: 'ru',
-        isActive: false
-      }],
+      languages: ['en', 'uk', 'ru'],
       activeLang: this.$i18n.locale,
       toggleLangMenu: false
     };
@@ -2298,11 +2289,8 @@ __webpack_require__.r(__webpack_exports__);
 
       this.languages.map(function (item) {
         if (lang === item) {
-          item.isActive = true;
-          _this2.$i18n.locale = item.name;
-          _this2.activeLang = item.name;
-        } else {
-          item.isActive = false;
+          _this2.$i18n.locale = item;
+          _this2.activeLang = item;
         }
       });
       this.toggleLangMenu = false;
@@ -2470,16 +2458,7 @@ __webpack_require__.r(__webpack_exports__);
       windowWidth: window.innerWidth,
       isMenuShown: false,
       isPageActive: false,
-      languages: [{
-        name: 'en',
-        isActive: true
-      }, {
-        name: 'uk',
-        isActive: false
-      }, {
-        name: 'ru',
-        isActive: false
-      }],
+      languages: ['en', 'uk', 'ru'],
       activeLang: this.$i18n.locale,
       toggleLangMenu: false
     };
@@ -2509,11 +2488,8 @@ __webpack_require__.r(__webpack_exports__);
 
       this.languages.map(function (item) {
         if (lang === item) {
-          item.isActive = true;
-          _this2.$i18n.locale = item.name;
-          _this2.activeLang = item.name;
-        } else {
-          item.isActive = false;
+          _this2.$i18n.locale = item;
+          _this2.activeLang = item;
         }
       });
       this.toggleLangMenu = false;
@@ -18237,20 +18213,20 @@ var render = function() {
               staticClass: "lang",
               class: [_vm.toggleLangMenu ? "lang-active" : "lang-hidden"]
             },
-            _vm._l(_vm.languages, function(lang) {
+            _vm._l(_vm.languages, function(lang, index) {
               return _c(
                 "li",
                 {
-                  key: lang.name,
+                  key: index,
                   staticClass: "lang__item",
-                  class: [lang.name === _vm.$i18n.locale ? "lang__active" : ""],
+                  class: [lang === _vm.$i18n.locale ? "lang__active" : ""],
                   on: {
                     click: function($event) {
                       return _vm.changeLanguage(lang)
                     }
                   }
                 },
-                [_vm._v(_vm._s(lang.name.toUpperCase()) + "\n      ")]
+                [_vm._v(_vm._s(lang.toUpperCase()) + "\n      ")]
               )
             }),
             0
@@ -18370,22 +18346,20 @@ var render = function() {
               _c(
                 "ul",
                 { staticClass: "lang" },
-                _vm._l(_vm.languages, function(lang) {
+                _vm._l(_vm.languages, function(lang, index) {
                   return _c(
                     "li",
                     {
-                      key: lang.name,
+                      key: index,
                       staticClass: "lang__item",
-                      class: [
-                        lang.name === _vm.$i18n.locale ? "lang__active" : ""
-                      ],
+                      class: [lang === _vm.$i18n.locale ? "lang__active" : ""],
                       on: {
                         click: function($event) {
                           return _vm.changeLanguage(lang)
                         }
                       }
                     },
-                    [_vm._v(_vm._s(lang.name.toUpperCase()) + "\n        ")]
+                    [_vm._v(_vm._s(lang.toUpperCase()) + "\n        ")]
                   )
                 }),
                 0
@@ -18591,20 +18565,20 @@ var render = function() {
               staticClass: "lang",
               class: [_vm.toggleLangMenu ? "lang-active" : "lang-hidden"]
             },
-            _vm._l(_vm.languages, function(lang) {
+            _vm._l(_vm.languages, function(lang, index) {
               return _c(
                 "li",
                 {
-                  key: lang.name,
+                  key: index,
                   staticClass: "lang__item",
-                  class: [lang.name === _vm.$i18n.locale ? "lang__active" : ""],
+                  class: [lang === _vm.$i18n.locale ? "lang__active" : ""],
                   on: {
                     click: function($event) {
                       return _vm.changeLanguage(lang)
                     }
                   }
                 },
-                [_vm._v(_vm._s(lang.name.toUpperCase()) + "\n      ")]
+                [_vm._v(_vm._s(lang.toUpperCase()) + "\n      ")]
               )
             }),
             0
@@ -18724,22 +18698,20 @@ var render = function() {
               _c(
                 "ul",
                 { staticClass: "lang" },
-                _vm._l(_vm.languages, function(lang) {
+                _vm._l(_vm.languages, function(lang, index) {
                   return _c(
                     "li",
                     {
-                      key: lang.name,
+                      key: index,
                       staticClass: "lang__item",
-                      class: [
-                        lang.name === _vm.$i18n.locale ? "lang__active" : ""
-                      ],
+                      class: [lang === _vm.$i18n.locale ? "lang__active" : ""],
                       on: {
                         click: function($event) {
                           return _vm.changeLanguage(lang)
                         }
                       }
                     },
-                    [_vm._v(_vm._s(lang.name.toUpperCase()) + "\n        ")]
+                    [_vm._v(_vm._s(lang.toUpperCase()) + "\n        ")]
                   )
                 }),
                 0
@@ -34826,7 +34798,6 @@ var messages = {
   ru: _js_locales_rus_json__WEBPACK_IMPORTED_MODULE_4__
 };
 var browserLanguage = navigator.language;
-console.log(browserLanguage);
 var i18n = new vue_i18n__WEBPACK_IMPORTED_MODULE_1__["default"]({
   locale: browserLanguage || '',
   messages: messages,
@@ -34968,7 +34939,7 @@ var routes = [{
     layout: 'black'
   },
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(14), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, /*! @/js/pages/main_paiges/aweBlack.vue */ "./resources/js/pages/main_paiges/aweBlack.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(15), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, /*! @/js/pages/main_paiges/aweBlack.vue */ "./resources/js/pages/main_paiges/aweBlack.vue"));
   }
 }, {
   path: '/privat-policy',
@@ -34995,7 +34966,7 @@ var routes = [{
     layout: 'white'
   },
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! @/js/pages/AWE_White_paiges/AboutUs.vue */ "./resources/js/pages/AWE_White_paiges/AboutUs.vue"));
+    return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! @/js/pages/AWE_White_paiges/AboutUs.vue */ "./resources/js/pages/AWE_White_paiges/AboutUs.vue"));
   }
 }, {
   path: '/announcements',
@@ -35004,7 +34975,7 @@ var routes = [{
     layout: 'white'
   },
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! @/js/pages/AWE_White_paiges/Announcements.vue */ "./resources/js/pages/AWE_White_paiges/Announcements.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! @/js/pages/AWE_White_paiges/Announcements.vue */ "./resources/js/pages/AWE_White_paiges/Announcements.vue"));
   }
 }, {
   path: '/admin',
@@ -35022,11 +34993,11 @@ var routes = [{
     layout: 'admin'
   },
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(8), __webpack_require__.e(15)]).then(__webpack_require__.bind(null, /*! @/js/pages/Admin_paiges/AdminPanel */ "./resources/js/pages/Admin_paiges/AdminPanel.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(16), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! @/js/pages/Admin_paiges/AdminPanel */ "./resources/js/pages/Admin_paiges/AdminPanel.vue"));
   } // beforeEnter: (to, from, next) => {
   //     const token = localStorage.getItem('Token')
   //     if(token){
-  //         next()
+  //         next('/admin-panel')
   //     }
   // }
 
@@ -35037,7 +35008,7 @@ var routes = [{
     layout: 'black'
   },
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(7), __webpack_require__.e(16)]).then(__webpack_require__.bind(null, /*! @/js/pages/AWE_Black_paiges/ForInvestors.vue */ "./resources/js/pages/AWE_Black_paiges/ForInvestors.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(14), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! @/js/pages/AWE_Black_paiges/ForInvestors.vue */ "./resources/js/pages/AWE_Black_paiges/ForInvestors.vue"));
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({

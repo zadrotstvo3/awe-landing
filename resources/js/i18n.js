@@ -10,7 +10,6 @@ Vue.use(VueI18n)
     ru
 }
 const browserLanguage = navigator.language
-console.log(browserLanguage)
 const i18n = new VueI18n({
     locale: browserLanguage || '',
     messages,

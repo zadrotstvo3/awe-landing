@@ -41,6 +41,9 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     submitLogIn: function submitLogIn() {
       if (this.userName === 'admin' && this.userPassword === 'admin') {
+        this.$axios.get('/airlock/csrf-cookie').then(function (response) {
+          console.log(response);
+        });
         this.$router.push('/admin-panel');
       } else {
         return this.error = true;
