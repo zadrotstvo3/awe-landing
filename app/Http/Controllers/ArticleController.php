@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Request\Article\CreateArticleRequest;
-use App\Http\Request\Article\UpdateArticleRequest;
+use App\Http\Requests\Article\CreateArticleRequest;
+use App\Http\Requests\Article\UpdateArticleRequest;
 use App\Services\Article\ArticleService;
 use App\User;
 use Exception;
