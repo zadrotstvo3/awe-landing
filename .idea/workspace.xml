@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -48,21 +51,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11251dca-49d4-4bad-9d23-4294f3722996" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Request/Article/CreateArticleRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Request/Article/UpdateArticleRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Article/Article.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Article/Localisation/BasicArticleAttributes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Article/Localisation/EngArticle.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Article/Localisation/RusArticle.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Article/Localisation/UkrArticle.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/Article/ArticleService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/Article/EngArticleService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/Article/RusArticleService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Services/Article/UkrArticleService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/156f7062-2112-44ec-a85f-41fe91b01c35.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/156f7062-2112-44ec-a85f-41fe91b01c35.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TaskController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Task.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_28_054834_create_tasks_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -173,6 +192,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -182,6 +207,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605621094446</updated>
       <workItem from="1605621095613" duration="2811000" />
+      <workItem from="1605769768800" duration="6858000" />
     </task>
     <servers />
   </component>
@@ -198,19 +224,28 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2475" y="218" width="800" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605622643682">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2475" y="218" width="800" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1605622643682" />
+    <state x="2613" y="315" width="524" height="482" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605776444610">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2613" y="315" width="524" height="482" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1605776444610" />
+    <state x="2494" y="280" width="761" height="551" key="NewPhpClassDialog" timestamp="1605775761315">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2494" y="280" width="761" height="551" key="NewPhpClassDialog/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1605775761315" />
     <state x="2563" y="300" width="634" height="514" key="find.popup" timestamp="1605622457004">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2563" y="300" width="634" height="514" key="find.popup/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1605622457004" />
-    <state x="2543" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1605621974553">
+    <state x="2543" y="264" width="672" height="678" key="search.everywhere.popup" timestamp="1605776416607">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2543" y="264" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1605621974553" />
+    <state x="2543" y="264" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1605776416607" />
   </component>
 </project>
