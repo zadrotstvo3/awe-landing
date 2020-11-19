@@ -55,7 +55,6 @@
       <change afterPath="$PROJECT_DIR$/app/Http/Request/Article/CreateArticleRequest.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Http/Request/Article/UpdateArticleRequest.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Models/Article/Article.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Article/Localisation/BasicArticleAttributes.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Models/Article/Localisation/EngArticle.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Models/Article/Localisation/RusArticle.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Models/Article/Localisation/UkrArticle.php" afterDir="false" />
@@ -207,7 +206,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605621094446</updated>
       <workItem from="1605621095613" duration="2811000" />
-      <workItem from="1605769768800" duration="6858000" />
+      <workItem from="1605769768800" duration="7297000" />
     </task>
     <servers />
   </component>
@@ -231,10 +230,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2475" y="218" width="800" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1605622643682" />
-    <state x="2613" y="315" width="524" height="482" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605776444610">
+    <state x="2613" y="315" width="524" height="482" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605777387305">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2613" y="315" width="524" height="482" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1605776444610" />
+    <state x="2613" y="315" width="524" height="482" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.34.1920.1046@1920.0.1920.1080" timestamp="1605777387305" />
     <state x="2494" y="280" width="761" height="551" key="NewPhpClassDialog" timestamp="1605775761315">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
