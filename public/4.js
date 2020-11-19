@@ -60,6 +60,13 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_components_admin_blogPreview__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/components/admin/blogPreview */ "./resources/js/components/admin/blogPreview.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -109,9 +116,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "blogEdit",
@@ -146,7 +151,7 @@ __webpack_require__.r(__webpack_exports__);
       this.editedItem = Object.assign({}, newVal);
     }
   },
-  methods: {
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['createArticle'])), {}, {
     changeImage: function changeImage(event) {
       var files = event.target.files || event.dataTransfer.files;
 
@@ -162,16 +167,20 @@ __webpack_require__.r(__webpack_exports__);
       var reader = new FileReader();
 
       reader.onload = function (event) {
-        _this.editedItem.imgPath = event.target.result;
+        _this.editedItem.image = event.target.result;
       };
 
       reader.readAsDataURL(file);
     },
     addItem: function addItem() {
+      var _this2 = this;
+
       var item = this.editedItem;
-      this.$emit('addItem', item);
+      this.createArticle(item).then(function () {
+        _this2.$emit('addItem', item);
+      });
     }
-  }
+  })
 });
 
 /***/ }),
@@ -370,6 +379,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_components_admin_blogEdit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/js/components/admin/blogEdit */ "./resources/js/components/admin/blogEdit.vue");
 /* harmony import */ var _js_components_admin_blogPreview__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/js/components/admin/blogPreview */ "./resources/js/components/admin/blogPreview.vue");
 /* harmony import */ var _js_components_admin_blogList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/js/components/admin/blogList */ "./resources/js/components/admin/blogList.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -408,6 +424,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 
@@ -429,20 +446,20 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {
-    this.setListLocale(this.$t('announcementsList'));
+    this.getArticles();
   },
-  methods: {
-    setListLocale: function setListLocale(list) {
-      this.blogList = list.map(function (item) {
-        return {
-          description: item.description,
-          imgPath: item.imgPath,
-          step: item.step,
-          title: item.title,
-          isActive: false
-        };
-      });
-    },
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapActions"])(['getArticles'])), {}, {
+    // setListLocale(list){
+    //     this.blogList = list.map((item) => {
+    //         return {
+    //             description: item.description,
+    //             imgPath: item.imgPath,
+    //             step: item.step,
+    //             title: item.title,
+    //             isActive: false
+    //         }
+    //     })
+    // },
     showPreviewItem: function showPreviewItem(item) {
       this.previewItem = '';
       this.editItem = '';
@@ -455,16 +472,16 @@ __webpack_require__.r(__webpack_exports__);
     createNewArticle: function createNewArticle() {
       var newItem = {
         description: '',
-        imgPath: '',
-        step: '',
+        image: '',
         title: '',
+        language: this.$i18n.locale,
+        article__id: null,
         isActive: false
       };
       this.previewItem = '';
       this.editItem = newItem;
     },
     addToList: function addToList(item) {
-      this.blogList.push(item);
       this.previewItem = '';
       this.editItem = '';
     },
@@ -487,10 +504,9 @@ __webpack_require__.r(__webpack_exports__);
     changeLanguage: function changeLanguage(lang) {
       this.$i18n.locale = lang;
       this.previewItem = '';
-      this.editItem = '';
-      this.setListLocale(this.$t('announcementsList'));
+      this.editItem = ''; // this.setListLocale(this.$t('announcementsList'))
     }
-  }
+  })
 });
 
 /***/ }),
@@ -940,38 +956,15 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "edit__image__preview" }, [
-                  _vm.editedItem.imgPath
+                  _vm.editedItem.image
                     ? _c("img", {
                         staticClass: "announce__img",
                         attrs: {
-                          src: _vm.editedItem.imgPath,
+                          src: _vm.editedItem.image,
                           alt: "uploaded image"
                         }
                       })
                     : _vm._e()
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "edit__date" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.editedItem.step,
-                        expression: "editedItem.step"
-                      }
-                    ],
-                    attrs: { type: "text", placeholder: "Enter date" },
-                    domProps: { value: _vm.editedItem.step },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.editedItem, "step", $event.target.value)
-                      }
-                    }
-                  })
                 ])
               ]),
               _vm._v(" "),

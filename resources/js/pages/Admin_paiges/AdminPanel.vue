@@ -41,6 +41,7 @@ import adminHeader from '@/js/components/admin/admin-header'
 import blogEdit from "@/js/components/admin/blogEdit";
 import blogPreview from "@/js/components/admin/blogPreview";
 import blogList from "@/js/components/admin/blogList";
+import {mapActions, mapGetters} from 'vuex'
 export default {
 name: "adminPanel",
   components: {
@@ -58,20 +59,21 @@ name: "adminPanel",
     }
   },
   created(){
-    this.setListLocale(this.$t('announcementsList'))
+    this.getArticles()
   },
   methods: {
-        setListLocale(list){
-            this.blogList = list.map((item) => {
-                return {
-                    description: item.description,
-                    imgPath: item.imgPath,
-                    step: item.step,
-                    title: item.title,
-                    isActive: false
-                }
-            })
-        },
+    ...mapActions(['getArticles']),
+        // setListLocale(list){
+        //     this.blogList = list.map((item) => {
+        //         return {
+        //             description: item.description,
+        //             imgPath: item.imgPath,
+        //             step: item.step,
+        //             title: item.title,
+        //             isActive: false
+        //         }
+        //     })
+        // },
         showPreviewItem(item){
           this.previewItem = ''
           this.editItem = ''
@@ -83,19 +85,20 @@ name: "adminPanel",
         },
         createNewArticle() {
           const newItem = {
-            description: '',
-            imgPath: '',
-            step: '',
-            title: '',
-            isActive: false
+              description: '',
+              image: '',
+              title: '',
+              language: this.$i18n.locale,
+              article__id: null,
+              isActive: false
           }
           this.previewItem = ''
           this.editItem = newItem
         },
         addToList(item){
-          this.blogList.push(item)
-          this.previewItem = ''
-          this.editItem = ''
+
+            this.previewItem = ''
+            this.editItem = ''
         },
         deleteArticle(item){
           if(item){
@@ -118,7 +121,7 @@ name: "adminPanel",
           this.$i18n.locale = lang
           this.previewItem = ''
           this.editItem = ''
-          this.setListLocale(this.$t('announcementsList'))
+          // this.setListLocale(this.$t('announcementsList'))
       }
   }
 }
