@@ -1,57 +1,55 @@
 <template>
-<div class="edit">
-  <div class="edit__form">
-    <div class="edit__show">
-      <button class="show" @click="showPreview = !showPreview">
-        {{showPreview ? 'Hide' : 'Preview'}}
-      </button>
-    </div>
-    <div class="edit__form" v-if="!showPreview">
-      <div class="edit__box--image">
-        <div class="edit__image">
-          <label for="image">
-            Add/Change image
-            <img src="@/js/assets/change-image.svg" alt="image icon">
-          </label>
-          <input type="file" id="image" @change="changeImage($event)">
+    <div class="edit">
+      <div class="edit__form">
+        <div class="edit__show">
+          <button class="show" @click="showPreview = !showPreview">
+            {{showPreview ? 'Hide' : 'Preview'}}
+          </button>
         </div>
-        <div class="edit__image__preview">
-          <img
-              v-if="editedItem.imgPath"
-               :src="editedItem.imgPath"
-               class="announce__img"
-               alt="uploaded image">
+        <div class="edit__form" v-if="!showPreview">
+          <div class="edit__box--image">
+            <div class="edit__image">
+              <label for="image">
+                Add/Change image
+                <img src="@/js/assets/change-image.svg" alt="image icon">
+              </label>
+              <input type="file" id="image" @change="changeImage($event)">
+            </div>
+            <div class="edit__image__preview">
+              <img
+                  v-if="editedItem.image"
+                   :src="editedItem.image"
+                   class="announce__img"
+                   alt="uploaded image">
+            </div>
+          </div>
+          <div class="edit__box">
+            <div class="edit__title">
+              <input type="text" v-model="editedItem.title">
+            </div>
+            <div class="edit__text">
+              <textarea v-model="editedItem.description"></textarea>
+            </div>
+          </div>
         </div>
-        <div class="edit__date">
-          <input type="text" placeholder="Enter date" v-model="editedItem.step">
+        <blog-preview v-else :item="editedItem"/>
+        <div class="edit__submit">
+          <button
+              class="submit"
+              @click="addItem"
+              :disabled="disableButton"
+              :class="{disabled: disableButton}"
+          >
+            Add post
+          </button>
         </div>
       </div>
-      <div class="edit__box">
-        <div class="edit__title">
-          <input type="text" v-model="editedItem.title">
-        </div>
-        <div class="edit__text">
-          <textarea v-model="editedItem.description"></textarea>
-        </div>
-      </div>
     </div>
-    <blog-preview v-else :item="editedItem"/>
-    <div class="edit__submit">
-      <button
-          class="submit"
-          @click="addItem"
-          :disabled="disableButton"
-          :class="{disabled: disableButton}"
-      >
-        Add post
-      </button>
-    </div>
-  </div>
-</div>
 </template>
 
 <script>
 import blogPreview from "@/js/components/admin/blogPreview";
+import {mapActions} from 'vuex'
 export default {
   name: "blogEdit",
   components: {
@@ -86,6 +84,7 @@ export default {
     }
   },
   methods: {
+      ...mapActions(['createArticle']),
     changeImage(event){
      const files = event.target.files || event.dataTransfer.files
       if(!files.length){
@@ -96,13 +95,16 @@ export default {
     createImage(file){
       const reader = new FileReader()
       reader.onload = (event) => {
-        this.editedItem.imgPath = event.target.result
+        this.editedItem.image = event.target.result
       }
       reader.readAsDataURL(file)
     },
     addItem(){
       const item = this.editedItem
-      this.$emit('addItem', item)
+        this.createArticle(item)
+        .then(()=>{
+          this.$emit('addItem', item)
+        })
     }
   }
 }

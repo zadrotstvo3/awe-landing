@@ -19,6 +19,7 @@
   </div>
 </template>
 <script>
+import {mapActions} from 'vuex'
 export default {
   name: "logIn",
   data(){
@@ -29,10 +30,14 @@ export default {
     }
   },
   methods: {
+      ...mapActions(['logIn']),
     submitLogIn(){
-      if(this.userName === 'admin' && this.userPassword === 'admin'){
-            this.$axios.get('/airlock/csrf-cookie').then(response => {console.log(response)})
-            this.$router.push('/admin-panel')
+      if(this.userName && this.userPassword){
+          const data = {
+              email: this.userName,
+              password: this.userPassword
+          }
+          this.logIn(data).then(()=>{this.$router.push('/admin-panel')})
       } else {
             return  this.error = true
       }
