@@ -33,7 +33,7 @@ class ArticleController extends Controller
     public function index(Request $request)
     {
         $limit = $request->get('limit', 5);
-        $result = $this->articleService->getList(intval($limit), $request->user());
+        $result = $this->articleService->getList(intval($limit));
 
         return response()->json($result);
     }

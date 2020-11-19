@@ -99,10 +99,9 @@ class ArticleService
 
     /**
      * @param int $limit
-     * @param User $user
      * @return LengthAwarePaginator
      */
-    public function getList(int $limit, User $user): LengthAwarePaginator
+    public function getList(int $limit): LengthAwarePaginator
     {
         return $this->model->with(['urkArticle', 'rusArticle', 'engArticle'])->paginate($limit);
     }

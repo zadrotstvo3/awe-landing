@@ -15,10 +15,10 @@ use Illuminate\Http\Request;
 Route::post('/login', 'UserController@login');
 Route::post('/register', 'UserController@register');
 Route::get('/logout', 'UserController@logout');
+Route::get('article/', 'ArticleController@index')->name('article.index');
 
 //Articles Routes
 Route::group(['prefix' => 'article', 'as' => 'article.', 'middleware'  => 'auth:airlock'], function () {
-    Route::get('/', 'ArticleController@index')->name('index');
     Route::post('/', 'ArticleController@store')->name('store');
     Route::get('/{article}', 'ArticleController@show')->name('show');
     Route::put('/{article}', 'ArticleController@update')->name('update');
