@@ -4,9 +4,17 @@ import axios from "axios";
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
-    state: {},
-    getters: {},
-    mutations: {},
+    state: {
+        articlesList: ''
+    },
+    getters: {
+        getArticlesList: (state) => state.articlesList
+    },
+    mutations: {
+        setArticlesList(state, action){
+            state.articlesList = action
+        }
+    },
     actions: {
         async logIn({state, commit}, action) {
             axios.defaults.withCredentials = true;
@@ -25,7 +33,13 @@ const store = new Vuex.Store({
         },
         async getArticles({state, commit}, action){
             await axios.get('api/article?limit=2&page=1')
-                .then((resp) => console.log(resp.data))
+                .then((resp) => {
+                    console.log(resp.data.data)
+                    const data = resp.data.data || ''
+                    if(data){
+                        commit('setArticlesList', [...data])
+                    }
+                })
         },
         async createArticle({state, commit}, action) {
             axios.defaults.withCredentials = true;

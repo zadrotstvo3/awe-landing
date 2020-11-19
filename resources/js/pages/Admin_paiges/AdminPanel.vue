@@ -58,22 +58,26 @@ name: "adminPanel",
         languageSelect: ['en', 'ru', 'uk']
     }
   },
+    computed:{
+        ...mapGetters(['getArticlesList']),
+    },
   created(){
     this.getArticles()
   },
   methods: {
     ...mapActions(['getArticles']),
-        // setListLocale(list){
-        //     this.blogList = list.map((item) => {
-        //         return {
-        //             description: item.description,
-        //             imgPath: item.imgPath,
-        //             step: item.step,
-        //             title: item.title,
-        //             isActive: false
-        //         }
-        //     })
-        // },
+        setListLocale(){
+        const list = [...this.getArticlesList]
+            this.blogList = list.map((item) => {
+                return {
+                    description: item.description,
+                    imgPath: item.imgPath,
+                    step: item.step,
+                    title: item.title,
+                    isActive: false
+                }
+            })
+        },
         showPreviewItem(item){
           this.previewItem = ''
           this.editItem = ''
@@ -86,17 +90,16 @@ name: "adminPanel",
         createNewArticle() {
           const newItem = {
               description: '',
-              image: '',
+              image: 'vbcbcncgn',
               title: '',
               language: this.$i18n.locale,
-              article__id: null,
+              article_id: null,
               isActive: false
           }
           this.previewItem = ''
           this.editItem = newItem
         },
         addToList(item){
-
             this.previewItem = ''
             this.editItem = ''
         },

@@ -153,6 +153,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['createArticle'])), {}, {
     changeImage: function changeImage(event) {
+      var img = event.target.files[0];
+      var formData = new FormData();
+      formData.append('image', img);
+      this.editedItem.image = 'dascvisdvciybsdi';
       var files = event.target.files || event.dataTransfer.files;
 
       if (!files.length) {
@@ -167,7 +171,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var reader = new FileReader();
 
       reader.onload = function (event) {
-        _this.editedItem.image = event.target.result;
+        _this.uploadedImage = event.target.result;
       };
 
       reader.readAsDataURL(file);
@@ -380,6 +384,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_components_admin_blogPreview__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/js/components/admin/blogPreview */ "./resources/js/components/admin/blogPreview.vue");
 /* harmony import */ var _js_components_admin_blogList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/js/components/admin/blogList */ "./resources/js/components/admin/blogList.vue");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -445,21 +461,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       languageSelect: ['en', 'ru', 'uk']
     };
   },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapGetters"])(['getArticlesList'])),
   created: function created() {
     this.getArticles();
   },
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapActions"])(['getArticles'])), {}, {
-    // setListLocale(list){
-    //     this.blogList = list.map((item) => {
-    //         return {
-    //             description: item.description,
-    //             imgPath: item.imgPath,
-    //             step: item.step,
-    //             title: item.title,
-    //             isActive: false
-    //         }
-    //     })
-    // },
+    setListLocale: function setListLocale() {
+      var list = _toConsumableArray(this.getArticlesList);
+
+      this.blogList = list.map(function (item) {
+        return {
+          description: item.description,
+          imgPath: item.imgPath,
+          step: item.step,
+          title: item.title,
+          isActive: false
+        };
+      });
+    },
     showPreviewItem: function showPreviewItem(item) {
       this.previewItem = '';
       this.editItem = '';
@@ -472,10 +491,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     createNewArticle: function createNewArticle() {
       var newItem = {
         description: '',
-        image: '',
+        image: 'vbcbcncgn',
         title: '',
         language: this.$i18n.locale,
-        article__id: null,
+        article_id: null,
         isActive: false
       };
       this.previewItem = '';
@@ -956,13 +975,10 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "edit__image__preview" }, [
-                  _vm.editedItem.image
+                  _vm.uploadedImage
                     ? _c("img", {
                         staticClass: "announce__img",
-                        attrs: {
-                          src: _vm.editedItem.image,
-                          alt: "uploaded image"
-                        }
+                        attrs: { src: _vm.uploadedImage, alt: "uploaded image" }
                       })
                     : _vm._e()
                 ])

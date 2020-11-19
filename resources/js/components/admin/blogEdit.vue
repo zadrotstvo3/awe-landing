@@ -17,8 +17,8 @@
             </div>
             <div class="edit__image__preview">
               <img
-                  v-if="editedItem.image"
-                   :src="editedItem.image"
+                  v-if="uploadedImage"
+                   :src="uploadedImage"
                    class="announce__img"
                    alt="uploaded image">
             </div>
@@ -86,16 +86,20 @@ export default {
   methods: {
       ...mapActions(['createArticle']),
     changeImage(event){
-     const files = event.target.files || event.dataTransfer.files
-      if(!files.length){
-        return
-      }
-      this.createImage(files[0])
+        const img = event.target.files[0]
+        const formData = new FormData()
+        formData.append('image', img)
+        this.editedItem.image = 'dascvisdvciybsdi'
+         const files = event.target.files || event.dataTransfer.files
+          if(!files.length){
+            return
+          }
+          this.createImage(files[0])
     },
     createImage(file){
       const reader = new FileReader()
       reader.onload = (event) => {
-        this.editedItem.image = event.target.result
+        this.uploadedImage = event.target.result
       }
       reader.readAsDataURL(file)
     },
