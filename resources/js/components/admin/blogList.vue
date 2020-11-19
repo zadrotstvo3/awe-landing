@@ -24,7 +24,7 @@
     <warningModal
         v-if="modal"
         @close="toggleModal"
-        @deleteItem="deleteArticle(currentItem)"
+        @deleteItem="deleteArticle(currentItem.id)"
     />
   </div>
 </template>
@@ -81,9 +81,11 @@ export default {
 .blog-list {
   width: 100%;
   max-width: 450px;
+
   margin: 50px;
   &__list {
-    height: 90%;
+    height: 70%;
+      overflow-y: scroll;
     display: flex;
     flex-direction: column;
   }
@@ -114,6 +116,7 @@ export default {
   &__button {
     width: 100%;
     max-width: 150px;
+      margin-bottom: 20px;
     .button {
       width: 100%;
       padding: 15px;

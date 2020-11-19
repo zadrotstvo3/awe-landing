@@ -5,48 +5,70 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
+        status: '',
         articlesList: ''
     },
     getters: {
+        getStatus: (state) => state.status,
         getArticlesList: (state) => state.articlesList
     },
     mutations: {
+        setStatus(state, action){
+          state.status = action
+        },
         setArticlesList(state, action){
             state.articlesList = action
         }
     },
     actions: {
         async logIn({state, commit}, action) {
-            axios.defaults.withCredentials = true;
-
             await axios.get('/airlock/csrf-cookie').then(() => {
-
-                axios.post('api/login', action)
+                return  axios.post('api/login', action)
                     .then((resp)=>{
                         if(resp.data.message === 'Login successful'){
-                            return resp.data.message
+                            const status = resp.data.message
+                            commit('setStatus', status)
                         }
                     })
                     .catch(err => console.log(err))
 
             })
         },
+        async logOut({state, commit}) {
+          return axios.get('api/logout')
+              .then((resp) => {
+                  const status = resp.data.message
+                  commit('setStatus', status)
+              })
+        },
         async getArticles({state, commit}, action){
-            await axios.get('api/article?limit=2&page=1')
+            await axios.get('api/article?limit=10&page=1')
                 .then((resp) => {
-                    console.log(resp.data.data)
                     const data = resp.data.data || ''
                     if(data){
                         commit('setArticlesList', [...data])
                     }
                 })
+                .catch(err => console.log(err))
         },
         async createArticle({state, commit}, action) {
-            axios.defaults.withCredentials = true;
             await axios.post('api/article', action)
                 .then((resp)=> {
-                    console.log(resp.data)
+                    if(resp){
+                        return true
+                    }
                 })
+                .catch(err => console.log(err))
+
+        },
+        async deleteArticle({state, commit}, action){
+            await axios.delete(`api/article/${action}`)
+                .then((resp)=> {
+                    if(resp){
+                        return true
+                    }
+                })
+                .catch(err => console.log(err))
         }
     }
 })

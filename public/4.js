@@ -9,8 +9,15 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_burger_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-burger-menu */ "./node_modules/vue-burger-menu/dist/vue-burger-menu.common.js");
-/* harmony import */ var vue_burger_menu__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_burger_menu__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var vue_burger_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-burger-menu */ "./node_modules/vue-burger-menu/dist/vue-burger-menu.common.js");
+/* harmony import */ var vue_burger_menu__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_burger_menu__WEBPACK_IMPORTED_MODULE_1__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -36,16 +43,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "admin-header",
   components: {
-    ScaleDown: vue_burger_menu__WEBPACK_IMPORTED_MODULE_0__["ScaleDown"]
+    ScaleDown: vue_burger_menu__WEBPACK_IMPORTED_MODULE_1__["ScaleDown"]
   },
   data: function data() {
     return {
       openSideBar: false
     };
-  }
+  },
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['logOut'])), {}, {
+    closeAdminPanel: function closeAdminPanel() {
+      var _this = this;
+
+      this.logOut()["finally"](function () {
+        _this.$router.push('/admin');
+      });
+    }
+  })
 });
 
 /***/ }),
@@ -151,7 +168,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.editedItem = Object.assign({}, newVal);
     }
   },
-  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['createArticle'])), {}, {
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['createArticle', 'getArticles'])), {}, {
     changeImage: function changeImage(event) {
       var img = event.target.files[0];
       var formData = new FormData();
@@ -181,7 +198,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       var item = this.editedItem;
       this.createArticle(item).then(function () {
-        _this2.$emit('addItem', item);
+        _this2.getArticles().then(function () {
+          _this2.$emit('addItem', item);
+        });
       });
     }
   })
@@ -440,6 +459,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -461,20 +481,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       languageSelect: ['en', 'ru', 'uk']
     };
   },
-  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapGetters"])(['getArticlesList'])),
-  created: function created() {
-    this.getArticles();
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapGetters"])(['getArticlesList', 'getStatus'])),
+  mounted: function mounted() {
+    return this.getStatus ? this.setBlogList() : this.$router.push('/admin');
   },
-  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapActions"])(['getArticles'])), {}, {
-    setListLocale: function setListLocale() {
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapActions"])(['deleteArticle', 'getArticles'])), {}, {
+    setBlogList: function setBlogList() {
       var list = _toConsumableArray(this.getArticlesList);
 
       this.blogList = list.map(function (item) {
         return {
-          description: item.description,
-          imgPath: item.imgPath,
-          step: item.step,
-          title: item.title,
+          id: item.rus_article.article_id,
+          description: item.rus_article.description,
+          imgPath: item.full_image_url,
+          step: item.created_at,
+          title: item.rus_article.title,
           isActive: false
         };
       });
@@ -500,32 +521,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.previewItem = '';
       this.editItem = newItem;
     },
-    addToList: function addToList(item) {
+    addToList: function addToList() {
+      this.setBlogList();
       this.previewItem = '';
       this.editItem = '';
     },
-    deleteArticle: function deleteArticle(item) {
-      if (item) {
-        var index = this.blogList.indexOf(item);
+    deleteItem: function deleteItem(item) {
+      var _this = this;
 
-        if (index > -1) {
-          this.blogList.splice(index, 1);
-          this.previewItem = '';
-          this.editItem = '';
-        }
-      }
-    },
-    addActiveClass: function addActiveClass(item) {
-      this.blogList.forEach(function (article) {
-        return article === item ? article.isActive = true : article.isActive = false;
+      this.deleteArticle(item).then(function () {
+        _this.getArticles();
       });
-    },
-    changeLanguage: function changeLanguage(lang) {
-      this.$i18n.locale = lang;
       this.previewItem = '';
-      this.editItem = ''; // this.setListLocale(this.$t('announcementsList'))
+      this.editItem = '';
     }
-  })
+  }),
+  addActiveClass: function addActiveClass(item) {
+    this.blogList.forEach(function (article) {
+      return article === item ? article.isActive = true : article.isActive = false;
+    });
+  },
+  changeLanguage: function changeLanguage(lang) {
+    this.$i18n.locale = lang;
+    this.previewItem = '';
+    this.editItem = '';
+  }
 });
 
 /***/ }),
@@ -580,7 +600,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".blog-list[data-v-1ddff92b] {\n  width: 100%;\n  max-width: 450px;\n  margin: 50px;\n}\n.blog-list__list[data-v-1ddff92b] {\n  height: 90%;\n  display: flex;\n  flex-direction: column;\n}\n.blog-list__item[data-v-1ddff92b] {\n  margin: 15px 0;\n  padding: 15px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border: 2px solid #a7a7a7;\n  border-radius: 35px;\n  list-style: none;\n}\n.blog-list__item img[data-v-1ddff92b] {\n  width: 25px;\n  margin: 0 5px;\n  opacity: 0.5;\n}\n.blog-list__item img[data-v-1ddff92b]:hover {\n  cursor: pointer;\n  opacity: 1;\n}\n.blog-list__images[data-v-1ddff92b] {\n  width: 100%;\n  max-width: 100px;\n  display: flex;\n}\n.blog-list__button[data-v-1ddff92b] {\n  width: 100%;\n  max-width: 150px;\n}\n.blog-list__button .button[data-v-1ddff92b] {\n  width: 100%;\n  padding: 15px;\n  font-size: 24px;\n  background-color: #fff;\n  border: 1px solid black;\n  border-radius: 30px;\n  outline: none;\n  transition: 0.3s ease-in-out;\n}\n.blog-list__button .button[data-v-1ddff92b]:hover {\n  background-color: black;\n  color: white;\n  cursor: pointer;\n}\n.activeClass[data-v-1ddff92b] {\n  border: 2px solid black;\n}\n@media only screen and (max-width: 770px) {\n.blog-list[data-v-1ddff92b] {\n    margin: 0;\n}\n}", ""]);
+exports.push([module.i, ".blog-list[data-v-1ddff92b] {\n  width: 100%;\n  max-width: 450px;\n  margin: 50px;\n}\n.blog-list__list[data-v-1ddff92b] {\n  height: 70%;\n  overflow-y: scroll;\n  display: flex;\n  flex-direction: column;\n}\n.blog-list__item[data-v-1ddff92b] {\n  margin: 15px 0;\n  padding: 15px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border: 2px solid #a7a7a7;\n  border-radius: 35px;\n  list-style: none;\n}\n.blog-list__item img[data-v-1ddff92b] {\n  width: 25px;\n  margin: 0 5px;\n  opacity: 0.5;\n}\n.blog-list__item img[data-v-1ddff92b]:hover {\n  cursor: pointer;\n  opacity: 1;\n}\n.blog-list__images[data-v-1ddff92b] {\n  width: 100%;\n  max-width: 100px;\n  display: flex;\n}\n.blog-list__button[data-v-1ddff92b] {\n  width: 100%;\n  max-width: 150px;\n  margin-bottom: 20px;\n}\n.blog-list__button .button[data-v-1ddff92b] {\n  width: 100%;\n  padding: 15px;\n  font-size: 24px;\n  background-color: #fff;\n  border: 1px solid black;\n  border-radius: 30px;\n  outline: none;\n  transition: 0.3s ease-in-out;\n}\n.blog-list__button .button[data-v-1ddff92b]:hover {\n  background-color: black;\n  color: white;\n  cursor: pointer;\n}\n.activeClass[data-v-1ddff92b] {\n  border: 2px solid black;\n}\n@media only screen and (max-width: 770px) {\n.blog-list[data-v-1ddff92b] {\n    margin: 0;\n}\n}", ""]);
 
 // exports
 
@@ -900,7 +920,7 @@ var render = function() {
           staticClass: "header__button",
           on: {
             click: function($event) {
-              return _vm.$router.push("/admin")
+              return _vm.closeAdminPanel()
             }
           }
         },
@@ -1177,7 +1197,7 @@ var render = function() {
             on: {
               close: _vm.toggleModal,
               deleteItem: function($event) {
-                return _vm.deleteArticle(_vm.currentItem)
+                return _vm.deleteArticle(_vm.currentItem.id)
               }
             }
           })
@@ -1398,16 +1418,18 @@ var render = function() {
         "div",
         { staticClass: "panel", attrs: { id: "page-wrap" } },
         [
-          _c("blogList", {
-            attrs: {
-              sendPreviewItem: _vm.showPreviewItem,
-              sendEditItem: _vm.showEdtItem,
-              addNewArticle: _vm.createNewArticle,
-              deleteArticle: _vm.deleteArticle,
-              addActiveClass: _vm.addActiveClass,
-              list: _vm.blogList
-            }
-          }),
+          _vm.blogList
+            ? _c("blogList", {
+                attrs: {
+                  sendPreviewItem: _vm.showPreviewItem,
+                  sendEditItem: _vm.showEdtItem,
+                  addNewArticle: _vm.createNewArticle,
+                  deleteArticle: _vm.deleteItem,
+                  addActiveClass: _vm.addActiveClass,
+                  list: _vm.blogList
+                }
+              })
+            : _vm._e(),
           _vm._v(" "),
           _vm.previewItem
             ? _c("blogPreview", { attrs: { item: _vm.previewItem } })

@@ -84,7 +84,7 @@ export default {
     }
   },
   methods: {
-      ...mapActions(['createArticle']),
+      ...mapActions(['createArticle', 'getArticles']),
     changeImage(event){
         const img = event.target.files[0]
         const formData = new FormData()
@@ -106,9 +106,12 @@ export default {
     addItem(){
       const item = this.editedItem
         this.createArticle(item)
-        .then(()=>{
-          this.$emit('addItem', item)
-        })
+            .then(()=>{
+                this.getArticles()
+                    .then(()=>{
+                        this.$emit('addItem', item)
+                    })
+            })
     }
   }
 }

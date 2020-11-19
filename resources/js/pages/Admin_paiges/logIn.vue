@@ -19,7 +19,7 @@
   </div>
 </template>
 <script>
-import {mapActions} from 'vuex'
+import {mapActions, mapGetters} from 'vuex'
 export default {
   name: "logIn",
   data(){
@@ -29,17 +29,33 @@ export default {
       error: false
     }
   },
+    mounted() {
+        return this.getStatus === 'Login successful'
+            ? this.$router.push('/admin-panel')
+            : false
+    },
+    computed: {
+      ...mapGetters(['getStatus'])
+    },
   methods: {
-      ...mapActions(['logIn']),
-    submitLogIn(){
+      ...mapActions(['logIn', 'getArticles']),
+    async submitLogIn(){
       if(this.userName && this.userPassword){
           const data = {
               email: this.userName,
               password: this.userPassword
           }
-          this.logIn(data).then(()=>{this.$router.push('/admin-panel')})
+           this.logIn(data)
+              .then(()=>{
+                  if(this.getStatus){
+                      this.getArticles()
+                          .then(()=>{
+                            this.$router.push('/admin-panel')
+                          })
+                  }
+              })
       } else {
-            return  this.error = true
+          return  this.error = true
       }
     }
   }

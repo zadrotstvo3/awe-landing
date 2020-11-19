@@ -16,13 +16,14 @@
       <span>Out Team</span>
     </router-link>
   </ScaleDown>
-  <button class="header__button" @click="$router.push('/admin')">
+  <button class="header__button" @click="closeAdminPanel()">
     Log Out
   </button>
 </header>
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 import { ScaleDown } from 'vue-burger-menu'
 export default {
   name: "admin-header",
@@ -33,7 +34,17 @@ export default {
     return {
       openSideBar: false
     }
-  }
+  },
+    methods: {
+      ...mapActions(['logOut']),
+        closeAdminPanel(){
+          this.logOut()
+            .finally(()=>{
+                this.$router.push('/admin')
+            })
+        }
+
+    }
 }
 </script>
 

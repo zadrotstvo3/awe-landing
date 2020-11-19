@@ -16,10 +16,11 @@
     </div>
     <div class="panel" id="page-wrap">
       <blogList
+          v-if="blogList"
           :sendPreviewItem="showPreviewItem"
           :sendEditItem="showEdtItem"
           :addNewArticle="createNewArticle"
-          :deleteArticle="deleteArticle"
+          :deleteArticle="deleteItem"
           :addActiveClass="addActiveClass"
           :list="blogList"
       />
@@ -43,37 +44,38 @@ import blogPreview from "@/js/components/admin/blogPreview";
 import blogList from "@/js/components/admin/blogList";
 import {mapActions, mapGetters} from 'vuex'
 export default {
-name: "adminPanel",
-  components: {
-    blogList,
-    blogPreview,
-    blogEdit,
-    adminHeader
-  },
-  data(){
+    name: "adminPanel",
+    components: {
+        blogList,
+        blogPreview,
+        blogEdit,
+        adminHeader
+    },
+    data(){
     return {
         previewItem: '',
         editItem: '',
         blogList: '',
         languageSelect: ['en', 'ru', 'uk']
     }
-  },
-    computed:{
-        ...mapGetters(['getArticlesList']),
     },
-  created(){
-    this.getArticles()
-  },
-  methods: {
-    ...mapActions(['getArticles']),
-        setListLocale(){
-        const list = [...this.getArticlesList]
+    computed:{
+        ...mapGetters(['getArticlesList', 'getStatus']),
+    },
+    mounted() {
+        return this.getStatus ? this.setBlogList() : this.$router.push('/admin')
+    },
+    methods: {
+        ...mapActions(['deleteArticle', 'getArticles']),
+        setBlogList(){
+            const list = [...this.getArticlesList]
             this.blogList = list.map((item) => {
                 return {
-                    description: item.description,
-                    imgPath: item.imgPath,
-                    step: item.step,
-                    title: item.title,
+                    id: item.rus_article.article_id,
+                    description: item.rus_article.description,
+                    imgPath: item.full_image_url,
+                    step: item.created_at,
+                    title: item.rus_article.title,
                     isActive: false
                 }
             })
@@ -99,18 +101,18 @@ name: "adminPanel",
           this.previewItem = ''
           this.editItem = newItem
         },
-        addToList(item){
+        addToList(){
+            this.setBlogList()
             this.previewItem = ''
             this.editItem = ''
         },
-        deleteArticle(item){
-          if(item){
-            const index = this.blogList.indexOf(item)
-            if(index > -1){
-              this.blogList.splice(index, 1)
-              this.previewItem = ''
-              this.editItem = ''
-            }
+        deleteItem(item){
+            this.deleteArticle(item)
+            .then(()=>{
+                this.getArticles()
+            })
+            this.previewItem = ''
+            this.editItem = ''
           }
         },
         addActiveClass(item){
@@ -124,9 +126,7 @@ name: "adminPanel",
           this.$i18n.locale = lang
           this.previewItem = ''
           this.editItem = ''
-          // this.setListLocale(this.$t('announcementsList'))
       }
-  }
 }
 </script>
 

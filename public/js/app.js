@@ -36896,6 +36896,8 @@ __webpack_require__.r(__webpack_exports__);
 // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
+axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.headers.post['X-Requested-With'] = 'XMLHttpRequest';
+axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.headers.get['X-Requested-With'] = 'XMLHttpRequest';
 var config = {
   // baseURL: process.env.baseURL || process.env.apiUrl || ""
   // timeout: 60 * 1000, // Timeout
@@ -37031,13 +37033,7 @@ var routes = [{
   },
   component: function component() {
     return Promise.all(/*! import() */[__webpack_require__.e(15), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! @/js/pages/Admin_paiges/AdminPanel */ "./resources/js/pages/Admin_paiges/AdminPanel.vue"));
-  } // beforeEnter: (to, from, next) => {
-  //     const token = localStorage.getItem('Token')
-  //     if(token){
-  //         next('/admin-panel')
-  //     }
-  // }
-
+  }
 }, {
   path: '/for-investors',
   name: 'Investors',
@@ -37103,14 +37099,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_2__["default"]);
 var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
   state: {
+    status: '',
     articlesList: ''
   },
   getters: {
+    getStatus: function getStatus(state) {
+      return state.status;
+    },
     getArticlesList: function getArticlesList(state) {
       return state.articlesList;
     }
   },
   mutations: {
+    setStatus: function setStatus(state, action) {
+      state.status = action;
+    },
     setArticlesList: function setArticlesList(state, action) {
       state.articlesList = action;
     }
@@ -37124,19 +37127,19 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
             switch (_context.prev = _context.next) {
               case 0:
                 state = _ref.state, commit = _ref.commit;
-                axios__WEBPACK_IMPORTED_MODULE_3___default.a.defaults.withCredentials = true;
-                _context.next = 4;
+                _context.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('/airlock/csrf-cookie').then(function () {
-                  axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('api/login', action).then(function (resp) {
+                  return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('api/login', action).then(function (resp) {
                     if (resp.data.message === 'Login successful') {
-                      return resp.data.message;
+                      var status = resp.data.message;
+                      commit('setStatus', status);
                     }
                   })["catch"](function (err) {
                     return console.log(err);
                   });
                 });
 
-              case 4:
+              case 3:
               case "end":
                 return _context.stop();
             }
@@ -37144,7 +37147,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
         }, _callee);
       }))();
     },
-    getArticles: function getArticles(_ref2, action) {
+    logOut: function logOut(_ref2) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
         var state, commit;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
@@ -37152,17 +37155,12 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
             switch (_context2.prev = _context2.next) {
               case 0:
                 state = _ref2.state, commit = _ref2.commit;
-                _context2.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('api/article?limit=2&page=1').then(function (resp) {
-                  console.log(resp.data.data);
-                  var data = resp.data.data || '';
+                return _context2.abrupt("return", axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('api/logout').then(function (resp) {
+                  var status = resp.data.message;
+                  commit('setStatus', status);
+                }));
 
-                  if (data) {
-                    commit('setArticlesList', _toConsumableArray(data));
-                  }
-                });
-
-              case 3:
+              case 2:
               case "end":
                 return _context2.stop();
             }
@@ -37170,7 +37168,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
         }, _callee2);
       }))();
     },
-    createArticle: function createArticle(_ref3, action) {
+    getArticles: function getArticles(_ref3, action) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
         var state, commit;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
@@ -37178,18 +37176,73 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
             switch (_context3.prev = _context3.next) {
               case 0:
                 state = _ref3.state, commit = _ref3.commit;
-                axios__WEBPACK_IMPORTED_MODULE_3___default.a.defaults.withCredentials = true;
-                _context3.next = 4;
-                return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('api/article', action).then(function (resp) {
-                  console.log(resp.data);
+                _context3.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('api/article?limit=10&page=1').then(function (resp) {
+                  var data = resp.data.data || '';
+
+                  if (data) {
+                    commit('setArticlesList', _toConsumableArray(data));
+                  }
+                })["catch"](function (err) {
+                  return console.log(err);
                 });
 
-              case 4:
+              case 3:
               case "end":
                 return _context3.stop();
             }
           }
         }, _callee3);
+      }))();
+    },
+    createArticle: function createArticle(_ref4, action) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
+        var state, commit;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                state = _ref4.state, commit = _ref4.commit;
+                _context4.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('api/article', action).then(function (resp) {
+                  if (resp) {
+                    return true;
+                  }
+                })["catch"](function (err) {
+                  return console.log(err);
+                });
+
+              case 3:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }))();
+    },
+    deleteArticle: function deleteArticle(_ref5, action) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5() {
+        var state, commit;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                state = _ref5.state, commit = _ref5.commit;
+                _context5.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_3___default.a["delete"]("api/article/".concat(action)).then(function (resp) {
+                  if (resp) {
+                    return true;
+                  }
+                })["catch"](function (err) {
+                  return console.log(err);
+                });
+
+              case 3:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5);
       }))();
     }
   }
