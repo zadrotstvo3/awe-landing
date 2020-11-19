@@ -28,10 +28,25 @@ class Article extends Model
     /**
      * @var string[]
      */
+    protected $appends = [
+        'full_image_url'
+    ];
+
+    /**
+     * @var string[]
+     */
     protected $fillable = [
         'user_id',
         'image'
     ];
+
+    /**
+     * @return string
+     */
+    public function getFullImageUrlAttribute(): string
+    {
+        return config('app.url') . $this->image;
+    }
 
     /**
      * @return BelongsTo

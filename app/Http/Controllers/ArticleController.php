@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Article\CreateArticleRequest;
 use App\Http\Requests\Article\UpdateArticleRequest;
 use App\Services\Article\ArticleService;
-use App\User;
 use Exception;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 /**
  * Class ArticleController
@@ -30,61 +32,82 @@ class ArticleController extends Controller
         $this->articleService = $articleService;
     }
 
+    /**
+     * @param Request $request
+     * @return Application|Factory|JsonResponse|View
+     */
     public function index(Request $request)
     {
-        $limit = $request->get('limit', 5);
-        $result = $this->articleService->getList(intval($limit));
+        if ($request->isXmlHttpRequest()) {
+            $limit = $request->get('limit', 5);
+            $result = $this->articleService->getList(intval($limit));
 
-        return response()->json($result);
+            return response()->json($result);
+        }
+        return view("welcome");
     }
 
     /**
      * @param CreateArticleRequest $request
-     * @return JsonResponse
+     * @return Application|Factory|JsonResponse|View
      */
     public function store(CreateArticleRequest $request)
     {
-        $result = $this->articleService->create($request->all(), $request->user());
+        if ($request->isXmlHttpRequest()) {
+            $result = $this->articleService->create($request->all(), $request->user());
 
-        return response()->json($result);
+            return response()->json($result);
+        }
+        return view("welcome");
     }
 
     /**
      * @param Request $request
-     * @return JsonResponse
+     * @return Application|Factory|JsonResponse|View
      */
     public function show(Request $request)
     {
-        $result = $this->articleService->show(
-            intval($request->route('article')),
-            ['urkArticle', 'rusArticle', 'engArticle']
-        );
-        return response()->json($result);
+        if ($request->isXmlHttpRequest()) {
+            $result = $this->articleService->show(
+                intval($request->route('article')),
+                ['urkArticle', 'rusArticle', 'engArticle']
+            );
+            return response()->json($result);
+        }
+        return view("welcome");
     }
 
     /**
      * @param UpdateArticleRequest $request
-     * @return JsonResponse
+     * @return Application|Factory|JsonResponse|View
      */
     public function update(UpdateArticleRequest $request)
     {
-        $result = $this->articleService->update(
-            intval($request->route('article')),
-            $request->all(),
-            User::first()
-        );
-        return response()->json($result);
+        if ($request->isXmlHttpRequest()) {
+
+            $result = $this->articleService->update(
+                intval($request->route('article')),
+                $request->all(),
+                $request->user()
+            );
+            return response()->json($result);
+        }
+        return view("welcome");
     }
 
     /**
      * @param Request $request
-     * @return JsonResponse
+     * @return Application|Factory|JsonResponse|View
      * @throws Exception
      */
     public function delete(Request $request)
     {
-        $result = $this->articleService->delete(intval($request->route('article')));
+        if ($request->isXmlHttpRequest()) {
 
-        return response()->json(['result' => $result]);
+            $result = $this->articleService->delete(intval($request->route('article')));
+
+            return response()->json(['result' => $result]);
+        }
+        return view("welcome");
     }
 }
