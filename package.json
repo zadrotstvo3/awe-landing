@@ -11,19 +11,27 @@
     },
     "devDependencies": {
         "axios": "^0.19",
-        "bootstrap": "^4.1.0",
         "cross-env": "^5.1",
         "jquery": "^3.5.1",
-        "laravel-mix": "^5.0.1",
-        "lodash": "^4.17.13",
+        "laravel-mix": "^5.0.9",
+        "lodash": "^4.17.20",
         "popper.js": "^1.16.1",
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0",
-        "vue-template-compiler": "^2.6.11"
+        "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "@haiku/burf-sandtime": "0.0.9",
+        "@haiku/burf-title": "0.0.5",
+        "particles.js": "^2.0.0",
+        "swiper": "^6.3.5",
         "vue": "^2.6.12",
-        "vue-router": "^3.4.9"
+        "vue-awesome-swiper": "^4.1.1",
+        "vue-burger-menu": "^2.0.5",
+        "vue-i18n": "^8.22.1",
+        "vue-loader": "^15.9.5",
+        "vue-router": "^3.4.9",
+        "vue-swiper": "^0.5.0"
     }
 }
