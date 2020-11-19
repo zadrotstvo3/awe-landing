@@ -11,3 +11,4 @@
 |
 */
 Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
+Route::get('/', 'SinglePageController@home')->name('home');
