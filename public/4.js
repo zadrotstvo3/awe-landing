@@ -132,7 +132,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -168,7 +167,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.editedItem = Object.assign({}, newVal);
     }
   },
-  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['createArticle', 'getArticles', 'uploadImage'])), {}, {
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['createArticle', 'getArticles', 'uploadImage', 'updateArticle'])), {}, {
     changeImage: function changeImage(event) {
       var files = event.target.files || event.dataTransfer.files;
 
@@ -192,6 +191,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this.uploadImage(data).then(function (resp) {
           console.log(resp);
           _this.editedItem.image = resp.url;
+          _this.editedItem.full_image_url = resp.full_url;
         });
       };
 
@@ -204,11 +204,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var item = this.editedItem;
         this.createArticle(item).then(function () {
           _this2.getArticles().then(function () {
-            _this2.$emit('addItem', item);
+            _this2.$emit('addItem');
           });
         });
       } else {
-        return;
+        delete this.editedItem.isActive;
+        var _item = {
+          title: this.editedItem.title,
+          description: this.editedItem.description,
+          image: this.editedItem.image,
+          language: this.$i18n.locale,
+          article_id: this.editedItem.article_id
+        };
+        this.updateArticle(_item);
       }
     }
   })
@@ -411,24 +419,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_components_admin_blogPreview__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/js/components/admin/blogPreview */ "./resources/js/components/admin/blogPreview.vue");
 /* harmony import */ var _js_components_admin_blogList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/js/components/admin/blogList */ "./resources/js/components/admin/blogList.vue");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
 //
 //
 //
@@ -491,23 +489,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapGetters"])(['getArticlesList', 'getStatus'])),
   mounted: function mounted() {
-    return this.getStatus ? this.setBlogList() : this.$router.push('/admin');
+    return this.getStatus ? true : this.$router.push('/admin');
   },
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapActions"])(['deleteArticle', 'getArticles'])), {}, {
-    setBlogList: function setBlogList() {
-      var list = _toConsumableArray(this.getArticlesList);
-
-      this.blogList = list.map(function (item) {
-        return {
-          id: item.rus_article.article_id,
-          description: item.rus_article.description,
-          image: item.full_image_url,
-          step: item.created_at,
-          title: item.rus_article.title,
-          isActive: false
-        };
-      });
-    },
     showPreviewItem: function showPreviewItem(item) {
       this.previewItem = '';
       this.editItem = '';
@@ -516,21 +500,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     showEdtItem: function showEdtItem(item) {
       this.previewItem = '';
       this.editItem = item;
+      console.log(this.editItem);
     },
     createNewArticle: function createNewArticle() {
       var newItem = {
         description: '',
-        image: 'vbcbcncgn',
+        image: '',
+        full_image_url: '',
         title: '',
         language: this.$i18n.locale,
-        article_id: null,
-        isActive: false
+        article_id: null
       };
       this.previewItem = '';
       this.editItem = newItem;
     },
     addToList: function addToList() {
-      this.setBlogList();
       this.previewItem = '';
       this.editItem = '';
     },
@@ -539,27 +523,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.deleteArticle(item).then(function (resp) {
         if (resp) {
-          _this.getArticles().then(function (resp) {
-            if (resp) {
-              _this.setBlogList();
-            }
-          });
+          _this.getArticles();
         }
       });
       this.previewItem = '';
       this.editItem = '';
+    },
+    addActiveClassName: function addActiveClassName(item) {
+      this.getArticlesList[this.$i18n.locale].forEach(function (article) {
+        return article === item ? article.isActive = true : article.isActive = false;
+      });
+    },
+    changeLanguage: function changeLanguage(lang) {
+      this.$i18n.locale = lang;
+      this.previewItem = '';
+      this.editItem = '';
     }
-  }),
-  addActiveClass: function addActiveClass(item) {
-    this.blogList.forEach(function (article) {
-      return article === item ? article.isActive = true : article.isActive = false;
-    });
-  },
-  changeLanguage: function changeLanguage(lang) {
-    this.$i18n.locale = lang;
-    this.previewItem = '';
-    this.editItem = '';
-  }
+  })
 });
 
 /***/ }),
@@ -1009,12 +989,13 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "edit__image__preview" }, [
-                  _vm.uploadedImage
-                    ? _c("img", {
-                        staticClass: "announce__img",
-                        attrs: { src: _vm.uploadedImage, alt: "uploaded image" }
-                      })
-                    : _vm._e()
+                  _c("img", {
+                    staticClass: "announce__img",
+                    attrs: {
+                      src: _vm.editedItem.full_image_url,
+                      alt: "uploaded image"
+                    }
+                  })
                 ])
               ]),
               _vm._v(" "),
@@ -1080,7 +1061,18 @@ var render = function() {
               attrs: { disabled: _vm.disableButton },
               on: { click: _vm.addItem }
             },
-            [_vm._v("\n        Add post\n      ")]
+            [
+              _vm._v(
+                "\n          " +
+                  _vm._s(
+                    "" +
+                      (_vm.editedItem.article_id === null
+                        ? "Create post"
+                        : "Save")
+                  ) +
+                  "\n      "
+              )
+            ]
           )
         ])
       ],
@@ -1280,7 +1272,7 @@ var render = function() {
         _c("div", { staticClass: "announce" }, [
           _c("img", {
             staticClass: "announce__img",
-            attrs: { src: _vm.item.imgPath, alt: "" }
+            attrs: { src: _vm.item.image, alt: "" }
           }),
           _vm._v(" "),
           _c("div", { staticClass: "announce__text" }, [
@@ -1432,18 +1424,21 @@ var render = function() {
         "div",
         { staticClass: "panel", attrs: { id: "page-wrap" } },
         [
-          _vm.blogList
-            ? _c("blogList", {
-                attrs: {
-                  sendPreviewItem: _vm.showPreviewItem,
-                  sendEditItem: _vm.showEdtItem,
-                  addNewArticle: _vm.createNewArticle,
-                  deleteArticle: _vm.deleteItem,
-                  addActiveClass: _vm.addActiveClass,
-                  list: _vm.blogList
-                }
-              })
-            : _vm._e(),
+          _vm._l(_vm.getArticlesList, function(item, index) {
+            return index === _vm.$i18n.locale
+              ? _c("blogList", {
+                  key: index,
+                  attrs: {
+                    sendPreviewItem: _vm.showPreviewItem,
+                    sendEditItem: _vm.showEdtItem,
+                    addNewArticle: _vm.createNewArticle,
+                    deleteArticle: _vm.deleteItem,
+                    addActiveClass: _vm.addActiveClassName,
+                    list: item
+                  }
+                })
+              : _vm._e()
+          }),
           _vm._v(" "),
           _vm.previewItem
             ? _c("blogPreview", { attrs: { item: _vm.previewItem } })
@@ -1456,7 +1451,7 @@ var render = function() {
               })
             : _vm._e()
         ],
-        1
+        2
       )
     ],
     1

@@ -17,8 +17,7 @@
             </div>
             <div class="edit__image__preview">
               <img
-                  v-if="uploadedImage"
-                   :src="uploadedImage"
+                   :src="editedItem.full_image_url"
                    class="announce__img"
                    alt="uploaded image">
             </div>
@@ -40,7 +39,7 @@
               :disabled="disableButton"
               :class="{disabled: disableButton}"
           >
-            Add post
+              {{ `${editedItem.article_id === null ? 'Create post' : 'Save'}` }}
           </button>
         </div>
       </div>
@@ -84,7 +83,7 @@ export default {
     }
   },
   methods: {
-      ...mapActions(['createArticle', 'getArticles', 'uploadImage']),
+      ...mapActions(['createArticle', 'getArticles', 'uploadImage', 'updateArticle']),
     changeImage(event){
          const files = event.target.files || event.dataTransfer.files
           if(!files.length){
@@ -103,6 +102,7 @@ export default {
           .then((resp) => {
               console.log(resp)
               this.editedItem.image = resp.url
+              this.editedItem.full_image_url = resp.full_url
           })
       }
       reader.readAsDataURL(file)
@@ -113,12 +113,20 @@ export default {
             this.createArticle(item)
                 .then(() => {
                     this.getArticles()
-                .then(() => {
-                    this.$emit('addItem', item)
-                })
+                        .then(() => {
+                            this.$emit('addItem')
+                        })
             })
         } else {
-            return
+            delete this.editedItem.isActive
+            const item = {
+                title: this.editedItem.title,
+                description: this.editedItem.description,
+                image: this.editedItem.image,
+                language: this.$i18n.locale,
+                article_id: this.editedItem.article_id
+            }
+            this.updateArticle(item)
         }
     }
   }

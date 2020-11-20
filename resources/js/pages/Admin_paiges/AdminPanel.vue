@@ -16,13 +16,15 @@
     </div>
     <div class="panel" id="page-wrap">
       <blogList
-          v-if="blogList"
+          v-for="(item, index) in getArticlesList"
+          :key="index"
+          v-if="index === $i18n.locale"
           :sendPreviewItem="showPreviewItem"
           :sendEditItem="showEdtItem"
           :addNewArticle="createNewArticle"
           :deleteArticle="deleteItem"
-          :addActiveClass="addActiveClass"
-          :list="blogList"
+          :addActiveClass="addActiveClassName"
+          :list="item"
       />
       <blogPreview
           v-if="previewItem"
@@ -63,23 +65,10 @@ export default {
         ...mapGetters(['getArticlesList', 'getStatus']),
     },
     mounted() {
-        return this.getStatus ? this.setBlogList() : this.$router.push('/admin')
+        return this.getStatus ? true : this.$router.push('/admin')
     },
     methods: {
         ...mapActions(['deleteArticle', 'getArticles']),
-        setBlogList(){
-            const list = [...this.getArticlesList]
-            this.blogList = list.map((item) => {
-                return {
-                    id: item.rus_article.article_id,
-                    description: item.rus_article.description,
-                    image: item.full_image_url,
-                    step: item.created_at,
-                    title: item.rus_article.title,
-                    isActive: false
-                }
-            })
-        },
         showPreviewItem(item){
           this.previewItem = ''
           this.editItem = ''
@@ -88,21 +77,21 @@ export default {
         showEdtItem(item) {
           this.previewItem = ''
           this.editItem = item
+            console.log(this.editItem)
         },
         createNewArticle() {
           const newItem = {
               description: '',
-              image: 'vbcbcncgn',
+              image: '',
+              full_image_url: '',
               title: '',
               language: this.$i18n.locale,
               article_id: null,
-              isActive: false
           }
           this.previewItem = ''
           this.editItem = newItem
         },
         addToList(){
-            this.setBlogList()
             this.previewItem = ''
             this.editItem = ''
         },
@@ -111,29 +100,24 @@ export default {
             .then((resp)=>{
                 if(resp){
                     this.getArticles()
-                    .then((resp)=>{
-                        if(resp) {
-                            this.setBlogList()
-                        }
-                    })
                 }
             })
             this.previewItem = ''
             this.editItem = ''
-          }
+          },
+        addActiveClassName(item){
+            this.getArticlesList[this.$i18n.locale].forEach((article) =>
+                article === item ?
+                    article.isActive = true :
+                    article.isActive = false
+            )
         },
-        addActiveClass(item){
-          this.blogList.forEach((article) =>
-              article === item ?
-                  article.isActive = true :
-                  article.isActive = false
-          )
-        },
-      changeLanguage(lang){
-          this.$i18n.locale = lang
-          this.previewItem = ''
-          this.editItem = ''
-      }
+        changeLanguage(lang){
+            this.$i18n.locale = lang
+            this.previewItem = ''
+            this.editItem = ''
+        }
+    }
 }
 </script>
 

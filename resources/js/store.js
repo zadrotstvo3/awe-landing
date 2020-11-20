@@ -46,7 +46,8 @@ const store = new Vuex.Store({
                 .then((resp) => {
                     const data = resp.data.data || ''
                     if(data){
-                        commit('setArticlesList', [...data])
+                        const languages = articlesDistruction(data)
+                        commit('setArticlesList', languages)
                     }
                     return true
                 })
@@ -61,6 +62,13 @@ const store = new Vuex.Store({
                 })
                 .catch(err => console.log(err))
 
+        },
+        async updateArticle({state, commit}, action){
+            return await axios.put(`api/article/${action.article_id}`, action)
+                .then((resp)=> {
+                    console.log(resp.data)
+                })
+                .catch(err => console.log(err))
         },
         async deleteArticle({state, commit}, action){
             return await axios.delete(`api/article/${action}`)
@@ -89,8 +97,54 @@ const articlesDistruction = function (array){
         const {
             created_at = '',
             eng_article = {},
-            fu_image_ulr = ''
+            rus_article = {},
+            urk_article = {},
+            full_image_url = '',
+            id= '',
+            image = '',
+            user_id = '',
+            updated_at = '',
+            isActive = false
         } = item
+        const newItemRu = {
+            created_at,
+            ...rus_article,
+            full_image_url,
+            id,
+            image,
+            user_id,
+            updated_at,
+            isActive
+        }
+        const newItemUk = {
+            created_at,
+            ...urk_article,
+            full_image_url,
+            id,
+            image,
+            user_id,
+            updated_at,
+            isActive
+        }
+        const newItemEn = {
+            created_at,
+            ...eng_article,
+            full_image_url,
+            id,
+            image,
+            user_id,
+            updated_at,
+            isActive
+        }
+        ru.push(newItemRu)
+        en.push(newItemEn)
+        uk.push(newItemUk)
     })
+    const languages = {
+        ru,
+        en,
+        uk
+    }
+    return languages
 }
 export default store
