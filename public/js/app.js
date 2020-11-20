@@ -2043,6 +2043,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AWEAdmin"
 });
@@ -2060,6 +2062,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_components_black_main_paiges_black_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/components/black/main_paiges/black__header */ "./resources/js/components/black/main_paiges/black__header.vue");
 /* harmony import */ var _js_components_black_main_paiges_black_footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/js/components/black/main_paiges/black__footer */ "./resources/js/components/black/main_paiges/black__footer.vue");
+//
+//
 //
 //
 //
@@ -2093,6 +2097,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_components_white_main_paiges_white_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/components/white/main_paiges/white__header */ "./resources/js/components/white/main_paiges/white__header.vue");
 /* harmony import */ var _js_components_white_main_paiges_white_footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/js/components/white/main_paiges/white__footer */ "./resources/js/components/white/main_paiges/white__footer.vue");
+//
+//
 //
 //
 //
@@ -2530,6 +2536,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -2697,7 +2705,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Codystar:wght@300&display=swap);", ""]);
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: \"Axiforma\";\n  src: url(" + escape(__webpack_require__(/*! @/js/assets/fonts/Axiforma-Medium.woff */ "./resources/js/assets/fonts/Axiforma-Medium.woff")) + ") format(\"woff\");\n}\n@font-face {\n  font-family: \"Zekton\";\n  src: url(" + escape(__webpack_require__(/*! @/js/assets/fonts/zekton/zekton-rg.woff */ "./resources/js/assets/fonts/zekton/zekton-rg.woff")) + ") format(\"woff\");\n}\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n#app {\n  width: 100%;\n  height: 100%;\n}\n@media only screen and (max-width: 820px) {\n.header__logo {\n    display: none;\n}\n}", ""]);
+exports.push([module.i, "@font-face {\n  font-family: \"Axiforma\";\n  src: url(" + escape(__webpack_require__(/*! @/js/assets/fonts/Axiforma-Medium.woff */ "./resources/js/assets/fonts/Axiforma-Medium.woff")) + ") format(\"woff\");\n}\n@font-face {\n  font-family: \"Zekton\";\n  src: url(" + escape(__webpack_require__(/*! @/js/assets/fonts/zekton/zekton-rg.woff */ "./resources/js/assets/fonts/zekton/zekton-rg.woff")) + ") format(\"woff\");\n}\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n#app {\n  width: 100%;\n  height: 100%;\n}\n.fade-enter-active, .fade-leave-active {\n  transition: opacity 0.5s;\n}\n.fade-enter, .fade-leave-to {\n  opacity: 0;\n}\n@media only screen and (max-width: 820px) {\n.header__logo {\n    display: none;\n}\n}", ""]);
 
 // exports
 
@@ -18718,7 +18726,19 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "admin" } }, [
-    _c("div", { staticClass: "main" }, [_c("router-view")], 1)
+    _c(
+      "div",
+      { staticClass: "main" },
+      [
+        _c(
+          "transition",
+          { attrs: { name: "fade", mode: "out-in" } },
+          [_c("router-view")],
+          1
+        )
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -18749,7 +18769,18 @@ var render = function() {
     [
       _c("black__header"),
       _vm._v(" "),
-      _c("main", [_c("router-view")], 1),
+      _c(
+        "main",
+        [
+          _c(
+            "transition",
+            { attrs: { name: "fade", mode: "out-in" } },
+            [_c("router-view")],
+            1
+          )
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("black__footer")
     ],
@@ -18784,7 +18815,18 @@ var render = function() {
     [
       _c("whiteHeader"),
       _vm._v(" "),
-      _c("main", [_c("router-view")], 1),
+      _c(
+        "main",
+        [
+          _c(
+            "transition",
+            { attrs: { name: "fade", mode: "out-in" } },
+            [_c("router-view")],
+            1
+          )
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("white__footer")
     ],
@@ -19517,7 +19559,14 @@ var render = function() {
   return _c(
     "div",
     { attrs: { id: "app" } },
-    [_c(_vm.layout, { tag: "component" }, [_c("router-view")], 1)],
+    [
+      _c(
+        "transition",
+        { attrs: { name: "fade", mode: "out-in" } },
+        [_c(_vm.layout, { tag: "component" }, [_c("router-view")], 1)],
+        1
+      )
+    ],
     1
   )
 }
@@ -36971,7 +37020,7 @@ var routes = [{
     layout: 'white'
   },
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(13), __webpack_require__.e(1), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! @/js/pages/main_paiges/aweWhite.vue */ "./resources/js/pages/main_paiges/aweWhite.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(13), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! @/js/pages/main_paiges/aweWhite.vue */ "./resources/js/pages/main_paiges/aweWhite.vue"));
   }
 }, {
   path: '/home',
@@ -37016,7 +37065,7 @@ var routes = [{
     layout: 'white'
   },
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! @/js/pages/AWE_White_paiges/Announcements.vue */ "./resources/js/pages/AWE_White_paiges/Announcements.vue"));
+    return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! @/js/pages/AWE_White_paiges/Announcements.vue */ "./resources/js/pages/AWE_White_paiges/Announcements.vue"));
   }
 }, {
   path: '/admin',
@@ -37128,6 +37177,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
                   return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('api/login', action).then(function (resp) {
                     if (resp.data.message === 'Login successful') {
                       var status = resp.data.message;
+                      window.Laravel.isLoggedin = true;
                       commit('setStatus', status);
                     }
                   })["catch"](function (err) {
@@ -37153,6 +37203,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
                 state = _ref2.state, commit = _ref2.commit;
                 return _context2.abrupt("return", axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('api/logout').then(function (resp) {
                   var status = resp.data.message;
+                  window.Laravel.isLoggedin = false;
                   commit('setStatus', status);
                 }));
 
@@ -37235,7 +37286,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
                 state = _ref5.state, commit = _ref5.commit;
                 _context5.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_3___default.a.put("api/article/".concat(action.article_id), action).then(function (resp) {
-                  console.log(resp.data);
+                  if (resp) {
+                    return true;
+                  }
                 })["catch"](function (err) {
                   return console.log(err);
                 });
@@ -37334,9 +37387,10 @@ var articlesDistruction = function articlesDistruction(array) {
         updated_at = _item$updated_at === void 0 ? '' : _item$updated_at,
         _item$isActive = item.isActive,
         isActive = _item$isActive === void 0 ? false : _item$isActive;
+    var date = new Date(created_at).toLocaleDateString("en-US");
 
     var newItemRu = _objectSpread(_objectSpread({
-      created_at: created_at
+      date: date
     }, rus_article), {}, {
       full_image_url: full_image_url,
       id: id,
@@ -37347,7 +37401,7 @@ var articlesDistruction = function articlesDistruction(array) {
     });
 
     var newItemUk = _objectSpread(_objectSpread({
-      created_at: created_at
+      date: date
     }, urk_article), {}, {
       full_image_url: full_image_url,
       id: id,
@@ -37358,7 +37412,7 @@ var articlesDistruction = function articlesDistruction(array) {
     });
 
     var newItemEn = _objectSpread(_objectSpread({
-      created_at: created_at
+      date: date
     }, eng_article), {}, {
       full_image_url: full_image_url,
       id: id,

@@ -27,6 +27,7 @@ const store = new Vuex.Store({
                     .then((resp)=>{
                         if(resp.data.message === 'Login successful'){
                             const status = resp.data.message
+                            window.Laravel.isLoggedin = true
                             commit('setStatus', status)
                         }
                     })
@@ -38,6 +39,7 @@ const store = new Vuex.Store({
           return axios.get('api/logout')
               .then((resp) => {
                   const status = resp.data.message
+                  window.Laravel.isLoggedin = false
                   commit('setStatus', status)
               })
         },
@@ -66,7 +68,9 @@ const store = new Vuex.Store({
         async updateArticle({state, commit}, action){
             return await axios.put(`api/article/${action.article_id}`, action)
                 .then((resp)=> {
-                    console.log(resp.data)
+                    if(resp) {
+                        return true
+                    }
                 })
                 .catch(err => console.log(err))
         },
@@ -106,8 +110,9 @@ const articlesDistruction = function (array){
             updated_at = '',
             isActive = false
         } = item
+        const date = new Date(created_at).toLocaleDateString("en-US")
         const newItemRu = {
-            created_at,
+            date,
             ...rus_article,
             full_image_url,
             id,
@@ -117,7 +122,7 @@ const articlesDistruction = function (array){
             isActive
         }
         const newItemUk = {
-            created_at,
+            date,
             ...urk_article,
             full_image_url,
             id,
@@ -127,7 +132,7 @@ const articlesDistruction = function (array){
             isActive
         }
         const newItemEn = {
-            created_at,
+            date,
             ...eng_article,
             full_image_url,
             id,

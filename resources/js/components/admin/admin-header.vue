@@ -39,7 +39,7 @@ export default {
       ...mapActions(['logOut']),
         closeAdminPanel(){
           this.logOut()
-            .finally(()=>{
+            .then(()=>{
                 this.$router.push('/admin')
             })
         }

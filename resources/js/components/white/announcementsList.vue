@@ -4,10 +4,15 @@
     <h2 class="title">{{$t('announcementsTitle')}}</h2>
   </div>
   <div class="announcements-list__list">
-    <ul class="list">
+    <ul class="list"
+        v-for="(article, articleIndex) in getArticlesList"
+        :key="articleIndex"
+        v-if="articleIndex === $i18n.locale"
+    >
       <li class="list__item"
-          v-for="(item, index) in $t('announcementsList')"
+          v-for="(item, index) in article"
           :key="index"
+          v-if="item.title"
       >
         <div class="list__step">
           <div class="list__dot">
@@ -16,12 +21,12 @@
             </svg>
           </div>
           <div class="list__step--name">
-            {{item.step}}
+            {{item.date}}
           </div>
         </div>
         <div class="list__announce">
           <div class="announce">
-            <img :src="require(`@/js/assets/${item.imgPath}`)" alt="image" class="announce__img">
+            <img :src="item.full_image_url" alt="image" class="announce__img">
             <div class="announce__text">
               <h3 class="announce__title">{{item.title}}</h3>
               <p class="announce__description">{{item.description}}</p>
@@ -35,8 +40,18 @@
 </template>
 
 <script>
+import {mapGetters, mapActions} from 'vuex'
 export default {
-name: "announcementsList"
+    name: "announcementsList",
+    computed: {
+        ...mapGetters(['getArticlesList'])
+    },
+    created() {
+        this.getArticles()
+    },
+    methods: {
+        ...mapActions(['getArticles'])
+    }
 }
 </script>
 
@@ -90,6 +105,7 @@ name: "announcementsList"
 
     &--name {
       margin-left: 10px;
+        font-size: 14px;
     }
   }
   &__dot {
@@ -98,6 +114,7 @@ name: "announcementsList"
   &__announce {
     margin-top: -100px;
     padding: 100px 0;
+      width: 100%;
   }
 }
 
@@ -109,11 +126,13 @@ name: "announcementsList"
 
   &__text {
     padding: 0 35px;
+      align-self: flex-start;
   }
   &__title {
     margin-bottom: 10px;
     font-size: 32px;
     line-height: 140%;
+      flex-grow: 1;
   }
   &__description  {
     font-size: 20px;
@@ -125,6 +144,7 @@ name: "announcementsList"
     max-width: 600px;
     height: auto;
     border-radius: 30px;
+      flex-grow: 0;
   }
 }
 @media only screen and (max-width: 1770px) {
@@ -199,6 +219,9 @@ name: "announcementsList"
         }
       }
     }
+      &__step {
+          width: 70px;
+      }
     &__step--name {
       margin: 0 5px;
       font-size: 8px;

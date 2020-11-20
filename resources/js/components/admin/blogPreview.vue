@@ -8,7 +8,7 @@
           </svg>
         </div>
         <div class="preview__step--name">
-          {{item.step}}
+          {{ item.date}}
         </div>
       </div>
       <div class="preview__announce">
@@ -44,7 +44,7 @@ export default {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
   }
   &__step {

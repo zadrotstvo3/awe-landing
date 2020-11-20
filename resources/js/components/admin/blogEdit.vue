@@ -109,25 +109,56 @@ export default {
     },
     addItem() {
         if (this.editedItem.article_id === null) {
-            const item = this.editedItem
-            this.createArticle(item)
-                .then(() => {
-                    this.getArticles()
-                        .then(() => {
-                            this.$emit('addItem')
-                        })
-            })
+            this.createNewItem()
+        } else if(this.editedItem.article_id) {
+            this.updateItem()
         } else {
-            delete this.editedItem.isActive
-            const item = {
-                title: this.editedItem.title,
-                description: this.editedItem.description,
-                image: this.editedItem.image,
-                language: this.$i18n.locale,
-                article_id: this.editedItem.article_id
-            }
-            this.updateArticle(item)
+            this.createNewLangForItem()
         }
+    },
+    createNewItem(){
+        const item = this.editedItem
+        this.createArticle(item)
+            .then(() => {
+                this.getArticles()
+                    .then(() => {
+                        this.$emit('addItem')
+                    })
+            })
+    },
+    updateItem(){
+        delete this.editedItem.isActive
+        const item = {
+            title: this.editedItem.title,
+            description: this.editedItem.description,
+            image: this.editedItem.image,
+            language: this.$i18n.locale,
+            article_id: this.editedItem.article_id
+        }
+        this.updateArticle(item)
+            .then(() => {
+                this.getArticles()
+                    .then(() => {
+                        this.$emit('addItem')
+                    })
+            })
+    },
+    createNewLangForItem(){
+        delete this.editedItem.isActive
+        const item = {
+            title: this.editedItem.title,
+            description: this.editedItem.description,
+            image: this.editedItem.image,
+            language: this.$i18n.locale,
+            article_id: this.editedItem.article_id || this.editedItem.id
+        }
+        this.createArticle(item)
+            .then(() => {
+                this.getArticles()
+                    .then(() => {
+                        this.$emit('addItem')
+                    })
+            })
     }
   }
 }

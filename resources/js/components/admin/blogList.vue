@@ -13,7 +13,10 @@
           @click="addActiveClass(item)"
           :class="{activeClass: item.isActive}"
       >
-        <p>{{item.title}}</p>
+          <div>
+            <p>{{`${ index + 1 + ')' + ' ' + (item.title ? item.title : '')}`}}</p><br>
+              <p>Created at: {{item.date}}</p>
+          </div>
         <div class="blog-list__images">
           <img src="@/js/assets/enable.svg" alt="preview icon"  @click="sendPreviewItem(item)">
           <img src="@/js/assets/edit.svg" alt="edit icon" @click="sendEditItem(item)">

@@ -9,6 +9,13 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -45,8 +52,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "announcementsList"
+  name: "announcementsList",
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])(['getArticlesList'])),
+  created: function created() {
+    this.getArticles();
+  },
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['getArticles']))
 });
 
 /***/ }),
@@ -207,70 +224,79 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "announcements-list__list" }, [
-      _c(
-        "ul",
-        { staticClass: "list" },
-        _vm._l(_vm.$t("announcementsList"), function(item, index) {
-          return _c("li", { key: index, staticClass: "list__item" }, [
-            _c("div", { staticClass: "list__step" }, [
-              _c("div", { staticClass: "list__dot" }, [
-                _c(
-                  "svg",
-                  {
-                    attrs: {
-                      width: "30",
-                      height: "30",
-                      viewBox: "0 0 30 30",
-                      fill: "none",
-                      xmlns: "http://www.w3.org/2000/svg"
-                    }
-                  },
-                  [
-                    _c("circle", {
-                      attrs: {
-                        cx: "15",
-                        cy: "15",
-                        r: "14.5",
-                        fill: "#F8F6F3",
-                        stroke: "#DED8D0"
-                      }
-                    })
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "list__step--name" }, [
-                _vm._v("\n            " + _vm._s(item.step) + "\n          ")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "list__announce" }, [
-              _c("div", { staticClass: "announce" }, [
-                _c("img", {
-                  staticClass: "announce__img",
-                  attrs: {
-                    src: __webpack_require__("./resources/js/assets sync recursive ^\\.\\/.*$")("./" + item.imgPath),
-                    alt: "image"
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "announce__text" }, [
-                  _c("h3", { staticClass: "announce__title" }, [
-                    _vm._v(_vm._s(item.title))
+    _c(
+      "div",
+      { staticClass: "announcements-list__list" },
+      _vm._l(_vm.getArticlesList, function(article, articleIndex) {
+        return articleIndex === _vm.$i18n.locale
+          ? _c(
+              "ul",
+              { key: articleIndex, staticClass: "list" },
+              _vm._l(article, function(item, index) {
+                return _c("li", { key: index, staticClass: "list__item" }, [
+                  _c("div", { staticClass: "list__step" }, [
+                    _c("div", { staticClass: "list__dot" }, [
+                      _c(
+                        "svg",
+                        {
+                          attrs: {
+                            width: "30",
+                            height: "30",
+                            viewBox: "0 0 30 30",
+                            fill: "none",
+                            xmlns: "http://www.w3.org/2000/svg"
+                          }
+                        },
+                        [
+                          _c("circle", {
+                            attrs: {
+                              cx: "15",
+                              cy: "15",
+                              r: "14.5",
+                              fill: "#F8F6F3",
+                              stroke: "#DED8D0"
+                            }
+                          })
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "list__step--name" }, [
+                      _vm._v(
+                        "\n            " + _vm._s(item.step) + "\n          "
+                      )
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("p", { staticClass: "announce__description" }, [
-                    _vm._v(_vm._s(item.description))
+                  _c("div", { staticClass: "list__announce" }, [
+                    _c("div", { staticClass: "announce" }, [
+                      _c("img", {
+                        staticClass: "announce__img",
+                        attrs: {
+                          src: __webpack_require__("./resources/js/assets sync recursive ^\\.\\/.*$")("./" + item.imgPath),
+                          alt: "image"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "announce__text" }, [
+                        _c("h3", { staticClass: "announce__title" }, [
+                          _vm._v(_vm._s(item.title))
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "announce__description" }, [
+                          _vm._v(_vm._s(item.description))
+                        ])
+                      ])
+                    ])
                   ])
                 ])
-              ])
-            ])
-          ])
-        }),
-        0
-      )
-    ])
+              }),
+              0
+            )
+          : _vm._e()
+      }),
+      0
+    )
   ])
 }
 var staticRenderFns = []

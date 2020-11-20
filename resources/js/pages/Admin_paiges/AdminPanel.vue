@@ -54,18 +54,21 @@ export default {
         adminHeader
     },
     data(){
-    return {
-        previewItem: '',
-        editItem: '',
-        blogList: '',
-        languageSelect: ['en', 'ru', 'uk']
-    }
+        return {
+            previewItem: '',
+            editItem: '',
+            blogList: '',
+            languageSelect: ['en', 'ru', 'uk']
+        }
+    },
+    created() {
+        this.getArticles()
     },
     computed:{
         ...mapGetters(['getArticlesList', 'getStatus']),
     },
     mounted() {
-        return this.getStatus ? true : this.$router.push('/admin')
+        return window.Laravel.isLoggedin ? true : this.$router.push('/admin')
     },
     methods: {
         ...mapActions(['deleteArticle', 'getArticles']),
@@ -117,6 +120,11 @@ export default {
             this.previewItem = ''
             this.editItem = ''
         }
+    },
+    beforeEnter(from, to, next){
+        window.Laravel.isLoggedin
+            ? next('/admin-panel')
+            : next('/admin')
     }
 }
 </script>

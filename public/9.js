@@ -55,7 +55,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mounted: function mounted() {
-    return this.getStatus === 'Login successful' ? this.$router.push('/admin-panel') : false;
+    return window.Laravel.isLoggedin ? this.$router.push('/admin-panel') : false;
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])(['getStatus'])),
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['logIn', 'getArticles'])), {}, {
@@ -100,7 +100,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }, _callee);
       }))();
     }
-  })
+  }),
+  beforeEnter: function beforeEnter(from, to, next) {
+    window.Laravel.isLoggedin ? next('/admin-panel') : next(false);
+  }
 });
 
 /***/ }),

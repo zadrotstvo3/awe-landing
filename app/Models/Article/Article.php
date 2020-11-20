@@ -45,7 +45,7 @@ class Article extends Model
      */
     public function getFullImageUrlAttribute(): string
     {
-        return config('app.url') . $this->image;
+        return config('app.url') . DIRECTORY_SEPARATOR . $this->image;
     }
 
     /**

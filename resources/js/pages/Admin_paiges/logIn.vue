@@ -30,7 +30,7 @@ export default {
     }
   },
     mounted() {
-        return this.getStatus === 'Login successful'
+        return window.Laravel.isLoggedin
             ? this.$router.push('/admin-panel')
             : false
     },
@@ -58,7 +58,12 @@ export default {
           return  this.error = true
       }
     }
-  }
+  },
+    beforeEnter(from, to, next){
+        window.Laravel.isLoggedin
+            ? next('/admin-panel')
+            : next(false)
+    }
 }
 </script>
 

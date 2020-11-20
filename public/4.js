@@ -58,7 +58,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     closeAdminPanel: function closeAdminPanel() {
       var _this = this;
 
-      this.logOut()["finally"](function () {
+      this.logOut().then(function () {
         _this.$router.push('/admin');
       });
     }
@@ -198,26 +198,57 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       reader.readAsDataURL(file);
     },
     addItem: function addItem() {
+      if (this.editedItem.article_id === null) {
+        this.createNewItem();
+      } else if (this.editedItem.article_id) {
+        this.updateItem();
+      } else {
+        this.createNewLangForItem();
+      }
+    },
+    createNewItem: function createNewItem() {
       var _this2 = this;
 
-      if (this.editedItem.article_id === null) {
-        var item = this.editedItem;
-        this.createArticle(item).then(function () {
-          _this2.getArticles().then(function () {
-            _this2.$emit('addItem');
-          });
+      var item = this.editedItem;
+      this.createArticle(item).then(function () {
+        _this2.getArticles().then(function () {
+          _this2.$emit('addItem');
         });
-      } else {
-        delete this.editedItem.isActive;
-        var _item = {
-          title: this.editedItem.title,
-          description: this.editedItem.description,
-          image: this.editedItem.image,
-          language: this.$i18n.locale,
-          article_id: this.editedItem.article_id
-        };
-        this.updateArticle(_item);
-      }
+      });
+    },
+    updateItem: function updateItem() {
+      var _this3 = this;
+
+      delete this.editedItem.isActive;
+      var item = {
+        title: this.editedItem.title,
+        description: this.editedItem.description,
+        image: this.editedItem.image,
+        language: this.$i18n.locale,
+        article_id: this.editedItem.article_id
+      };
+      this.updateArticle(item).then(function () {
+        _this3.getArticles().then(function () {
+          _this3.$emit('addItem');
+        });
+      });
+    },
+    createNewLangForItem: function createNewLangForItem() {
+      var _this4 = this;
+
+      delete this.editedItem.isActive;
+      var item = {
+        title: this.editedItem.title,
+        description: this.editedItem.description,
+        image: this.editedItem.image,
+        language: this.$i18n.locale,
+        article_id: this.editedItem.article_id || this.editedItem.id
+      };
+      this.createArticle(item).then(function () {
+        _this4.getArticles().then(function () {
+          _this4.$emit('addItem');
+        });
+      });
     }
   })
 });
@@ -234,6 +265,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_components_admin_warningModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/components/admin/warningModal */ "./resources/js/components/admin/warningModal.vue");
+//
+//
+//
 //
 //
 //
@@ -487,9 +521,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       languageSelect: ['en', 'ru', 'uk']
     };
   },
+  created: function created() {
+    this.getArticles();
+  },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapGetters"])(['getArticlesList', 'getStatus'])),
   mounted: function mounted() {
-    return this.getStatus ? true : this.$router.push('/admin');
+    return window.Laravel.isLoggedin ? true : this.$router.push('/admin');
   },
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapActions"])(['deleteArticle', 'getArticles'])), {}, {
     showPreviewItem: function showPreviewItem(item) {
@@ -539,7 +576,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.previewItem = '';
       this.editItem = '';
     }
-  })
+  }),
+  beforeEnter: function beforeEnter(from, to, next) {
+    window.Laravel.isLoggedin ? next('/admin-panel') : next('/admin');
+  }
 });
 
 /***/ }),
@@ -613,7 +653,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".preview[data-v-45433d4b] {\n  width: 100%;\n  margin: 50px 10px;\n}\n.preview__item[data-v-45433d4b] {\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n}\n.preview__step[data-v-45433d4b] {\n  width: 100%;\n  max-width: 100px;\n  align-self: stretch;\n  display: flex;\n  justify-content: space-between;\n  border-left: 1px solid #E4DFD8;\n}\n.preview__step--name[data-v-45433d4b] {\n  margin-left: 10px;\n}\n.preview__dot[data-v-45433d4b] {\n  margin-left: -15px;\n}\n.announce[data-v-45433d4b] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n}\n.announce__text[data-v-45433d4b] {\n  padding: 0 35px;\n}\n.announce__title[data-v-45433d4b] {\n  margin-bottom: 10px;\n  font-size: 32px;\n  line-height: 140%;\n}\n.announce__description[data-v-45433d4b] {\n  font-size: 20px;\n  line-height: 140%;\n  font-weight: 200;\n}\n.announce__img[data-v-45433d4b] {\n  width: 100%;\n  max-width: 560px;\n  height: auto;\n  border-radius: 30px;\n  align-self: flex-start;\n}\n@media only screen and (max-width: 770px) {\n.announce[data-v-45433d4b] {\n    padding: 15px 0;\n    flex-direction: column;\n}\n.announce__img[data-v-45433d4b] {\n    max-width: 100%;\n    margin-bottom: 10px;\n    height: 200px;\n}\n.announce__text[data-v-45433d4b] {\n    padding: 0;\n}\n.announce__title[data-v-45433d4b] {\n    font-size: 16px;\n}\n.announce__description[data-v-45433d4b] {\n    font-size: 12px;\n}\n}", ""]);
+exports.push([module.i, ".preview[data-v-45433d4b] {\n  width: 100%;\n  margin: 50px 10px;\n}\n.preview__item[data-v-45433d4b] {\n  width: 100%;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n}\n.preview__step[data-v-45433d4b] {\n  width: 100%;\n  max-width: 100px;\n  align-self: stretch;\n  display: flex;\n  justify-content: space-between;\n  border-left: 1px solid #E4DFD8;\n}\n.preview__step--name[data-v-45433d4b] {\n  margin-left: 10px;\n}\n.preview__dot[data-v-45433d4b] {\n  margin-left: -15px;\n}\n.announce[data-v-45433d4b] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n}\n.announce__text[data-v-45433d4b] {\n  padding: 0 35px;\n}\n.announce__title[data-v-45433d4b] {\n  margin-bottom: 10px;\n  font-size: 32px;\n  line-height: 140%;\n}\n.announce__description[data-v-45433d4b] {\n  font-size: 20px;\n  line-height: 140%;\n  font-weight: 200;\n}\n.announce__img[data-v-45433d4b] {\n  width: 100%;\n  max-width: 560px;\n  height: auto;\n  border-radius: 30px;\n  align-self: flex-start;\n}\n@media only screen and (max-width: 770px) {\n.announce[data-v-45433d4b] {\n    padding: 15px 0;\n    flex-direction: column;\n}\n.announce__img[data-v-45433d4b] {\n    max-width: 100%;\n    margin-bottom: 10px;\n    height: 200px;\n}\n.announce__text[data-v-45433d4b] {\n    padding: 0;\n}\n.announce__title[data-v-45433d4b] {\n    font-size: 16px;\n}\n.announce__description[data-v-45433d4b] {\n    font-size: 12px;\n}\n}", ""]);
 
 // exports
 
@@ -1153,7 +1193,19 @@ var render = function() {
               }
             },
             [
-              _c("p", [_vm._v(_vm._s(item.title))]),
+              _c("div", [
+                _c("p", [
+                  _vm._v(
+                    _vm._s(
+                      "" +
+                        (index + 1 + ")" + " " + (item.title ? item.title : ""))
+                    )
+                  )
+                ]),
+                _c("br"),
+                _vm._v(" "),
+                _c("p", [_vm._v("Created at: " + _vm._s(item.date))])
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "blog-list__images" }, [
                 _c("img", {
@@ -1264,7 +1316,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "preview__step--name" }, [
-          _vm._v("\n        " + _vm._s(_vm.item.step) + "\n      ")
+          _vm._v("\n        " + _vm._s(_vm.item.date) + "\n      ")
         ])
       ]),
       _vm._v(" "),

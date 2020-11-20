@@ -2,7 +2,9 @@
   <div id="black">
     <black__header />
     <main>
-      <router-view/>
+        <transition name="fade" mode="out-in">
+            <router-view/>
+        </transition>
     </main>
     <black__footer/>
   </div>
