@@ -56,6 +56,16 @@ const routes = [
         name: 'Investors',
         meta: {layout: 'black'},
         component: () => import('@/js/pages/AWE_Black_paiges/ForInvestors.vue')
+    },
+    {
+        path: '/page-not-found',
+        name: 'Error',
+        meta: {layout: 'white'},
+        component: () => import('@/js/pages/main_paiges/Error.vue')
+    },
+    {
+        path: '*',
+        redirect: '/page-not-found'
     }
 ]
 

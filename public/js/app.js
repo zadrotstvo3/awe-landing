@@ -37094,6 +37094,18 @@ var routes = [{
   component: function component() {
     return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! @/js/pages/AWE_Black_paiges/ForInvestors.vue */ "./resources/js/pages/AWE_Black_paiges/ForInvestors.vue"));
   }
+}, {
+  path: '/page-not-found',
+  name: 'Error',
+  meta: {
+    layout: 'white'
+  },
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! @/js/pages/main_paiges/Error.vue */ "./resources/js/pages/main_paiges/Error.vue"));
+  }
+}, {
+  path: '*',
+  redirect: '/page-not-found'
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
