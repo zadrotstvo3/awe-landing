@@ -28,4 +28,7 @@ export default {
     background-color: black;
     color: white;
   }
+main {
+    height: 100vh;
+}
 </style>

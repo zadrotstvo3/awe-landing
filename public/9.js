@@ -55,7 +55,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   mounted: function mounted() {
-    return window.Laravel.isLoggedin ? this.$router.push('/admin-panel') : false;
+    return window.Laravel.isLoggedin ? this.getArticles() && this.$router.push({
+      name: 'Admin-panel',
+      params: '1'
+    }) : false;
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])(['getStatus'])),
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['logIn', 'getArticles'])), {}, {

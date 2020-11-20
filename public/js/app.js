@@ -2590,7 +2590,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#black {\n  font-family: \"Zekton\", sans-serif;\n  background-color: black;\n  color: white;\n}", ""]);
+exports.push([module.i, "#black {\n  font-family: \"Zekton\", sans-serif;\n  background-color: black;\n  color: white;\n}\nmain {\n  height: 100vh;\n}", ""]);
 
 // exports
 
@@ -2609,7 +2609,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#white[data-v-87564460] {\n  background-color: #F8F7F3;\n  font-family: Gilroy, sans-serif;\n}", ""]);
+exports.push([module.i, "#white[data-v-87564460] {\n  background-color: #F8F7F3;\n  font-family: Gilroy, sans-serif;\n}\nmain[data-v-87564460] {\n  height: 100vh;\n}", ""]);
 
 // exports
 
@@ -36881,9 +36881,10 @@ var messages = {
   uk: _js_locales_ukr_json__WEBPACK_IMPORTED_MODULE_3__,
   ru: _js_locales_rus_json__WEBPACK_IMPORTED_MODULE_4__
 };
+console.log(navigator.language);
 var browserLanguage = navigator.language;
 var i18n = new vue_i18n__WEBPACK_IMPORTED_MODULE_1__["default"]({
-  locale: browserLanguage || '',
+  locale: browserLanguage.slice(0, 2) || 'en',
   messages: messages,
   silentFallbackWarn: true
 });
@@ -37077,14 +37078,31 @@ var routes = [{
     return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! @/js/pages/Admin_paiges/logIn */ "./resources/js/pages/Admin_paiges/logIn.vue"));
   }
 }, {
-  path: '/admin-panel',
+  path: '/admin-panel/',
   name: 'Admin-panel',
   meta: {
     layout: 'admin'
   },
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(15), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! @/js/pages/Admin_paiges/AdminPanel */ "./resources/js/pages/Admin_paiges/AdminPanel.vue"));
-  }
+    return Promise.all(/*! import() */[__webpack_require__.e(15), __webpack_require__.e(17)]).then(__webpack_require__.bind(null, /*! @/js/pages/Admin_paiges/AdminPanel */ "./resources/js/pages/Admin_paiges/AdminPanel.vue"));
+  },
+  children: [{
+    path: 'announcements',
+    meta: {
+      layout: 'admin'
+    },
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! @/js/components/admin/admin-announcements */ "./resources/js/components/admin/admin-announcements.vue"));
+    }
+  }, {
+    path: 'our-team',
+    meta: {
+      layout: 'admin'
+    },
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! @/js/components/admin/our-team */ "./resources/js/components/admin/our-team.vue"));
+    }
+  }]
 }, {
   path: '/for-investors',
   name: 'Investors',

@@ -27,4 +27,7 @@ export default {
   background-color: #F8F7F3;
   font-family: Gilroy, sans-serif;
 }
+main {
+    height: 100vh;
+}
 </style>

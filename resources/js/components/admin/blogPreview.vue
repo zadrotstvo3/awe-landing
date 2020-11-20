@@ -13,7 +13,7 @@
       </div>
       <div class="preview__announce">
         <div class="announce">
-          <img :src="item.image" alt="" class="announce__img">
+          <img :src="item.full_image_url" alt="" class="announce__img">
           <div class="announce__text">
             <h3 class="announce__title">{{item.title}}</h3>
             <p class="announce__description">{{item.description}}</p>

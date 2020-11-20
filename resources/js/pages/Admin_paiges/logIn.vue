@@ -31,7 +31,7 @@ export default {
   },
     mounted() {
         return window.Laravel.isLoggedin
-            ? this.$router.push('/admin-panel')
+            ? this.getArticles() && this.$router.push({name: 'Admin-panel', params: '1'})
             : false
     },
     computed: {
