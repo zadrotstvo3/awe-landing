@@ -29,7 +29,7 @@ class CreateArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            'description' => ['required', 'string', 'max:255'],
+            'description' => ['required', 'string', 'max:2555'],
             'title' => ['required', 'string', 'max:255'],
             'image' => ['nullable', 'string', 'max:255'],
             'article_id' => ['nullable', 'integer', 'exists:articles,id'],

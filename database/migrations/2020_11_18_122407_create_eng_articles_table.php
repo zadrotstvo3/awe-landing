@@ -17,7 +17,7 @@ class CreateEngArticlesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('article_id');
             $table->string('title');
-            $table->text('description');
+            $table->longText('description');
             $table->timestamps();
 
             $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
