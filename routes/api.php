@@ -19,7 +19,7 @@ Route::get('me', 'UserController@me')->name('me')->middleware('auth:airlock');
 Route::get('article/', 'ArticleController@index')->name('article.index');
 
 //Articles Routes
-Route::group(['prefix' => 'article', 'as' => 'article.'/*, 'middleware' => 'auth:airlock'*/], function () {
+Route::group(['prefix' => 'article', 'as' => 'article.', 'middleware' => 'auth:airlock'], function () {
     Route::post('/', 'ArticleController@store')->name('store');
     Route::get('/{article}', 'ArticleController@show')->name('show');
     Route::put('/{article}', 'ArticleController@update')->name('update');

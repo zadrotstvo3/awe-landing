@@ -73,7 +73,7 @@ export default {
                 return {
                     id: item.rus_article.article_id,
                     description: item.rus_article.description,
-                    imgPath: item.full_image_url,
+                    image: item.full_image_url,
                     step: item.created_at,
                     title: item.rus_article.title,
                     isActive: false
@@ -108,8 +108,15 @@ export default {
         },
         deleteItem(item){
             this.deleteArticle(item)
-            .then(()=>{
-                this.getArticles()
+            .then((resp)=>{
+                if(resp){
+                    this.getArticles()
+                    .then((resp)=>{
+                        if(resp) {
+                            this.setBlogList()
+                        }
+                    })
+                }
             })
             this.previewItem = ''
             this.editItem = ''

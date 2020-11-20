@@ -168,12 +168,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.editedItem = Object.assign({}, newVal);
     }
   },
-  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['createArticle', 'getArticles'])), {}, {
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['createArticle', 'getArticles', 'uploadImage'])), {}, {
     changeImage: function changeImage(event) {
-      var img = event.target.files[0];
-      var formData = new FormData();
-      formData.append('image', img);
-      this.editedItem.image = 'dascvisdvciybsdi';
       var files = event.target.files || event.dataTransfer.files;
 
       if (!files.length) {
@@ -189,6 +185,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       reader.onload = function (event) {
         _this.uploadedImage = event.target.result;
+        var data = {
+          image: _this.uploadedImage
+        };
+
+        _this.uploadImage(data).then(function (resp) {
+          console.log(resp);
+          _this.editedItem.image = resp.url;
+        });
       };
 
       reader.readAsDataURL(file);
@@ -196,12 +200,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     addItem: function addItem() {
       var _this2 = this;
 
-      var item = this.editedItem;
-      this.createArticle(item).then(function () {
-        _this2.getArticles().then(function () {
-          _this2.$emit('addItem', item);
+      if (this.editedItem.article_id === null) {
+        var item = this.editedItem;
+        this.createArticle(item).then(function () {
+          _this2.getArticles().then(function () {
+            _this2.$emit('addItem', item);
+          });
         });
-      });
+      } else {
+        return;
+      }
     }
   })
 });
@@ -493,7 +501,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return {
           id: item.rus_article.article_id,
           description: item.rus_article.description,
-          imgPath: item.full_image_url,
+          image: item.full_image_url,
           step: item.created_at,
           title: item.rus_article.title,
           isActive: false
@@ -529,8 +537,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     deleteItem: function deleteItem(item) {
       var _this = this;
 
-      this.deleteArticle(item).then(function () {
-        _this.getArticles();
+      this.deleteArticle(item).then(function (resp) {
+        if (resp) {
+          _this.getArticles().then(function (resp) {
+            if (resp) {
+              _this.setBlogList();
+            }
+          });
+        }
       });
       this.previewItem = '';
       this.editItem = '';
@@ -600,7 +614,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".blog-list[data-v-1ddff92b] {\n  width: 100%;\n  max-width: 450px;\n  margin: 50px;\n}\n.blog-list__list[data-v-1ddff92b] {\n  height: 70%;\n  overflow-y: scroll;\n  display: flex;\n  flex-direction: column;\n}\n.blog-list__item[data-v-1ddff92b] {\n  margin: 15px 0;\n  padding: 15px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border: 2px solid #a7a7a7;\n  border-radius: 35px;\n  list-style: none;\n}\n.blog-list__item img[data-v-1ddff92b] {\n  width: 25px;\n  margin: 0 5px;\n  opacity: 0.5;\n}\n.blog-list__item img[data-v-1ddff92b]:hover {\n  cursor: pointer;\n  opacity: 1;\n}\n.blog-list__images[data-v-1ddff92b] {\n  width: 100%;\n  max-width: 100px;\n  display: flex;\n}\n.blog-list__button[data-v-1ddff92b] {\n  width: 100%;\n  max-width: 150px;\n  margin-bottom: 20px;\n}\n.blog-list__button .button[data-v-1ddff92b] {\n  width: 100%;\n  padding: 15px;\n  font-size: 24px;\n  background-color: #fff;\n  border: 1px solid black;\n  border-radius: 30px;\n  outline: none;\n  transition: 0.3s ease-in-out;\n}\n.blog-list__button .button[data-v-1ddff92b]:hover {\n  background-color: black;\n  color: white;\n  cursor: pointer;\n}\n.activeClass[data-v-1ddff92b] {\n  border: 2px solid black;\n}\n@media only screen and (max-width: 770px) {\n.blog-list[data-v-1ddff92b] {\n    margin: 0;\n}\n}", ""]);
+exports.push([module.i, ".blog-list[data-v-1ddff92b] {\n  width: 100%;\n  max-width: 450px;\n  margin: 50px;\n}\n.blog-list__list[data-v-1ddff92b] {\n  height: 70%;\n  scroll-behavior: smooth;\n  overflow: auto;\n  display: flex;\n  flex-direction: column;\n}\n.blog-list__item[data-v-1ddff92b] {\n  margin: 15px 0;\n  padding: 15px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border: 2px solid #a7a7a7;\n  border-radius: 35px;\n  list-style: none;\n}\n.blog-list__item img[data-v-1ddff92b] {\n  width: 25px;\n  margin: 0 5px;\n  opacity: 0.5;\n}\n.blog-list__item img[data-v-1ddff92b]:hover {\n  cursor: pointer;\n  opacity: 1;\n}\n.blog-list__images[data-v-1ddff92b] {\n  width: 100%;\n  max-width: 100px;\n  display: flex;\n}\n.blog-list__button[data-v-1ddff92b] {\n  width: 100%;\n  max-width: 150px;\n  margin-bottom: 20px;\n}\n.blog-list__button .button[data-v-1ddff92b] {\n  width: 100%;\n  padding: 15px;\n  font-size: 24px;\n  background-color: #fff;\n  border: 1px solid black;\n  border-radius: 30px;\n  outline: none;\n  transition: 0.3s ease-in-out;\n}\n.blog-list__button .button[data-v-1ddff92b]:hover {\n  background-color: black;\n  color: white;\n  cursor: pointer;\n}\n.activeClass[data-v-1ddff92b] {\n  border: 2px solid black;\n}\n@media only screen and (max-width: 770px) {\n.blog-list[data-v-1ddff92b] {\n    margin: 0;\n}\n}", ""]);
 
 // exports
 

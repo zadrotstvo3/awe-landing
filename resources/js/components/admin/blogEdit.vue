@@ -84,12 +84,8 @@ export default {
     }
   },
   methods: {
-      ...mapActions(['createArticle', 'getArticles']),
+      ...mapActions(['createArticle', 'getArticles', 'uploadImage']),
     changeImage(event){
-        const img = event.target.files[0]
-        const formData = new FormData()
-        formData.append('image', img)
-        this.editedItem.image = 'dascvisdvciybsdi'
          const files = event.target.files || event.dataTransfer.files
           if(!files.length){
             return
@@ -100,18 +96,30 @@ export default {
       const reader = new FileReader()
       reader.onload = (event) => {
         this.uploadedImage = event.target.result
+        const data = {
+            image: this.uploadedImage
+        }
+        this.uploadImage(data)
+          .then((resp) => {
+              console.log(resp)
+              this.editedItem.image = resp.url
+          })
       }
       reader.readAsDataURL(file)
     },
-    addItem(){
-      const item = this.editedItem
-        this.createArticle(item)
-            .then(()=>{
-                this.getArticles()
-                    .then(()=>{
-                        this.$emit('addItem', item)
-                    })
+    addItem() {
+        if (this.editedItem.article_id === null) {
+            const item = this.editedItem
+            this.createArticle(item)
+                .then(() => {
+                    this.getArticles()
+                .then(() => {
+                    this.$emit('addItem', item)
+                })
             })
+        } else {
+            return
+        }
     }
   }
 }

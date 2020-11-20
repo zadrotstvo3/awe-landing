@@ -84,10 +84,11 @@ export default {
 
   margin: 50px;
   &__list {
-    height: 70%;
-      overflow-y: scroll;
-    display: flex;
-    flex-direction: column;
+        height: 70%;
+        scroll-behavior: smooth;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
   }
   &__item {
     margin: 15px 0;

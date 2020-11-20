@@ -37185,11 +37185,16 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
                   if (data) {
                     commit('setArticlesList', _toConsumableArray(data));
                   }
+
+                  return true;
                 })["catch"](function (err) {
                   return console.log(err);
                 });
 
               case 3:
+                return _context3.abrupt("return", _context3.sent);
+
+              case 4:
               case "end":
                 return _context3.stop();
             }
@@ -37215,6 +37220,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
                 });
 
               case 3:
+                return _context4.abrupt("return", _context4.sent);
+
+              case 4:
               case "end":
                 return _context4.stop();
             }
@@ -37240,11 +37248,41 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
                 });
 
               case 3:
+                return _context5.abrupt("return", _context5.sent);
+
+              case 4:
               case "end":
                 return _context5.stop();
             }
           }
         }, _callee5);
+      }))();
+    },
+    uploadImage: function uploadImage(_ref6, action) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6() {
+        var state, commit;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
+          while (1) {
+            switch (_context6.prev = _context6.next) {
+              case 0:
+                state = _ref6.state, commit = _ref6.commit;
+                _context6.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('api/file/upload', action).then(function (resp) {
+                  console.log(resp.data);
+                  return resp.data;
+                })["catch"](function (err) {
+                  return console.log(err);
+                });
+
+              case 3:
+                return _context6.abrupt("return", _context6.sent);
+
+              case 4:
+              case "end":
+                return _context6.stop();
+            }
+          }
+        }, _callee6);
       }))();
     }
   }

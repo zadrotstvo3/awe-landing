@@ -42,17 +42,18 @@ const store = new Vuex.Store({
               })
         },
         async getArticles({state, commit}, action){
-            await axios.get('api/article?limit=10&page=1')
+            return await axios.get('api/article?limit=10&page=1')
                 .then((resp) => {
                     const data = resp.data.data || ''
                     if(data){
                         commit('setArticlesList', [...data])
                     }
+                    return true
                 })
                 .catch(err => console.log(err))
         },
         async createArticle({state, commit}, action) {
-            await axios.post('api/article', action)
+            return await axios.post('api/article', action)
                 .then((resp)=> {
                     if(resp){
                         return true
@@ -62,11 +63,19 @@ const store = new Vuex.Store({
 
         },
         async deleteArticle({state, commit}, action){
-            await axios.delete(`api/article/${action}`)
+            return await axios.delete(`api/article/${action}`)
                 .then((resp)=> {
                     if(resp){
                         return true
                     }
+                })
+                .catch(err => console.log(err))
+        },
+        async uploadImage({state, commit}, action){
+            return await axios.post('api/file/upload', action)
+                .then((resp) => {
+                    console.log(resp.data)
+                    return resp.data
                 })
                 .catch(err => console.log(err))
         }
