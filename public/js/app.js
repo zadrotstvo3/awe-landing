@@ -36898,6 +36898,8 @@ __webpack_require__.r(__webpack_exports__);
 
 axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.headers.post['X-Requested-With'] = 'XMLHttpRequest';
 axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.headers.get['X-Requested-With'] = 'XMLHttpRequest';
+axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.headers["delete"]['X-Requested-With'] = 'XMLHttpRequest';
+axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.headers.put['X-Requested-With'] = 'XMLHttpRequest';
 var config = {
   // baseURL: process.env.baseURL || process.env.apiUrl || ""
   // timeout: 60 * 1000, // Timeout
@@ -37247,6 +37249,21 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
     }
   }
 });
+
+var articlesDistruction = function articlesDistruction(array) {
+  var ru = [];
+  var uk = [];
+  var en = [];
+  array.map(function (item) {
+    var _item$created_at = item.created_at,
+        created_at = _item$created_at === void 0 ? '' : _item$created_at,
+        _item$eng_article = item.eng_article,
+        eng_article = _item$eng_article === void 0 ? {} : _item$eng_article,
+        _item$fu_image_ulr = item.fu_image_ulr,
+        fu_image_ulr = _item$fu_image_ulr === void 0 ? '' : _item$fu_image_ulr;
+  });
+};
+
 /* harmony default export */ __webpack_exports__["default"] = (store);
 
 /***/ }),

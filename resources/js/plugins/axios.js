@@ -9,6 +9,8 @@ import axios from "axios";
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 axios.defaults.headers.post['X-Requested-With'] = 'XMLHttpRequest';
 axios.defaults.headers.get['X-Requested-With'] = 'XMLHttpRequest';
+axios.defaults.headers.delete['X-Requested-With'] = 'XMLHttpRequest';
+axios.defaults.headers.put['X-Requested-With'] = 'XMLHttpRequest';
 
 
 let config = {

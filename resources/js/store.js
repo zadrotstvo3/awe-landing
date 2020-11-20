@@ -72,4 +72,16 @@ const store = new Vuex.Store({
         }
     }
 })
+const articlesDistruction = function (array){
+    const ru = []
+    const uk = []
+    const en =[]
+    array.map((item) => {
+        const {
+            created_at = '',
+            eng_article = {},
+            fu_image_ulr = ''
+        } = item
+    })
+}
 export default store
