@@ -4316,6 +4316,28 @@ module.exports = "/images/play.svg?7a987263e70a1f6e6d80f368c852934e";
 
 /***/ }),
 
+/***/ "./resources/js/assets/group.svg":
+/*!***************************************!*\
+  !*** ./resources/js/assets/group.svg ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/group.svg?52d3b039c9c5c9069375ad5079e18001";
+
+/***/ }),
+
+/***/ "./resources/js/assets/home.svg":
+/*!**************************************!*\
+  !*** ./resources/js/assets/home.svg ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/home.svg?4e2903a37e4b6df1668bdb0d57e5007c";
+
+/***/ }),
+
 /***/ "./resources/js/assets/key.png":
 /*!*************************************!*\
   !*** ./resources/js/assets/key.png ***!
@@ -4610,6 +4632,17 @@ module.exports = "/images/unicorn_2.png?b13b4fc1e53e016ba570c88994cde1fc";
 /***/ (function(module, exports) {
 
 module.exports = "/images/world.svg?b12eeb1a218c6294b23524721eebe85e";
+
+/***/ }),
+
+/***/ "./resources/js/assets/writing.svg":
+/*!*****************************************!*\
+  !*** ./resources/js/assets/writing.svg ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/writing.svg?fa6d8b572ee1c972b2096e36e28ce9d0";
 
 /***/ }),
 

@@ -20,7 +20,7 @@
                    :src="editedItem.full_image_url"
                    class="announce__img"
                    alt="uploaded image">
-                <div class="edit__image--field" v-elsegit>
+                <div class="edit__image--field" v-else>
                     <img src="@/js/assets/change-image.svg" alt="image icon">
                 </div>
             </div>

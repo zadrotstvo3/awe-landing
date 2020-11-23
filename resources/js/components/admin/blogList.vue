@@ -14,7 +14,7 @@
           :class="{activeClass: item.isActive}"
       >
           <div>
-            <p>{{`${ index + 1 + ')' + ' ' + (item.title ? item.title : '')}`}}</p><br>
+            <p>{{`${ index + 1 + ')' + ' ' + (item.title ? item.title : 'Tranlation needed')}`}}</p><br>
               <p>Created at: {{item.date}}</p>
           </div>
         <div class="blog-list__images">

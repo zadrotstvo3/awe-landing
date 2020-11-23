@@ -43,6 +43,7 @@ export default {
            this.logIn(data)
               .then(()=>{
                   if(this.getStatus){
+                      window.Laravel.isLoggedin = true
                       this.getArticles()
                       this.getTeamList()
                           .then(()=>{

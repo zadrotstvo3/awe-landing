@@ -1,81 +1,86 @@
 <template>
-<div class="panel">
-    <div class="team-list" id="page-wrap">
-        <ul class="list">
-            <li
-                class="list__item"
-                v-for="(item , index) in teamList"
-                :key="index"
-            >
-                <div class="item" v-if="index !== 4">
-                    <div v-if="item.showEdit">
-                        <div class="item__image">
-                            <label class="item__image--label" for="image" v-if="!item.full_avatar_url">
-                                <img
-                                    src="@/js/assets/plus.svg"
-                                    class="item__icon"
-                                    alt="avatar">
-                            </label>
-                            <div class="item__close" v-else>
-                                <svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24" @click="item.full_avatar_url = ''">
-                                    <path fill="white" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
-                                </svg>
-                                <img src="@/js/assets/undo.svg" alt="back icon" class="icon__back" @click="toggleEditBlock(item)">
-                                <img  class="preview" :src="item.full_avatar_url" alt="image">
-                            </div>
-                            <input type="file" id="image" @change="changeImage($event, item)">
-                        </div>
-                        <div class="item__text">
+    <div>
+        <adminHeader/>
+        <div class="panel">
+            <div class="team-list" id="page-wrap">
+                <ul class="list">
+                    <li
+                        class="list__item"
+                        v-for="(item , index) in teamList"
+                        :key="index"
+                    >
+                        <div class="item" v-if="index !== 4">
+                            <div v-if="item.showEdit">
+                                <div class="item__image">
+                                    <label class="item__image--label" for="image" v-if="!item.full_avatar_url">
+                                        <img
+                                            src="@/js/assets/plus.svg"
+                                            class="item__icon"
+                                            alt="avatar">
+                                    </label>
+                                    <div class="item__close" v-else>
+                                        <svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24" @click="item.full_avatar_url = ''">
+                                            <path fill="white" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+                                        </svg>
+                                        <img src="@/js/assets/undo.svg" alt="back icon" class="icon__back" @click="toggleEditBlock(item)">
+                                        <img  class="preview" :src="item.full_avatar_url" alt="image">
+                                    </div>
+                                    <input type="file" id="image" @change="changeImage($event, item)">
+                                </div>
+                                <div class="item__text">
 
+                                </div>
+                                <div class="item__input">
+                                    <input type="text" placeholder="First name" v-model="item.first_name">
+                                    <input type="text" placeholder="Last name" v-model="item.last_name">
+                                    <input type="text" placeholder="Position" v-model="item.position">
+                                    <input type="submit" value="Confirm edit" @click="editMember(item)" v-if="item.id">
+                                    <input type="submit" value="Add" @click="addMember(item)" v-else>
+                                </div>
+                            </div>
+                            <div class="item__preview" v-if="!item.showEdit">
+                                <img
+                                    :src="item.full_avatar_url"
+                                    class="item__preview--image"
+                                    alt="avatar">
+                                <p class="list__name">{{ `${item.first_name + ' ' +  item.last_name}`}}</p>
+                                <p class="list__position">{{item.position}}</p>
+                                <div class="item__hover">
+                                    <img src="@/js/assets/edit.svg" alt="edit icon" @click="toggleEditBlock(item)">
+                                    <img src="@/js/assets/x-mark.svg" alt="delete icon" @click="toggleModal(item)">
+                                </div>
+                            </div>
                         </div>
-                        <div class="item__input">
-                            <input type="text" placeholder="First name" v-model="item.first_name">
-                            <input type="text" placeholder="Last name" v-model="item.last_name">
-                            <input type="text" placeholder="Position" v-model="item.position">
-                            <input type="submit" value="Confirm edit" @click="editMember(item)" v-if="item.id">
-                            <input type="submit" value="Add" @click="addMember(item)" v-else>
+                        <div class="item" v-else>
+                            <div class="item__video">
+                                <div class="item__play">
+                                    <svg width="36" height="42" viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M35 19.268C36.3333 20.0378 36.3333 21.9623 35 22.7321L3.5 40.9186C2.16667 41.6884 0.500002 40.7261 0.500002 39.1865L0.500004 2.81347C0.500004 1.27387 2.16667 0.311614 3.5 1.08142L35 19.268Z" fill="white"/>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="item__preview" v-if="!item.showEdit">
-                        <img
-                            :src="item.full_avatar_url"
-                            class="item__preview--image"
-                            alt="avatar">
-                        <p class="list__name">{{ `${item.first_name + ' ' +  item.last_name}`}}</p>
-                        <p class="list__position">{{item.position}}</p>
-                        <div class="item__hover">
-                            <img src="@/js/assets/edit.svg" alt="edit icon" @click="toggleEditBlock(item)">
-                            <img src="@/js/assets/x-mark.svg" alt="delete icon" @click="toggleModal(item)">
-                        </div>
-                    </div>
-                </div>
-                <div class="item" v-else>
-                    <div class="item__video">
-                        <div class="item__play">
-                            <svg width="36" height="42" viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M35 19.268C36.3333 20.0378 36.3333 21.9623 35 22.7321L3.5 40.9186C2.16667 41.6884 0.500002 40.7261 0.500002 39.1865L0.500004 2.81347C0.500004 1.27387 2.16667 0.311614 3.5 1.08142L35 19.268Z" fill="white"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
+                    </li>
+                </ul>
+            </div>
+            <warningModal
+                v-if="modal"
+                @close="toggleModal"
+                @deleteItem="deleteTeamMember(currentItem)"
+            />
+        </div>
     </div>
-    <warningModal
-        v-if="modal"
-        @close="toggleModal"
-        @deleteItem="deleteTeamMember(currentItem)"
-    />
-</div>
 </template>
 
 <script>
 import warningModal from "@/js/components/admin/warningModal";
+import adminHeader from '@/js/components/admin/admin-header'
 import {mapActions, mapGetters} from 'vuex'
 export default {
     name: "our-team",
     components: {
-        warningModal
+        warningModal,
+        adminHeader
     },
     data(){
         return {
@@ -87,6 +92,14 @@ export default {
     },
     created(){
         this.createList()
+    },
+    mounted() {
+        this.getTeamList()
+            .then((resp)=> {
+                if(resp){
+                    this.createList()
+                }
+            })
     },
     computed: {
       ...mapGetters(['getMembersList'])

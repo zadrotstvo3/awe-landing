@@ -32,7 +32,7 @@ export default {
   },
   data(){
     return {
-      openSideBar: false
+      openSideBar: false,
     }
   },
     methods: {
@@ -40,6 +40,7 @@ export default {
         closeAdminPanel(){
           this.logOut()
             .then(()=>{
+                window.Laravel.isLoggedin = false
                 this.$router.push('/admin')
             })
         }

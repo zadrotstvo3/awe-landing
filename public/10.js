@@ -77,6 +77,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
                 _this.logIn(data).then(function () {
                   if (_this.getStatus) {
+                    window.Laravel.isLoggedin = true;
+
                     _this.getArticles();
 
                     _this.getTeamList().then(function () {

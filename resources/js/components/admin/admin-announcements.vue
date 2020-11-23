@@ -1,5 +1,6 @@
 <template>
     <div>
+        <adminHeader></adminHeader>
         <div class="language-panel">
             <ul class="language-panel__list">
                 <li
@@ -41,6 +42,7 @@
 import blogEdit from "@/js/components/admin/blogEdit";
 import blogPreview from "@/js/components/admin/blogPreview";
 import blogList from "@/js/components/admin/blogList";
+import adminHeader from '@/js/components/admin/admin-header'
 import {mapActions, mapGetters} from "vuex";
 export default {
     name: "admin-announcements",
@@ -48,6 +50,7 @@ export default {
         blogList,
         blogPreview,
         blogEdit,
+        adminHeader
     },
     data(){
         return {
@@ -59,6 +62,9 @@ export default {
     },
     computed:{
         ...mapGetters(['getArticlesList', 'getStatus']),
+    },
+    mounted(){
+        this.getArticles()
     },
     methods: {
         ...mapActions(['deleteArticle', 'getArticles']),
