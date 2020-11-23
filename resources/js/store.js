@@ -6,11 +6,13 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
     state: {
         status: '',
-        articlesList: ''
+        articlesList: '',
+        teamList: []
     },
     getters: {
         getStatus: (state) => state.status,
-        getArticlesList: (state) => state.articlesList
+        getArticlesList: (state) => state.articlesList,
+        getMembersList: (state) => state.teamList || []
     },
     mutations: {
         setStatus(state, action){
@@ -18,6 +20,9 @@ const store = new Vuex.Store({
         },
         setArticlesList(state, action){
             state.articlesList = action
+        },
+        setTeamList(state, action){
+            state.teamList = action
         }
     },
     actions: {
@@ -42,6 +47,7 @@ const store = new Vuex.Store({
                   window.Laravel.isLoggedin = false
                   commit('setStatus', status)
               })
+              .catch(err => console.log(err))
         },
         async getArticles({state, commit}, action){
             return await axios.get('api/article?limit=10&page=1')
@@ -86,8 +92,39 @@ const store = new Vuex.Store({
         async uploadImage({state, commit}, action){
             return await axios.post('api/file/upload', action)
                 .then((resp) => {
-                    console.log(resp.data)
                     return resp.data
+                })
+                .catch(err => console.log(err))
+        },
+        async getTeamList({state, commit}){
+            return await axios.get('api/team/member?limit=10&page=1')
+                .then((resp)=>{
+                    const data = resp.data.data || ''
+                    commit('setTeamList', data)
+                    return true
+                })
+                .catch(err => console.log(err))
+        },
+        async addTeamMember({state, commit}, action){
+            return await axios.post('api/team/member', action)
+                .then((resp) => {
+                    if(resp){
+                        return true
+                    }
+                })
+                .catch(err => console.log(err))
+        },
+        async editCurrentMember({state, commit}, action){
+            return axios.put(`api/team/member/${action.id}`, action)
+                .then((resp)=>{
+                    return true
+                })
+                .catch(err => console.log(err))
+        },
+        async deleteMember({state, commit}, action){
+            return await axios.delete(`api/team/member/${action}`)
+                .then((resp)=>{
+                    return true
                 })
                 .catch(err => console.log(err))
         }

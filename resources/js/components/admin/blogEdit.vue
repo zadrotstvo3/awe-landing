@@ -16,10 +16,13 @@
               <input type="file" id="image" @change="changeImage($event)">
             </div>
             <div class="edit__image__preview">
-              <img
+              <img v-if="editedItem.full_image_url"
                    :src="editedItem.full_image_url"
                    class="announce__img"
                    alt="uploaded image">
+                <div class="edit__image--field" v-elsegit>
+                    <img src="@/js/assets/change-image.svg" alt="image icon">
+                </div>
             </div>
           </div>
           <div class="edit__box">
@@ -198,6 +201,18 @@ export default {
     .disabled {
       background-color: gray;
     }
+  }
+  &__image--field{
+      width: 100%;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #eaeaea;
+
+      img {
+          width: 100px;
+      }
   }
 
   &__form {

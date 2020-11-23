@@ -196,6 +196,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -534,7 +537,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".edit[data-v-2d282097] {\n  width: 100%;\n  margin: 50px 10px;\n}\n.edit__show[data-v-2d282097], .edit__submit[data-v-2d282097] {\n  padding: 0 15px;\n  width: 100%;\n  display: flex;\n  justify-content: flex-end;\n  align-items: flex-end;\n}\n.edit__show .show[data-v-2d282097], .edit__show .submit[data-v-2d282097], .edit__submit .show[data-v-2d282097], .edit__submit .submit[data-v-2d282097] {\n  width: 100%;\n  max-width: 150px;\n  padding: 15px;\n  border: 1px solid black;\n  background-color: #fff;\n  outline: none;\n  font-size: 18px;\n}\n.edit__show .show[data-v-2d282097]:hover, .edit__show .submit[data-v-2d282097]:hover, .edit__submit .show[data-v-2d282097]:hover, .edit__submit .submit[data-v-2d282097]:hover {\n  cursor: pointer;\n  background-color: black;\n  color: white;\n}\n.edit__show .submit[data-v-2d282097], .edit__submit .submit[data-v-2d282097] {\n  background-color: #000000;\n  color: white;\n}\n.edit__show .disabled[data-v-2d282097], .edit__submit .disabled[data-v-2d282097] {\n  background-color: gray;\n}\n.edit__form[data-v-2d282097] {\n  width: 100%;\n  margin: 15px 0;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n}\n.edit__box[data-v-2d282097] {\n  flex-grow: 1;\n  margin: 0 15px;\n}\n.edit__box--image[data-v-2d282097] {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n.edit__date[data-v-2d282097] {\n  width: 100%;\n}\n.edit__date input[data-v-2d282097] {\n  width: 100%;\n  padding: 15px;\n  font-size: 14px;\n  outline: none;\n}\n.edit__image[data-v-2d282097] {\n  max-width: 450px;\n}\n.edit__image label[data-v-2d282097] {\n  padding: 15px 0;\n  display: flex;\n  align-items: center;\n}\n.edit__image img[data-v-2d282097] {\n  margin-left: 15px;\n  width: 45px;\n}\n.edit__image input[data-v-2d282097] {\n  display: none;\n}\n.edit__title[data-v-2d282097] {\n  margin: 15px 0;\n  width: 100%;\n}\n.edit__title input[data-v-2d282097] {\n  width: 100%;\n  padding: 15px;\n  font-size: 16px;\n  outline: none;\n}\n.edit__text textarea[data-v-2d282097] {\n  width: 100%;\n  height: 300px;\n  padding: 15px;\n  font-size: 18px;\n  outline: none;\n}\n.announce[data-v-2d282097] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n}\n.announce__text[data-v-2d282097] {\n  padding: 0 35px;\n}\n.announce__title[data-v-2d282097] {\n  margin-bottom: 10px;\n  font-size: 32px;\n  line-height: 140%;\n}\n.announce__description[data-v-2d282097] {\n  font-size: 20px;\n  line-height: 140%;\n  font-weight: 200;\n}\n.announce__img[data-v-2d282097] {\n  width: 100%;\n  max-width: 400px;\n  height: auto;\n  border-radius: 30px;\n}\n@media only screen and (max-width: 1070px) {\n.edit__box[data-v-2d282097] {\n    margin: 0;\n}\n.edit__submit[data-v-2d282097] {\n    padding: 0;\n}\n}", ""]);
+exports.push([module.i, ".edit[data-v-2d282097] {\n  width: 100%;\n  margin: 50px 10px;\n}\n.edit__show[data-v-2d282097], .edit__submit[data-v-2d282097] {\n  padding: 0 15px;\n  width: 100%;\n  display: flex;\n  justify-content: flex-end;\n  align-items: flex-end;\n}\n.edit__show .show[data-v-2d282097], .edit__show .submit[data-v-2d282097], .edit__submit .show[data-v-2d282097], .edit__submit .submit[data-v-2d282097] {\n  width: 100%;\n  max-width: 150px;\n  padding: 15px;\n  border: 1px solid black;\n  background-color: #fff;\n  outline: none;\n  font-size: 18px;\n}\n.edit__show .show[data-v-2d282097]:hover, .edit__show .submit[data-v-2d282097]:hover, .edit__submit .show[data-v-2d282097]:hover, .edit__submit .submit[data-v-2d282097]:hover {\n  cursor: pointer;\n  background-color: black;\n  color: white;\n}\n.edit__show .submit[data-v-2d282097], .edit__submit .submit[data-v-2d282097] {\n  background-color: #000000;\n  color: white;\n}\n.edit__show .disabled[data-v-2d282097], .edit__submit .disabled[data-v-2d282097] {\n  background-color: gray;\n}\n.edit__image--field[data-v-2d282097] {\n  width: 100%;\n  height: 300px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: #eaeaea;\n}\n.edit__image--field img[data-v-2d282097] {\n  width: 100px;\n}\n.edit__form[data-v-2d282097] {\n  width: 100%;\n  margin: 15px 0;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n}\n.edit__box[data-v-2d282097] {\n  flex-grow: 1;\n  margin: 0 15px;\n}\n.edit__box--image[data-v-2d282097] {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n.edit__date[data-v-2d282097] {\n  width: 100%;\n}\n.edit__date input[data-v-2d282097] {\n  width: 100%;\n  padding: 15px;\n  font-size: 14px;\n  outline: none;\n}\n.edit__image[data-v-2d282097] {\n  max-width: 450px;\n}\n.edit__image label[data-v-2d282097] {\n  padding: 15px 0;\n  display: flex;\n  align-items: center;\n}\n.edit__image img[data-v-2d282097] {\n  margin-left: 15px;\n  width: 45px;\n}\n.edit__image input[data-v-2d282097] {\n  display: none;\n}\n.edit__title[data-v-2d282097] {\n  margin: 15px 0;\n  width: 100%;\n}\n.edit__title input[data-v-2d282097] {\n  width: 100%;\n  padding: 15px;\n  font-size: 16px;\n  outline: none;\n}\n.edit__text textarea[data-v-2d282097] {\n  width: 100%;\n  height: 300px;\n  padding: 15px;\n  font-size: 18px;\n  outline: none;\n}\n.announce[data-v-2d282097] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n}\n.announce__text[data-v-2d282097] {\n  padding: 0 35px;\n}\n.announce__title[data-v-2d282097] {\n  margin-bottom: 10px;\n  font-size: 32px;\n  line-height: 140%;\n}\n.announce__description[data-v-2d282097] {\n  font-size: 20px;\n  line-height: 140%;\n  font-weight: 200;\n}\n.announce__img[data-v-2d282097] {\n  width: 100%;\n  max-width: 400px;\n  height: auto;\n  border-radius: 30px;\n}\n@media only screen and (max-width: 1070px) {\n.edit__box[data-v-2d282097] {\n    margin: 0;\n}\n.edit__submit[data-v-2d282097] {\n    padding: 0;\n}\n}", ""]);
 
 // exports
 
@@ -896,13 +899,31 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "edit__image__preview" }, [
-                  _c("img", {
-                    staticClass: "announce__img",
-                    attrs: {
-                      src: _vm.editedItem.full_image_url,
-                      alt: "uploaded image"
-                    }
-                  })
+                  _vm.editedItem.full_image_url
+                    ? _c("img", {
+                        staticClass: "announce__img",
+                        attrs: {
+                          src: _vm.editedItem.full_image_url,
+                          alt: "uploaded image"
+                        }
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      directives: [{ name: "elsegit", rawName: "v-elsegit" }],
+                      staticClass: "edit__image--field"
+                    },
+                    [
+                      _c("img", {
+                        attrs: {
+                          src: __webpack_require__(/*! @/js/assets/change-image.svg */ "./resources/js/assets/change-image.svg"),
+                          alt: "image icon"
+                        }
+                      })
+                    ]
+                  )
                 ])
               ]),
               _vm._v(" "),

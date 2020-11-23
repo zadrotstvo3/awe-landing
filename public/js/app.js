@@ -2036,6 +2036,13 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_components_admin_admin_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/components/admin/admin-header */ "./resources/js/components/admin/admin-header.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2048,11 +2055,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     adminHeader: _js_components_admin_admin_header__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  name: "AWEAdmin"
+  name: "AWEAdmin",
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])(['getStatus'])), {}, {
+    showPanel: function showPanel() {
+      return this.getStatus === 'Login successful';
+    }
+  }),
+  watch: {
+    showPanel: function showPanel(oldVal, newVal) {
+      console.log(oldVal);
+      console.log(newVal);
+      return oldVal = newVal;
+    }
+  }
 });
 
 /***/ }),
@@ -22151,7 +22171,7 @@ var render = function() {
     "div",
     { attrs: { id: "admin" } },
     [
-      _c("adminHeader"),
+      _vm.showPanel ? _c("adminHeader") : _vm._e(),
       _vm._v(" "),
       _c(
         "div",
@@ -40818,7 +40838,8 @@ vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_2__
 var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
   state: {
     status: '',
-    articlesList: ''
+    articlesList: '',
+    teamList: []
   },
   getters: {
     getStatus: function getStatus(state) {
@@ -40826,6 +40847,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
     },
     getArticlesList: function getArticlesList(state) {
       return state.articlesList;
+    },
+    getMembersList: function getMembersList(state) {
+      return state.teamList || [];
     }
   },
   mutations: {
@@ -40834,6 +40858,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
     },
     setArticlesList: function setArticlesList(state, action) {
       state.articlesList = action;
+    },
+    setTeamList: function setTeamList(state, action) {
+      state.teamList = action;
     }
   },
   actions: {
@@ -40878,6 +40905,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
                   var status = resp.data.message;
                   window.Laravel.isLoggedin = false;
                   commit('setStatus', status);
+                })["catch"](function (err) {
+                  return console.log(err);
                 }));
 
               case 2:
@@ -41015,7 +41044,6 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
                 state = _ref7.state, commit = _ref7.commit;
                 _context7.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('api/file/upload', action).then(function (resp) {
-                  console.log(resp.data);
                   return resp.data;
                 })["catch"](function (err) {
                   return console.log(err);
@@ -41030,6 +41058,110 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__["default"].Store({
             }
           }
         }, _callee7);
+      }))();
+    },
+    getTeamList: function getTeamList(_ref8) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee8() {
+        var state, commit;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee8$(_context8) {
+          while (1) {
+            switch (_context8.prev = _context8.next) {
+              case 0:
+                state = _ref8.state, commit = _ref8.commit;
+                _context8.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get('api/team/member?limit=10&page=1').then(function (resp) {
+                  var data = resp.data.data || '';
+                  commit('setTeamList', data);
+                  return true;
+                })["catch"](function (err) {
+                  return console.log(err);
+                });
+
+              case 3:
+                return _context8.abrupt("return", _context8.sent);
+
+              case 4:
+              case "end":
+                return _context8.stop();
+            }
+          }
+        }, _callee8);
+      }))();
+    },
+    addTeamMember: function addTeamMember(_ref9, action) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee9() {
+        var state, commit;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee9$(_context9) {
+          while (1) {
+            switch (_context9.prev = _context9.next) {
+              case 0:
+                state = _ref9.state, commit = _ref9.commit;
+                _context9.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('api/team/member', action).then(function (resp) {
+                  if (resp) {
+                    return true;
+                  }
+                })["catch"](function (err) {
+                  return console.log(err);
+                });
+
+              case 3:
+                return _context9.abrupt("return", _context9.sent);
+
+              case 4:
+              case "end":
+                return _context9.stop();
+            }
+          }
+        }, _callee9);
+      }))();
+    },
+    editCurrentMember: function editCurrentMember(_ref10, action) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee10() {
+        var state, commit;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee10$(_context10) {
+          while (1) {
+            switch (_context10.prev = _context10.next) {
+              case 0:
+                state = _ref10.state, commit = _ref10.commit;
+                return _context10.abrupt("return", axios__WEBPACK_IMPORTED_MODULE_3___default.a.put("api/team/member/".concat(action.id), action).then(function (resp) {
+                  return true;
+                })["catch"](function (err) {
+                  return console.log(err);
+                }));
+
+              case 2:
+              case "end":
+                return _context10.stop();
+            }
+          }
+        }, _callee10);
+      }))();
+    },
+    deleteMember: function deleteMember(_ref11, action) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee11() {
+        var state, commit;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee11$(_context11) {
+          while (1) {
+            switch (_context11.prev = _context11.next) {
+              case 0:
+                state = _ref11.state, commit = _ref11.commit;
+                _context11.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_3___default.a["delete"]("api/team/member/".concat(action)).then(function (resp) {
+                  return true;
+                })["catch"](function (err) {
+                  return console.log(err);
+                });
+
+              case 3:
+                return _context11.abrupt("return", _context11.sent);
+
+              case 4:
+              case "end":
+                return _context11.stop();
+            }
+          }
+        }, _callee11);
       }))();
     }
   }

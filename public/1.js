@@ -3200,6 +3200,7 @@ var map = {
 	"./assets/team_list/7-person.png": "./resources/js/assets/team_list/7-person.png",
 	"./assets/team_list/8-person.png": "./resources/js/assets/team_list/8-person.png",
 	"./assets/text.svg": "./resources/js/assets/text.svg",
+	"./assets/undo.svg": "./resources/js/assets/undo.svg",
 	"./assets/unicorn1.png": "./resources/js/assets/unicorn1.png",
 	"./assets/unicorn2.png": "./resources/js/assets/unicorn2.png",
 	"./assets/unicorn_1.png": "./resources/js/assets/unicorn_1.png",
@@ -3356,6 +3357,7 @@ var map = {
 	"./team_list/7-person.png": "./resources/js/assets/team_list/7-person.png",
 	"./team_list/8-person.png": "./resources/js/assets/team_list/8-person.png",
 	"./text.svg": "./resources/js/assets/text.svg",
+	"./undo.svg": "./resources/js/assets/undo.svg",
 	"./unicorn1.png": "./resources/js/assets/unicorn1.png",
 	"./unicorn2.png": "./resources/js/assets/unicorn2.png",
 	"./unicorn_1.png": "./resources/js/assets/unicorn_1.png",
@@ -4542,6 +4544,17 @@ module.exports = "/images/8-person.png?de122b90cab4dd4d23242a3214e7494b";
 /***/ (function(module, exports) {
 
 module.exports = "/images/text.svg?9e559109c43780ba15adfbc39acac550";
+
+/***/ }),
+
+/***/ "./resources/js/assets/undo.svg":
+/*!**************************************!*\
+  !*** ./resources/js/assets/undo.svg ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/undo.svg?edd4d07073089617600eed9baa72a55b";
 
 /***/ }),
 

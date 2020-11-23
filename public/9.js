@@ -11,12 +11,6 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_components_admin_warningModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/components/admin/warningModal */ "./resources/js/components/admin/warningModal.vue");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -29,6 +23,14 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
 //
 //
 //
@@ -114,76 +116,109 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     };
   },
   created: function created() {
-    var list = [{
-      firstName: "John ",
-      lastName: "Doe",
-      position: "manager",
-      full_image_url: "1-person.png"
-    }, {
-      firstName: "John ",
-      lastName: "Doe",
-      position: "manager",
-      full_image_url: "1-person.png"
-    }, {
-      firstName: "John ",
-      lastName: "Doe",
-      position: "manager",
-      full_image_url: "1-person.png"
-    }];
-    var array = new Array(8).fill().map(function (item, index) {
-      if (index < list.length) {
-        list[index].showEdit = false;
-        return list[index];
-      } else {
-        return {
-          first_name: "",
-          last_name: "",
-          position: "",
-          avatar: "",
-          full_image_url: '',
-          social_medias: [],
-          showEdit: true
-        };
-      }
-    });
-    return this.teamList = _toConsumableArray(array);
+    this.createList();
   },
-  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['uploadImage'])), {}, {
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])(['getMembersList'])),
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['uploadImage', 'getTeamList', 'addTeamMember', 'editCurrentMember', 'deleteMember'])), {}, {
+    createList: function createList() {
+      var _this = this;
+
+      var array = new Array(9).fill().map(function (item, index) {
+        if (index < _this.getMembersList.length) {
+          _this.getMembersList[index].showEdit = false;
+          return _objectSpread({}, _this.getMembersList[index]);
+        } else {
+          return {
+            first_name: "",
+            last_name: "",
+            position: "",
+            avatar: "",
+            full_avatar_url: '',
+            social_medias: [],
+            showEdit: true
+          };
+        }
+      });
+      return this.teamList = _toConsumableArray(array);
+    },
     toggleModal: function toggleModal(item) {
       this.currentItem = item;
       this.modal = !this.modal;
     },
-    deleteTeamMate: function deleteTeamMate(item) {
-      console.log(item);
+    toggleEditBlock: function toggleEditBlock(item) {
+      item.showEdit = !item.showEdit;
     },
-    changeImage: function changeImage(event, index) {
+    deleteTeamMember: function deleteTeamMember(item) {
+      var _this2 = this;
+
+      this.deleteMember(item.id).then(function (resp) {
+        if (resp) {
+          _this2.getTeamList().then(function (resp) {
+            if (resp) {
+              _this2.createList();
+            }
+          });
+        }
+      });
+    },
+    changeImage: function changeImage(event, item) {
       var files = event.target.files || event.dataTransfer.files;
 
       if (!files.length) {
         return;
       }
 
-      this.createImage(files[0], index);
+      this.createImage(files[0], item);
     },
-    createImage: function createImage(file, index) {
-      var _this = this;
+    createImage: function createImage(file, item) {
+      var _this3 = this;
 
       var reader = new FileReader();
 
       reader.onload = function (event) {
-        _this.uploadedImage = event.target.result;
+        _this3.uploadedImage = event.target.result;
         var data = {
-          image: _this.uploadedImage
+          image: _this3.uploadedImage
         };
 
-        _this.uploadImage(data).then(function (resp) {
+        _this3.uploadImage(data).then(function (resp) {
           console.log(resp);
-          _this.teamList[index].avatar = resp.url;
-          _this.teamList[index].full_image_url = resp.full_url;
+          console.log(item);
+          item.avatar = resp.url;
+          item.full_avatar_url = resp.full_url;
         });
       };
 
       reader.readAsDataURL(file);
+    },
+    addMember: function addMember(item) {
+      var _this4 = this;
+
+      delete item.showEdit;
+      this.addTeamMember(item).then(function (resp) {
+        if (resp) {
+          _this4.getTeamList().then(function (resp) {
+            if (resp) {
+              _this4.createList();
+            }
+          });
+        }
+      });
+    },
+    editMember: function editMember(item) {
+      var _this5 = this;
+
+      delete item.showEdit;
+      item.social_medias = null;
+      this.editCurrentMember(item).then(function (resp) {
+        if (resp) {
+          _this5.getTeamList().then(function (resp) {
+            if (resp) {
+              _this5.createList();
+            }
+          });
+        }
+      });
     }
   })
 });
@@ -247,7 +282,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".team-list[data-v-4bc70b09] {\n  width: 100%;\n  max-width: 1300px;\n  margin: 0 auto;\n  padding: 50px 15px;\n}\n.list[data-v-4bc70b09] {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-template-rows: repeat(3, 1fr);\n  grid-column-gap: 30px;\n  grid-row-gap: 30px;\n}\n.list__item[data-v-4bc70b09] {\n  width: 100%;\n  max-width: 300px;\n  list-style: none;\n  justify-self: center;\n}\n.list__item[data-v-4bc70b09]:first-child {\n  grid-area: 1/1/2/2;\n}\n.list__item:first-child .item[data-v-4bc70b09] {\n  width: 100%;\n  height: 100%;\n}\n.list__item:first-child .item__image[data-v-4bc70b09], .list__item:first-child .item__preview--image[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  background-color: #e3e3e3;\n  border-radius: 50px 50px 0 50px;\n}\n.list__item:first-child .item__image img[data-v-4bc70b09], .list__item:first-child .item__preview--image img[data-v-4bc70b09] {\n  border-radius: 50px 50px 0 50px;\n}\n.list__item[data-v-4bc70b09]:nth-child(2) {\n  grid-area: 1/2/2/3;\n}\n.list__item:nth-child(2) .item[data-v-4bc70b09] {\n  width: 100%;\n  height: 100%;\n}\n.list__item:nth-child(2) .item__image[data-v-4bc70b09], .list__item:nth-child(2) .item__preview--image[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  background-color: #e3e3e3;\n  border-radius: 50px 50px 0 0;\n}\n.list__item:nth-child(2) .item__image img[data-v-4bc70b09], .list__item:nth-child(2) .item__preview--image img[data-v-4bc70b09] {\n  border-radius: 50px 50px 0 0;\n}\n.list__item[data-v-4bc70b09]:nth-child(3) {\n  grid-area: 1/3/2/4;\n}\n.list__item:nth-child(3) .item[data-v-4bc70b09] {\n  width: 100%;\n  height: 100%;\n}\n.list__item:nth-child(3) .item__image[data-v-4bc70b09], .list__item:nth-child(3) .item__preview--image[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  background-color: #e3e3e3;\n  border-radius: 50px 50px 50px 0;\n}\n.list__item:nth-child(3) .item__image img[data-v-4bc70b09], .list__item:nth-child(3) .item__preview--image img[data-v-4bc70b09] {\n  border-radius: 50px 50px 50px 0;\n}\n.list__item[data-v-4bc70b09]:nth-child(4) {\n  grid-area: 2/1/3/2;\n}\n.list__item:nth-child(4) .item[data-v-4bc70b09] {\n  width: 100%;\n  height: 100%;\n}\n.list__item:nth-child(4) .item__image[data-v-4bc70b09], .list__item:nth-child(4) .item__preview--image[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  background-color: #e3e3e3;\n  border-radius: 50px 0 0 50px;\n}\n.list__item:nth-child(4) .item__image img[data-v-4bc70b09], .list__item:nth-child(4) .item__preview--image img[data-v-4bc70b09] {\n  border-radius: 50px 0 0 50px;\n}\n.list__item[data-v-4bc70b09]:nth-child(5) {\n  grid-area: 2/2/3/3;\n}\n.list__item[data-v-4bc70b09]:nth-child(6) {\n  grid-area: 2/3/3/4;\n}\n.list__item:nth-child(6) .item[data-v-4bc70b09] {\n  width: 100%;\n  height: 100%;\n}\n.list__item:nth-child(6) .item__image[data-v-4bc70b09], .list__item:nth-child(6) .item__preview--image[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  background-color: #e3e3e3;\n  border-radius: 0 50px 50px 0;\n}\n.list__item:nth-child(6) .item__image img[data-v-4bc70b09], .list__item:nth-child(6) .item__preview--image img[data-v-4bc70b09] {\n  border-radius: 0 50px 50px 0;\n}\n.list__item[data-v-4bc70b09]:nth-child(7) {\n  grid-area: 3/1/4/2;\n}\n.list__item:nth-child(7) .item[data-v-4bc70b09] {\n  width: 100%;\n  height: 100%;\n}\n.list__item:nth-child(7) .item__image[data-v-4bc70b09], .list__item:nth-child(7) .item__preview--image[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  background-color: #e3e3e3;\n  border-radius: 50px 0 50px 50px;\n}\n.list__item:nth-child(7) .item__image img[data-v-4bc70b09], .list__item:nth-child(7) .item__preview--image img[data-v-4bc70b09] {\n  border-radius: 50px 0 50px 50px;\n}\n.list__item[data-v-4bc70b09]:nth-child(8) {\n  grid-area: 3/2/4/3;\n}\n.list__item:nth-child(8) .item[data-v-4bc70b09] {\n  width: 100%;\n  height: 100%;\n}\n.list__item:nth-child(8) .item__image[data-v-4bc70b09], .list__item:nth-child(8) .item__preview--image[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  background-color: #e3e3e3;\n  border-radius: 0 0 50px 50px;\n}\n.list__item:nth-child(8) .item__image img[data-v-4bc70b09], .list__item:nth-child(8) .item__preview--image img[data-v-4bc70b09] {\n  border-radius: 0 0 50px 50px;\n}\n.list__item[data-v-4bc70b09]:last-child {\n  grid-area: 3/3/4/4;\n}\n.list__item:last-child .item[data-v-4bc70b09] {\n  width: 100%;\n  height: 100%;\n}\n.list__item:last-child .item__image[data-v-4bc70b09], .list__item:last-child .item__preview--image[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  background-color: #e3e3e3;\n  border-radius: 0 50px 50px 50px;\n}\n.list__item:last-child .item__image img[data-v-4bc70b09], .list__item:last-child .item__preview--image img[data-v-4bc70b09] {\n  border-radius: 0 50px 50px 50px;\n}\n.list__image[data-v-4bc70b09] {\n  width: 100%;\n  height: auto;\n  -o-object-fit: contain;\n     object-fit: contain;\n}\n.list__name[data-v-4bc70b09] {\n  margin-top: 15px;\n  font-size: 24px;\n  font-weight: 600;\n}\n.list__position[data-v-4bc70b09] {\n  margin-top: 10px;\n}\n.item[data-v-4bc70b09] {\n  position: relative;\n}\n.item__preview[data-v-4bc70b09] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n.item__image[data-v-4bc70b09] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.item__image--label img[data-v-4bc70b09] {\n  width: 100px;\n}\n.item__image input[data-v-4bc70b09] {\n  display: none;\n}\n.item__image .preview[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.item__input[data-v-4bc70b09], .item__links[data-v-4bc70b09] {\n  padding: 10px 0;\n}\n.item__input input[data-v-4bc70b09], .item__links input[data-v-4bc70b09] {\n  width: 100%;\n  margin: 5px;\n  padding: 10px;\n  outline: none;\n}\n.item__close[data-v-4bc70b09] {\n  position: relative;\n}\n.item__close .icon[data-v-4bc70b09] {\n  position: absolute;\n  top: 20px;\n  right: 20px;\n}\n.item__video[data-v-4bc70b09] {\n  width: 100%;\n  max-width: 420px;\n  height: 300px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: black;\n}\n.item__hover[data-v-4bc70b09] {\n  padding: 15px 35px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: rgba(255, 255, 255, 0.7);\n  opacity: 0;\n  visibility: hidden;\n  z-index: -2;\n}\n.item__hover img[data-v-4bc70b09] {\n  margin: 0 10px;\n  width: 35px;\n  cursor: pointer;\n}\n.item:hover .item__hover[data-v-4bc70b09] {\n  opacity: 1;\n  visibility: visible;\n  z-index: 2;\n  transition: 0.3s ease-in-out;\n}\n@media only screen and (max-width: 1240px) {\n.item__video[data-v-4bc70b09] {\n    height: auto;\n}\n}\n@media only screen and (max-width: 660px) {\n.team-list[data-v-4bc70b09] {\n    width: 100%;\n    max-width: 300px;\n    margin: 0 auto;\n    padding: 20px 5px;\n}\n.list[data-v-4bc70b09] {\n    grid-column-gap: 5px;\n    grid-row-gap: 5px;\n}\n.list__name[data-v-4bc70b09] {\n    margin-top: 5px;\n    font-size: 14px;\n}\n.list__position[data-v-4bc70b09] {\n    margin-top: 0;\n    font-size: 10px;\n}\n}", ""]);
+exports.push([module.i, ".team-list[data-v-4bc70b09] {\n  width: 100%;\n  max-width: 1300px;\n  margin: 0 auto;\n  padding: 50px 15px;\n}\n.list[data-v-4bc70b09] {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-template-rows: repeat(3, 1fr);\n  grid-column-gap: 30px;\n  grid-row-gap: 30px;\n}\n.list__item[data-v-4bc70b09] {\n  width: 100%;\n  max-width: 300px;\n  list-style: none;\n  justify-self: center;\n}\n.list__item[data-v-4bc70b09]:first-child {\n  grid-area: 1/1/2/2;\n}\n.list__item:first-child .item[data-v-4bc70b09] {\n  width: 100%;\n  height: 100%;\n}\n.list__item:first-child .item__image[data-v-4bc70b09], .list__item:first-child .item__preview--image[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  background-color: #e3e3e3;\n  border-radius: 80px 80px 0 80px;\n}\n.list__item:first-child .item__image img[data-v-4bc70b09], .list__item:first-child .item__preview--image img[data-v-4bc70b09] {\n  border-radius: 80px 80px 0 80px;\n}\n.list__item[data-v-4bc70b09]:nth-child(2) {\n  grid-area: 1/2/2/3;\n}\n.list__item:nth-child(2) .item[data-v-4bc70b09] {\n  width: 100%;\n  height: 100%;\n}\n.list__item:nth-child(2) .item__image[data-v-4bc70b09], .list__item:nth-child(2) .item__preview--image[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  background-color: #e3e3e3;\n  border-radius: 80px 80px 0 0;\n}\n.list__item:nth-child(2) .item__image img[data-v-4bc70b09], .list__item:nth-child(2) .item__preview--image img[data-v-4bc70b09] {\n  border-radius: 80px 80px 0 0;\n}\n.list__item[data-v-4bc70b09]:nth-child(3) {\n  grid-area: 1/3/2/4;\n}\n.list__item:nth-child(3) .item[data-v-4bc70b09] {\n  width: 100%;\n  height: 100%;\n}\n.list__item:nth-child(3) .item__image[data-v-4bc70b09], .list__item:nth-child(3) .item__preview--image[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  background-color: #e3e3e3;\n  border-radius: 80px 80px 80px 0;\n}\n.list__item:nth-child(3) .item__image img[data-v-4bc70b09], .list__item:nth-child(3) .item__preview--image img[data-v-4bc70b09] {\n  border-radius: 80px 80px 80px 0;\n}\n.list__item[data-v-4bc70b09]:nth-child(4) {\n  grid-area: 2/1/3/2;\n}\n.list__item:nth-child(4) .item[data-v-4bc70b09] {\n  width: 100%;\n  height: 100%;\n}\n.list__item:nth-child(4) .item__image[data-v-4bc70b09], .list__item:nth-child(4) .item__preview--image[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  background-color: #e3e3e3;\n  border-radius: 80px 0 0 80px;\n}\n.list__item:nth-child(4) .item__image img[data-v-4bc70b09], .list__item:nth-child(4) .item__preview--image img[data-v-4bc70b09] {\n  border-radius: 80px 0 0 80px;\n}\n.list__item[data-v-4bc70b09]:nth-child(5) {\n  grid-area: 2/2/3/3;\n}\n.list__item[data-v-4bc70b09]:nth-child(6) {\n  grid-area: 2/3/3/4;\n}\n.list__item:nth-child(6) .item[data-v-4bc70b09] {\n  width: 100%;\n  height: 100%;\n}\n.list__item:nth-child(6) .item__image[data-v-4bc70b09], .list__item:nth-child(6) .item__preview--image[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  background-color: #e3e3e3;\n  border-radius: 0 80px 80px 0;\n}\n.list__item:nth-child(6) .item__image img[data-v-4bc70b09], .list__item:nth-child(6) .item__preview--image img[data-v-4bc70b09] {\n  border-radius: 0 80px 80px 0;\n}\n.list__item[data-v-4bc70b09]:nth-child(7) {\n  grid-area: 3/1/4/2;\n}\n.list__item:nth-child(7) .item[data-v-4bc70b09] {\n  width: 100%;\n  height: 100%;\n}\n.list__item:nth-child(7) .item__image[data-v-4bc70b09], .list__item:nth-child(7) .item__preview--image[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  background-color: #e3e3e3;\n  border-radius: 80px 0 80px 80px;\n}\n.list__item:nth-child(7) .item__image img[data-v-4bc70b09], .list__item:nth-child(7) .item__preview--image img[data-v-4bc70b09] {\n  border-radius: 80px 0 80px 80px;\n}\n.list__item[data-v-4bc70b09]:nth-child(8) {\n  grid-area: 3/2/4/3;\n}\n.list__item:nth-child(8) .item[data-v-4bc70b09] {\n  width: 100%;\n  height: 100%;\n}\n.list__item:nth-child(8) .item__image[data-v-4bc70b09], .list__item:nth-child(8) .item__preview--image[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  background-color: #e3e3e3;\n  border-radius: 0 0 80px 80px;\n}\n.list__item:nth-child(8) .item__image img[data-v-4bc70b09], .list__item:nth-child(8) .item__preview--image img[data-v-4bc70b09] {\n  border-radius: 0 0 80px 80px;\n}\n.list__item[data-v-4bc70b09]:last-child {\n  grid-area: 3/3/4/4;\n}\n.list__item:last-child .item[data-v-4bc70b09] {\n  width: 100%;\n  height: 100%;\n}\n.list__item:last-child .item__image[data-v-4bc70b09], .list__item:last-child .item__preview--image[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  background-color: #e3e3e3;\n  border-radius: 0 80px 80px 80px;\n}\n.list__item:last-child .item__image img[data-v-4bc70b09], .list__item:last-child .item__preview--image img[data-v-4bc70b09] {\n  border-radius: 0 80px 80px 80px;\n}\n.list__image[data-v-4bc70b09] {\n  width: 100%;\n  height: auto;\n  -o-object-fit: contain;\n     object-fit: contain;\n}\n.list__name[data-v-4bc70b09] {\n  margin-top: 15px;\n  font-size: 24px;\n  font-weight: 600;\n}\n.list__position[data-v-4bc70b09] {\n  margin-top: 10px;\n}\n.item[data-v-4bc70b09] {\n  position: relative;\n}\n.item__preview[data-v-4bc70b09] {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n.item__image[data-v-4bc70b09] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.item__image--label img[data-v-4bc70b09] {\n  width: 100px;\n}\n.item__image input[data-v-4bc70b09] {\n  display: none;\n}\n.item__image .preview[data-v-4bc70b09] {\n  width: 300px;\n  height: 300px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.item__input[data-v-4bc70b09], .item__links[data-v-4bc70b09] {\n  padding: 10px 0;\n}\n.item__input input[data-v-4bc70b09], .item__links input[data-v-4bc70b09] {\n  width: 100%;\n  margin: 5px;\n  padding: 10px;\n  outline: none;\n}\n.item__close[data-v-4bc70b09] {\n  position: relative;\n}\n.item__close .icon[data-v-4bc70b09] {\n  position: absolute;\n  top: 30px;\n  right: 30px;\n}\n.item__close .icon__back[data-v-4bc70b09] {\n  position: absolute;\n  top: 27px;\n  left: 30px;\n  width: 20px;\n}\n.item__video[data-v-4bc70b09] {\n  width: 100%;\n  max-width: 420px;\n  height: 300px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: black;\n}\n.item__hover[data-v-4bc70b09] {\n  padding: 15px 35px;\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: rgba(255, 255, 255, 0.7);\n  opacity: 0;\n  visibility: hidden;\n  z-index: -2;\n}\n.item__hover img[data-v-4bc70b09] {\n  margin: 0 10px;\n  width: 35px;\n  cursor: pointer;\n}\n.item:hover .item__hover[data-v-4bc70b09] {\n  opacity: 1;\n  visibility: visible;\n  z-index: 2;\n  transition: 0.3s ease-in-out;\n}\n@media only screen and (max-width: 1240px) {\n.item__video[data-v-4bc70b09] {\n    height: auto;\n}\n}\n@media only screen and (max-width: 660px) {\n.team-list[data-v-4bc70b09] {\n    width: 100%;\n    max-width: 300px;\n    margin: 0 auto;\n    padding: 20px 5px;\n}\n.list[data-v-4bc70b09] {\n    grid-column-gap: 5px;\n    grid-row-gap: 5px;\n}\n.list__name[data-v-4bc70b09] {\n    margin-top: 5px;\n    font-size: 14px;\n}\n.list__position[data-v-4bc70b09] {\n    margin-top: 0;\n    font-size: 10px;\n}\n}", ""]);
 
 // exports
 
@@ -360,54 +395,10 @@ var render = function() {
             return _c("li", { key: index, staticClass: "list__item" }, [
               index !== 4
                 ? _c("div", { staticClass: "item" }, [
-                    !item.showEdit
-                      ? _c("div", { staticClass: "item__preview" }, [
-                          _c("img", {
-                            staticClass: "item__preview--image",
-                            attrs: { src: item.full_image_url, alt: "avatar" }
-                          }),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "list__name" }, [
-                            _vm._v(
-                              _vm._s(
-                                "" + (item.firstName + " " + item.lastName)
-                              )
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "list__position" }, [
-                            _vm._v(_vm._s(item.position))
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "item__hover" }, [
-                            _c("img", {
-                              attrs: {
-                                src: __webpack_require__(/*! @/js/assets/edit.svg */ "./resources/js/assets/edit.svg"),
-                                alt: "edit icon"
-                              },
-                              on: {
-                                click: function($event) {
-                                  item.showEdit = !item.showEdit
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("img", {
-                              attrs: {
-                                src: __webpack_require__(/*! @/js/assets/x-mark.svg */ "./resources/js/assets/x-mark.svg"),
-                                alt: "delete icon"
-                              },
-                              on: {
-                                click: function($event) {
-                                  return _vm.toggleModal(item)
-                                }
-                              }
-                            })
-                          ])
-                        ])
-                      : _c("div", [
+                    item.showEdit
+                      ? _c("div", [
                           _c("div", { staticClass: "item__image" }, [
-                            !item.full_image_url
+                            !item.full_avatar_url
                               ? _c(
                                   "label",
                                   {
@@ -436,7 +427,7 @@ var render = function() {
                                       attrs: { viewBox: "0 0 24 24" },
                                       on: {
                                         click: function($event) {
-                                          item.full_image_url = ""
+                                          item.full_avatar_url = ""
                                         }
                                       }
                                     },
@@ -452,9 +443,22 @@ var render = function() {
                                   ),
                                   _vm._v(" "),
                                   _c("img", {
+                                    staticClass: "icon__back",
+                                    attrs: {
+                                      src: __webpack_require__(/*! @/js/assets/undo.svg */ "./resources/js/assets/undo.svg"),
+                                      alt: "back icon"
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.toggleEditBlock(item)
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c("img", {
                                     staticClass: "preview",
                                     attrs: {
-                                      src: _vm.uploadedImage,
+                                      src: item.full_avatar_url,
                                       alt: "image"
                                     }
                                   })
@@ -464,7 +468,7 @@ var render = function() {
                               attrs: { type: "file", id: "image" },
                               on: {
                                 change: function($event) {
-                                  return _vm.changeImage($event, index)
+                                  return _vm.changeImage($event, item)
                                 }
                               }
                             })
@@ -478,15 +482,15 @@ var render = function() {
                                 {
                                   name: "model",
                                   rawName: "v-model",
-                                  value: item.firstName,
-                                  expression: "item.firstName"
+                                  value: item.first_name,
+                                  expression: "item.first_name"
                                 }
                               ],
                               attrs: {
                                 type: "text",
                                 placeholder: "First name"
                               },
-                              domProps: { value: item.firstName },
+                              domProps: { value: item.first_name },
                               on: {
                                 input: function($event) {
                                   if ($event.target.composing) {
@@ -494,7 +498,7 @@ var render = function() {
                                   }
                                   _vm.$set(
                                     item,
-                                    "firstName",
+                                    "first_name",
                                     $event.target.value
                                   )
                                 }
@@ -506,12 +510,12 @@ var render = function() {
                                 {
                                   name: "model",
                                   rawName: "v-model",
-                                  value: item.lastName,
-                                  expression: "item.lastName"
+                                  value: item.last_name,
+                                  expression: "item.last_name"
                                 }
                               ],
                               attrs: { type: "text", placeholder: "Last name" },
-                              domProps: { value: item.lastName },
+                              domProps: { value: item.last_name },
                               on: {
                                 input: function($event) {
                                   if ($event.target.composing) {
@@ -519,7 +523,7 @@ var render = function() {
                                   }
                                   _vm.$set(
                                     item,
-                                    "lastName",
+                                    "last_name",
                                     $event.target.value
                                   )
                                 }
@@ -551,16 +555,76 @@ var render = function() {
                               }
                             }),
                             _vm._v(" "),
-                            _c("input", {
-                              attrs: { type: "submit", value: "Save" },
+                            item.id
+                              ? _c("input", {
+                                  attrs: {
+                                    type: "submit",
+                                    value: "Confirm edit"
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.editMember(item)
+                                    }
+                                  }
+                                })
+                              : _c("input", {
+                                  attrs: { type: "submit", value: "Add" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.addMember(item)
+                                    }
+                                  }
+                                })
+                          ])
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    !item.showEdit
+                      ? _c("div", { staticClass: "item__preview" }, [
+                          _c("img", {
+                            staticClass: "item__preview--image",
+                            attrs: { src: item.full_avatar_url, alt: "avatar" }
+                          }),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "list__name" }, [
+                            _vm._v(
+                              _vm._s(
+                                "" + (item.first_name + " " + item.last_name)
+                              )
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "list__position" }, [
+                            _vm._v(_vm._s(item.position))
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "item__hover" }, [
+                            _c("img", {
+                              attrs: {
+                                src: __webpack_require__(/*! @/js/assets/edit.svg */ "./resources/js/assets/edit.svg"),
+                                alt: "edit icon"
+                              },
                               on: {
                                 click: function($event) {
-                                  item.showEdit = !item.showEdit
+                                  return _vm.toggleEditBlock(item)
+                                }
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("img", {
+                              attrs: {
+                                src: __webpack_require__(/*! @/js/assets/x-mark.svg */ "./resources/js/assets/x-mark.svg"),
+                                alt: "delete icon"
+                              },
+                              on: {
+                                click: function($event) {
+                                  return _vm.toggleModal(item)
                                 }
                               }
                             })
                           ])
                         ])
+                      : _vm._e()
                   ])
                 : _c("div", { staticClass: "item" }, [
                     _c("div", { staticClass: "item__video" }, [
@@ -600,7 +664,7 @@ var render = function() {
             on: {
               close: _vm.toggleModal,
               deleteItem: function($event) {
-                return _vm.deleteTeamMate(_vm.currentItem)
+                return _vm.deleteTeamMember(_vm.currentItem)
               }
             }
           })
@@ -707,6 +771,17 @@ module.exports = "/images/edit.svg?194ae7c4d46fb5e80b061bab8f2ada5d";
 /***/ (function(module, exports) {
 
 module.exports = "/images/plus.svg?82b63f68ca2843f459e8c4b5376a9f72";
+
+/***/ }),
+
+/***/ "./resources/js/assets/undo.svg":
+/*!**************************************!*\
+  !*** ./resources/js/assets/undo.svg ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/undo.svg?edd4d07073089617600eed9baa72a55b";
 
 /***/ }),
 

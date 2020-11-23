@@ -54,13 +54,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       error: false
     };
   },
-  // mounted() {
-  //     return window.Laravel.isLoggedin
-  //         ? this.getArticles() && this.$router.push({name: 'Admin-panel', params: '1'})
-  //         : false
-  // },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])(['getStatus'])),
-  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['logIn', 'getArticles'])), {}, {
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['logIn', 'getArticles', 'getTeamList'])), {}, {
     submitLogIn: function submitLogIn() {
       var _this = this;
 
@@ -82,7 +77,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
                 _this.logIn(data).then(function () {
                   if (_this.getStatus) {
-                    _this.getArticles().then(function () {
+                    _this.getArticles();
+
+                    _this.getTeamList().then(function () {
                       _this.$router.push('/admin-panel');
                     });
                   }

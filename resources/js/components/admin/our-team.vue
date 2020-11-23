@@ -8,42 +8,44 @@
                 :key="index"
             >
                 <div class="item" v-if="index !== 4">
-                    <div class="item__preview" v-if="!item.showEdit">
-                        <img
-                            :src="item.full_image_url"
-                            class="item__preview--image"
-                            alt="avatar">
-                        <p class="list__name">{{ `${item.firstName + ' ' +  item.lastName}`}}</p>
-                        <p class="list__position">{{item.position}}</p>
-                        <div class="item__hover">
-                            <img src="@/js/assets/edit.svg" alt="edit icon" @click="item.showEdit = !item.showEdit">
-                            <img src="@/js/assets/x-mark.svg" alt="delete icon" @click="toggleModal(item)">
-                        </div>
-                    </div>
-                    <div v-else>
-                        <div class="item__image" >
-                            <label class="item__image--label" for="image" v-if="!item.full_image_url">
+                    <div v-if="item.showEdit">
+                        <div class="item__image">
+                            <label class="item__image--label" for="image" v-if="!item.full_avatar_url">
                                 <img
                                     src="@/js/assets/plus.svg"
                                     class="item__icon"
                                     alt="avatar">
                             </label>
                             <div class="item__close" v-else>
-                                <svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24" @click="item.full_image_url = ''">
+                                <svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24" @click="item.full_avatar_url = ''">
                                     <path fill="white" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
                                 </svg>
-                                <img  class="preview" :src="uploadedImage" alt="image">
+                                <img src="@/js/assets/undo.svg" alt="back icon" class="icon__back" @click="toggleEditBlock(item)">
+                                <img  class="preview" :src="item.full_avatar_url" alt="image">
                             </div>
-                            <input type="file" id="image" @change="changeImage($event, index)">
+                            <input type="file" id="image" @change="changeImage($event, item)">
                         </div>
                         <div class="item__text">
 
                         </div>
                         <div class="item__input">
-                            <input type="text" placeholder="First name" v-model="item.firstName">
-                            <input type="text" placeholder="Last name" v-model="item.lastName">
+                            <input type="text" placeholder="First name" v-model="item.first_name">
+                            <input type="text" placeholder="Last name" v-model="item.last_name">
                             <input type="text" placeholder="Position" v-model="item.position">
-                            <input type="submit" value="Save" @click="item.showEdit = !item.showEdit">
+                            <input type="submit" value="Confirm edit" @click="editMember(item)" v-if="item.id">
+                            <input type="submit" value="Add" @click="addMember(item)" v-else>
+                        </div>
+                    </div>
+                    <div class="item__preview" v-if="!item.showEdit">
+                        <img
+                            :src="item.full_avatar_url"
+                            class="item__preview--image"
+                            alt="avatar">
+                        <p class="list__name">{{ `${item.first_name + ' ' +  item.last_name}`}}</p>
+                        <p class="list__position">{{item.position}}</p>
+                        <div class="item__hover">
+                            <img src="@/js/assets/edit.svg" alt="edit icon" @click="toggleEditBlock(item)">
+                            <img src="@/js/assets/x-mark.svg" alt="delete icon" @click="toggleModal(item)">
                         </div>
                     </div>
                 </div>
@@ -62,14 +64,14 @@
     <warningModal
         v-if="modal"
         @close="toggleModal"
-        @deleteItem="deleteTeamMate(currentItem)"
+        @deleteItem="deleteTeamMember(currentItem)"
     />
 </div>
 </template>
 
 <script>
 import warningModal from "@/js/components/admin/warningModal";
-import {mapActions} from 'vuex'
+import {mapActions, mapGetters} from 'vuex'
 export default {
     name: "our-team",
     components: {
@@ -84,64 +86,63 @@ export default {
         }
     },
     created(){
-        const list = [
-            {
-                firstName: "John ",
-                lastName: "Doe",
-                position: "manager",
-                full_image_url: "1-person.png"
-            },
-            {
-                firstName: "John ",
-                lastName: "Doe",
-                position: "manager",
-                full_image_url: "1-person.png"
-            },
-            {
-                firstName: "John ",
-                lastName: "Doe",
-                position: "manager",
-                full_image_url: "1-person.png"
-            }
-        ]
-        const array = new Array(8)
-        .fill()
-        .map((item, index)=> {
-            if(index < list.length){
-                list[index].showEdit = false
-                return list[index]
-            }
-            else {
-                return {
-                    first_name: "",
-                    last_name: "",
-                    position: "",
-                    avatar: "",
-                    full_image_url: '',
-                    social_medias: [],
-                    showEdit: true
-                }
-            }
-        })
-        return this.teamList = [...array]
+        this.createList()
+    },
+    computed: {
+      ...mapGetters(['getMembersList'])
     },
     methods: {
-        ...mapActions(['uploadImage']),
+        ...mapActions(['uploadImage', 'getTeamList', 'addTeamMember', 'editCurrentMember', 'deleteMember']),
+        createList(){
+            const array = new Array(9)
+                .fill()
+                .map((item, index)=> {
+                    if(index < this.getMembersList.length){
+                        this.getMembersList[index].showEdit = false
+                        return {...this.getMembersList[index]}
+                    }
+                    else {
+                        return {
+                            first_name: "",
+                            last_name: "",
+                            position: "",
+                            avatar: "",
+                            full_avatar_url: '',
+                            social_medias: [],
+                            showEdit: true
+                        }
+                    }
+                })
+            return this.teamList = [...array]
+        },
         toggleModal(item){
             this.currentItem = item
             this.modal = !this.modal
         },
-        deleteTeamMate(item){
-            console.log(item)
+        toggleEditBlock(item){
+            item.showEdit = !item.showEdit
         },
-        changeImage(event, index){
+        deleteTeamMember(item){
+            this.deleteMember(item.id)
+                .then((resp)=>{
+                    if(resp){
+                        this.getTeamList()
+                            .then((resp)=> {
+                                if(resp){
+                                    this.createList()
+                                }
+                            })
+                    }
+                })
+        },
+        changeImage(event, item){
             const files = event.target.files || event.dataTransfer.files
             if(!files.length){
                 return
             }
-            this.createImage(files[0], index)
+            this.createImage(files[0], item)
         },
-        createImage(file, index){
+        createImage(file, item){
             const reader = new FileReader()
             reader.onload = (event) => {
                 this.uploadedImage = event.target.result
@@ -151,12 +152,42 @@ export default {
                 this.uploadImage(data)
                     .then((resp) => {
                         console.log(resp)
-                        this.teamList[index].avatar = resp.url
-                        this.teamList[index].full_image_url = resp.full_url
+                        console.log(item)
+                        item.avatar = resp.url
+                        item.full_avatar_url = resp.full_url
                     })
             }
             reader.readAsDataURL(file)
         },
+        addMember(item){
+            delete item.showEdit
+            this.addTeamMember(item)
+            .then((resp)=>{
+                if(resp){
+                    this.getTeamList()
+                    .then((resp)=> {
+                        if(resp){
+                            this.createList()
+                        }
+                    })
+                }
+            })
+        },
+        editMember(item){
+            delete item.showEdit
+            item.social_medias = null
+            this.editCurrentMember(item)
+            .then((resp)=>{
+                if(resp){
+                    this.getTeamList()
+                    .then((resp)=>{
+                        if(resp){
+                            this.createList()
+                        }
+                    })
+                }
+            })
+        }
     }
 }
 </script>
@@ -189,9 +220,9 @@ export default {
                     width: 300px;
                     height: 300px;
                     background-color: #e3e3e3;
-                    border-radius: 50px 50px 0 50px;
+                    border-radius: 80px 80px 0 80px;
                     img {
-                        border-radius: 50px 50px 0 50px;
+                        border-radius: 80px 80px 0 80px;
                     }
                 }
             }
@@ -205,9 +236,9 @@ export default {
                     width: 300px;
                     height: 300px;
                     background-color: #e3e3e3;
-                    border-radius: 50px 50px 0 0;
+                    border-radius: 80px 80px 0 0;
                     img {
-                        border-radius: 50px 50px 0 0;
+                        border-radius: 80px 80px 0 0;
                     }
                 }
             }
@@ -221,9 +252,9 @@ export default {
                     width: 300px;
                     height: 300px;
                     background-color: #e3e3e3;
-                    border-radius: 50px 50px 50px 0;
+                    border-radius: 80px 80px 80px 0;
                     img {
-                        border-radius: 50px 50px 50px 0;
+                        border-radius: 80px 80px 80px 0;
                     }
                 }
             }
@@ -237,9 +268,9 @@ export default {
                     width: 300px;
                     height: 300px;
                     background-color: #e3e3e3;
-                    border-radius: 50px 0 0 50px;
+                    border-radius: 80px 0 0 80px;
                     img {
-                        border-radius: 50px 0 0 50px;
+                        border-radius: 80px 0 0 80px;
                     }
                 }
             }
@@ -256,9 +287,9 @@ export default {
                     width: 300px;
                     height: 300px;
                     background-color: #e3e3e3;
-                    border-radius: 0 50px 50px 0;
+                    border-radius: 0 80px 80px 0;
                     img {
-                        border-radius: 0 50px 50px 0;
+                        border-radius: 0 80px 80px 0;
                     }
                 }
             }
@@ -272,9 +303,9 @@ export default {
                     width: 300px;
                     height: 300px;
                     background-color: #e3e3e3;
-                    border-radius: 50px 0 50px 50px;
+                    border-radius: 80px 0 80px 80px;
                     img {
-                        border-radius: 50px 0 50px 50px;
+                        border-radius: 80px 0 80px 80px;
                     }
                 }
             }
@@ -288,9 +319,9 @@ export default {
                     width: 300px;
                     height: 300px;
                     background-color: #e3e3e3;
-                    border-radius: 0 0 50px 50px;
+                    border-radius: 0 0 80px 80px;
                     img {
-                        border-radius: 0 0 50px 50px;
+                        border-radius: 0 0 80px 80px;
                     }
                 }
             }
@@ -304,9 +335,9 @@ export default {
                     width: 300px;
                     height: 300px;
                     background-color: #e3e3e3;
-                    border-radius: 0 50px 50px 50px;
+                    border-radius: 0 80px 80px 80px;
                     img {
-                        border-radius: 0 50px 50px 50px;
+                        border-radius: 0 80px 80px 80px;
                     }
                 }
             }
@@ -365,8 +396,14 @@ export default {
         position: relative;
         .icon {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 30px;
+            right: 30px;
+        }
+        .icon__back {
+            position: absolute;
+            top: 27px;
+            left: 30px;
+            width: 20px;
         }
     }
     &__video {

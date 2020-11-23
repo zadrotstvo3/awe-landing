@@ -91,8 +91,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -103,11 +101,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   created: function created() {
     this.getArticles();
   },
-  // mounted() {
-  //     return window.Laravel.isLoggedin ?
-  //         this.$router.push('/admin-panel/announcements') :
-  //         this.$router.push('/admin')
-  // },
+  mounted: function mounted() {
+    return window.Laravel.isLoggedin ? this.$router.push('/admin-announcements') : this.$router.push('/admin');
+  },
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])(['getArticles'])),
   beforeEnter: function beforeEnter(from, to, next) {
     window.Laravel.isLoggedin ? next('/admin-panel/announcements') : next('/admin');
@@ -322,11 +318,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [_c("admin-header"), _vm._v(" "), _c("div", [_c("router-view")], 1)],
-    1
-  )
+  return _c("div", [_c("adminHeader")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true

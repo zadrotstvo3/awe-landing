@@ -29,16 +29,11 @@ export default {
       error: false
     }
   },
-    // mounted() {
-    //     return window.Laravel.isLoggedin
-    //         ? this.getArticles() && this.$router.push({name: 'Admin-panel', params: '1'})
-    //         : false
-    // },
     computed: {
       ...mapGetters(['getStatus'])
     },
   methods: {
-      ...mapActions(['logIn', 'getArticles']),
+      ...mapActions(['logIn', 'getArticles', 'getTeamList']),
     async submitLogIn(){
       if(this.userName && this.userPassword){
           const data = {
@@ -49,6 +44,7 @@ export default {
               .then(()=>{
                   if(this.getStatus){
                       this.getArticles()
+                      this.getTeamList()
                           .then(()=>{
                             this.$router.push('/admin-panel')
                           })
