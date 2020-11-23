@@ -1,5 +1,6 @@
 <template>
   <div id="admin">
+      <adminHeader/>
     <div class="main">
         <transition name="fade" mode="out-in">
             <router-view/>
@@ -9,7 +10,12 @@
 </template>
 
 <script>
+import adminHeader from '@/js/components/admin/admin-header'
+
 export default {
+    components: {
+        adminHeader
+    },
   name: "AWEAdmin",
 }
 </script>

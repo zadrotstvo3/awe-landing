@@ -29,11 +29,11 @@ export default {
       error: false
     }
   },
-    mounted() {
-        return window.Laravel.isLoggedin
-            ? this.getArticles() && this.$router.push({name: 'Admin-panel', params: '1'})
-            : false
-    },
+    // mounted() {
+    //     return window.Laravel.isLoggedin
+    //         ? this.getArticles() && this.$router.push({name: 'Admin-panel', params: '1'})
+    //         : false
+    // },
     computed: {
       ...mapGetters(['getStatus'])
     },

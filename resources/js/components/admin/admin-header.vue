@@ -7,11 +7,11 @@
       <img src="@/js/assets/home.svg" alt="home icon">
       <span>Home</span>
     </router-link>
-    <router-link class="link" to="/admin-panel/announcements">
+    <router-link class="link" to="/admin-announcements">
       <img src="@/js/assets/writing.svg" alt="blog icon">
       <span>Announcements</span>
     </router-link>
-    <router-link class="link" to="/admin-panel/our-team">
+    <router-link class="link" to="/admin-Our-team">
       <img src="@/js/assets/group.svg" alt="blog icon">
       <span>Out Team</span>
     </router-link>

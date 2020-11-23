@@ -46,22 +46,23 @@ const routes = [
         component: () => import('@/js/pages/Admin_paiges/logIn')
     },
     {
-        path: '/admin-panel/',
+        path: '/admin-panel',
         name: 'Admin-panel',
         meta: {layout: 'admin'},
         component: () => import('@/js/pages/Admin_paiges/AdminPanel'),
-        children: [
-            {
-                path: 'announcements',
-                meta: {layout: 'admin'},
-                component: () =>  import('@/js/components/admin/admin-announcements'),
-            },
-            {
-                path: 'our-team',
-                meta: {layout: 'admin'},
-                component: () =>  import('@/js/components/admin/our-team'),
-            }
-        ]
+    },
+    {
+        path: '/admin-announcements',
+        name: 'Admin-announcements',
+        meta: {layout: 'admin'},
+        component: () =>  import('@/js/components/admin/admin-announcements'),
+    },
+
+    {
+        path: '/admin-our-team',
+        name: 'Admin-Our-team',
+        meta: {layout: 'admin'},
+        component: () =>  import('@/js/components/admin/our-team'),
     },
     {
         path: '/for-investors',

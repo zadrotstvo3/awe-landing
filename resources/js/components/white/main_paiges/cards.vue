@@ -33,11 +33,12 @@ export default {
 
 <style lang="scss">
 .cards__block {
-  margin-top: 80px;
+  margin-top: 20px;
   position: relative;
   display: flex;
 }
 .card {
+    padding: 100px 20px;
   display: flex;
   flex-direction: column-reverse;
   &__year {
@@ -110,10 +111,11 @@ export default {
   overflow: visible;
   background-color: #fff;
 }
-.right{
-  width: 60%;
-  display: flex;
-  flex-direction: column;
+.right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    background: #F8F7F3;
 }
 
 @media only screen and (max-width: 1600px) {
