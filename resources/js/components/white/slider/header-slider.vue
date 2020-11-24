@@ -5,7 +5,7 @@
         <img src="@/js/assets/slider_images/category.png" alt="slider image">
       </swiper-slide>
       <swiper-slide>
-        <img src="@/js/assets/slider_images/map.png" alt="slider image">
+        <img src="@/js/assets/slider_images/sliderMap.png" alt="slider image">
       </swiper-slide>
       <swiper-slide>
         <img src="@/js/assets/slider_images/my_profile.png" alt="slider image">
@@ -29,7 +29,7 @@ export default {
         centeredSlides: true,
         notNextTick: true,
         loop: true,
-        initialSlide: 1,
+        initialSlide: 2,
         autoplay: {
           disableOnInteraction: false
         },
