@@ -7,12 +7,14 @@ const store = new Vuex.Store({
     state: {
         status: '',
         articlesList: '',
-        teamList: []
+        teamList: [],
+        video: 'https://www.youtube.com/embed/nvq_lvC1MRY'
     },
     getters: {
         getStatus: (state) => state.status,
         getArticlesList: (state) => state.articlesList,
-        getMembersList: (state) => state.teamList || []
+        getMembersList: (state) => state.teamList || [],
+        getVideo: (state) => state.video
     },
     mutations: {
         setStatus(state, action){
@@ -23,6 +25,9 @@ const store = new Vuex.Store({
         },
         setTeamList(state, action){
             state.teamList = action
+        },
+        setNewVideo(state, action){
+            state.video = action
         }
     },
     actions: {

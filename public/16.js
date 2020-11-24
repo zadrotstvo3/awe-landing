@@ -1,1553 +1,1895 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[16],{
 
-/***/ "./node_modules/particles.js/particles.js":
-/*!************************************************!*\
-  !*** ./node_modules/particles.js/particles.js ***!
-  \************************************************/
+/***/ "./node_modules/@haiku/burf-title/code/main/code.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@haiku/burf-title/code/main/code.js ***!
+  \**********************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-/* -----------------------------------------------
-/* Author : Vincent Garreau  - vincentgarreau.com
-/* MIT license: http://opensource.org/licenses/MIT
-/* Demo / Generator : vincentgarreau.com/particles.js
-/* GitHub : github.com/VincentGarreau/particles.js
-/* How to use? : Check the GitHub README
-/* v2.0.0
-/* ----------------------------------------------- */
-
-var pJS = function(tag_id, params){
-
-  var canvas_el = document.querySelector('#'+tag_id+' > .particles-js-canvas-el');
-
-  /* particles.js variables with default values */
-  this.pJS = {
-    canvas: {
-      el: canvas_el,
-      w: canvas_el.offsetWidth,
-      h: canvas_el.offsetHeight
-    },
-    particles: {
-      number: {
-        value: 400,
-        density: {
-          enable: true,
-          value_area: 800
-        }
+var Haiku = __webpack_require__(/*! @haiku/core */ "./node_modules/@haiku/core/index.js");
+module.exports = {
+  metadata: {
+    username: "cghpbzbrvlwtnxburf@upived.com",
+    uuid: "014a0ceb-fda4-4505-bc01-5fdb671f1315",
+    organization: "Burf",
+    project: "title",
+    branch: "master",
+    folder: "/Users/rivoagencyd/.haiku/projects/Burf/title",
+    version: "0.0.5",
+    root: "https://cdn.haiku.ai/3a7c09b8-e849-4285-949e-8b87f03804c5/3422a1b5125ede38b2535566da3e11b0da71f4e3/",
+    core: "5.1.1",
+    title: "Main",
+    type: "haiku",
+    relpath: "code/main/code.js"
+  },
+  options: {},
+  states: {},
+  eventHandlers: {},
+  timelines: {
+    Default: {
+      "haiku:Rectangle-51-a893063764e24aea": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
       },
-      color: {
-        value: '#fff'
-      },
-      shape: {
-        type: 'circle',
-        stroke: {
-          width: 0,
-          color: '#ff0000'
+      "haiku:Main-03757d2ca1026e0a": {
+        "sizeMode.x": 1,
+        "sizeAbsolute.y": 100,
+        "style.overflowX": "hidden",
+        "style.overflowY": "hidden",
+        "sizeAbsolute.x": 600,
+        "style.position": "relative",
+        "style.WebkitTapHighlightColor": "rgba(0,0,0,0)",
+        "sizeMode.y": 1,
+        "sizeMode.z": 1,
+        "style.backgroundColor": {
+          "0": { value: "rgba(0, 0, 0, 0)", edited: true }
         },
-        polygon: {
-          nb_sides: 5
-        },
-        image: {
-          src: '',
-          width: 100,
-          height: 100
+        "translation.y": 0,
+        opacity: 1
+      },
+      "haiku:Rectangle-46-91109e5334bb60e1": {
+        d: "M250.5 0.5H0.5V50.5H250.5V0.5Z"
+      },
+      "haiku:Rectangle-47-f252e403dd1677a0": {
+        d: "M520.5 0.5H270.5V50.5H520.5V0.5Z"
+      },
+      "haiku:Line-1-b14c3bf66f716824": { x1: 250.5, y1: 26, x2: 270.5, y2: 26 },
+      "haiku:-1-9de0e6c605f7c63c": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 59.7,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 2, edited: true } },
+        "rotation.x": {
+          "0": { value: 0, edited: true },
+          "1000": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "1600": { value: 1.5708, edited: true },
+          "5600": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "6200": { value: 0, edited: true }
         }
       },
-      opacity: {
-        value: 1,
-        random: false,
-        anim: {
-          enable: false,
-          speed: 2,
-          opacity_min: 0,
-          sync: false
+      "haiku:-2-d7282cef4d01c399": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 94.79,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 3, edited: true } },
+        "rotation.x": {
+          "0": { value: 0, edited: true },
+          "1300": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "1900": { value: 1.5708, edited: true },
+          "5900": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "6500": { value: 0, edited: true }
         }
       },
-      size: {
-        value: 20,
-        random: false,
-        anim: {
-          enable: false,
-          speed: 20,
-          size_min: 0,
-          sync: false
+      "haiku:-3-f3d75393cfa4bef6": {
+        "style.position": "absolute",
+        "sizeAbsolute.y": 40,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        "sizeMode.x": 1,
+        fill: "none",
+        "sizeMode.y": 1,
+        "translation.x": 129.88,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 4, edited: true } },
+        "rotation.y": 0,
+        "rotation.x": {
+          "0": { value: 0, edited: true },
+          "1583": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "2200": { value: 1.5708, edited: true },
+          "6200": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "6800": { value: 0, edited: true }
         }
       },
-      line_linked: {
-        enable: true,
-        distance: 100,
-        color: '#fff',
-        opacity: 1,
-        width: 1
-      },
-      move: {
-        enable: true,
-        speed: 2,
-        direction: 'none',
-        random: false,
-        straight: false,
-        out_mode: 'out',
-        bounce: false,
-        attract: {
-          enable: false,
-          rotateX: 3000,
-          rotateY: 3000
+      "haiku:-4-d2cbad6e186f171a": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 164.97000000000003,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 5, edited: true } },
+        "rotation.x": {
+          "0": { value: 0, edited: true },
+          "1900": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "2500": { value: 1.5708, edited: true },
+          "6500": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "7100": { value: 0, edited: true }
         }
       },
-      array: []
-    },
-    interactivity: {
-      detect_on: 'canvas',
-      events: {
-        onhover: {
-          enable: true,
-          mode: 'grab'
-        },
-        onclick: {
-          enable: true,
-          mode: 'push'
-        },
-        resize: true
-      },
-      modes: {
-        grab:{
-          distance: 100,
-          line_linked:{
-            opacity: 1
-          }
-        },
-        bubble:{
-          distance: 200,
-          size: 80,
-          duration: 0.4
-        },
-        repulse:{
-          distance: 200,
-          duration: 0.4
-        },
-        push:{
-          particles_nb: 4
-        },
-        remove:{
-          particles_nb: 2
+      "haiku:-5-d47107f5f706cede": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 200.06,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 6, edited: true } },
+        "rotation.x": {
+          "0": { value: 0, edited: true },
+          "2200": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "2800": { value: 1.5708, edited: true },
+          "6800": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "7400": { value: 0, edited: true }
         }
       },
-      mouse:{}
-    },
-    retina_detect: false,
-    fn: {
-      interact: {},
-      modes: {},
-      vendors:{}
-    },
-    tmp: {}
-  };
-
-  var pJS = this.pJS;
-
-  /* params settings */
-  if(params){
-    Object.deepExtend(pJS, params);
-  }
-
-  pJS.tmp.obj = {
-    size_value: pJS.particles.size.value,
-    size_anim_speed: pJS.particles.size.anim.speed,
-    move_speed: pJS.particles.move.speed,
-    line_linked_distance: pJS.particles.line_linked.distance,
-    line_linked_width: pJS.particles.line_linked.width,
-    mode_grab_distance: pJS.interactivity.modes.grab.distance,
-    mode_bubble_distance: pJS.interactivity.modes.bubble.distance,
-    mode_bubble_size: pJS.interactivity.modes.bubble.size,
-    mode_repulse_distance: pJS.interactivity.modes.repulse.distance
-  };
-
-
-  pJS.fn.retinaInit = function(){
-
-    if(pJS.retina_detect && window.devicePixelRatio > 1){
-      pJS.canvas.pxratio = window.devicePixelRatio; 
-      pJS.tmp.retina = true;
-    } 
-    else{
-      pJS.canvas.pxratio = 1;
-      pJS.tmp.retina = false;
-    }
-
-    pJS.canvas.w = pJS.canvas.el.offsetWidth * pJS.canvas.pxratio;
-    pJS.canvas.h = pJS.canvas.el.offsetHeight * pJS.canvas.pxratio;
-
-    pJS.particles.size.value = pJS.tmp.obj.size_value * pJS.canvas.pxratio;
-    pJS.particles.size.anim.speed = pJS.tmp.obj.size_anim_speed * pJS.canvas.pxratio;
-    pJS.particles.move.speed = pJS.tmp.obj.move_speed * pJS.canvas.pxratio;
-    pJS.particles.line_linked.distance = pJS.tmp.obj.line_linked_distance * pJS.canvas.pxratio;
-    pJS.interactivity.modes.grab.distance = pJS.tmp.obj.mode_grab_distance * pJS.canvas.pxratio;
-    pJS.interactivity.modes.bubble.distance = pJS.tmp.obj.mode_bubble_distance * pJS.canvas.pxratio;
-    pJS.particles.line_linked.width = pJS.tmp.obj.line_linked_width * pJS.canvas.pxratio;
-    pJS.interactivity.modes.bubble.size = pJS.tmp.obj.mode_bubble_size * pJS.canvas.pxratio;
-    pJS.interactivity.modes.repulse.distance = pJS.tmp.obj.mode_repulse_distance * pJS.canvas.pxratio;
-
-  };
-
-
-
-  /* ---------- pJS functions - canvas ------------ */
-
-  pJS.fn.canvasInit = function(){
-    pJS.canvas.ctx = pJS.canvas.el.getContext('2d');
-  };
-
-  pJS.fn.canvasSize = function(){
-
-    pJS.canvas.el.width = pJS.canvas.w;
-    pJS.canvas.el.height = pJS.canvas.h;
-
-    if(pJS && pJS.interactivity.events.resize){
-
-      window.addEventListener('resize', function(){
-
-          pJS.canvas.w = pJS.canvas.el.offsetWidth;
-          pJS.canvas.h = pJS.canvas.el.offsetHeight;
-
-          /* resize canvas */
-          if(pJS.tmp.retina){
-            pJS.canvas.w *= pJS.canvas.pxratio;
-            pJS.canvas.h *= pJS.canvas.pxratio;
-          }
-
-          pJS.canvas.el.width = pJS.canvas.w;
-          pJS.canvas.el.height = pJS.canvas.h;
-
-          /* repaint canvas on anim disabled */
-          if(!pJS.particles.move.enable){
-            pJS.fn.particlesEmpty();
-            pJS.fn.particlesCreate();
-            pJS.fn.particlesDraw();
-            pJS.fn.vendors.densityAutoParticles();
-          }
-
-        /* density particles enabled */
-        pJS.fn.vendors.densityAutoParticles();
-
-      });
-
-    }
-
-  };
-
-
-  pJS.fn.canvasPaint = function(){
-    pJS.canvas.ctx.fillRect(0, 0, pJS.canvas.w, pJS.canvas.h);
-  };
-
-  pJS.fn.canvasClear = function(){
-    pJS.canvas.ctx.clearRect(0, 0, pJS.canvas.w, pJS.canvas.h);
-  };
-
-
-  /* --------- pJS functions - particles ----------- */
-
-  pJS.fn.particle = function(color, opacity, position){
-
-    /* size */
-    this.radius = (pJS.particles.size.random ? Math.random() : 1) * pJS.particles.size.value;
-    if(pJS.particles.size.anim.enable){
-      this.size_status = false;
-      this.vs = pJS.particles.size.anim.speed / 100;
-      if(!pJS.particles.size.anim.sync){
-        this.vs = this.vs * Math.random();
-      }
-    }
-
-    /* position */
-    this.x = position ? position.x : Math.random() * pJS.canvas.w;
-    this.y = position ? position.y : Math.random() * pJS.canvas.h;
-
-    /* check position  - into the canvas */
-    if(this.x > pJS.canvas.w - this.radius*2) this.x = this.x - this.radius;
-    else if(this.x < this.radius*2) this.x = this.x + this.radius;
-    if(this.y > pJS.canvas.h - this.radius*2) this.y = this.y - this.radius;
-    else if(this.y < this.radius*2) this.y = this.y + this.radius;
-
-    /* check position - avoid overlap */
-    if(pJS.particles.move.bounce){
-      pJS.fn.vendors.checkOverlap(this, position);
-    }
-
-    /* color */
-    this.color = {};
-    if(typeof(color.value) == 'object'){
-
-      if(color.value instanceof Array){
-        var color_selected = color.value[Math.floor(Math.random() * pJS.particles.color.value.length)];
-        this.color.rgb = hexToRgb(color_selected);
-      }else{
-        if(color.value.r != undefined && color.value.g != undefined && color.value.b != undefined){
-          this.color.rgb = {
-            r: color.value.r,
-            g: color.value.g,
-            b: color.value.b
-          }
+      "haiku:-6-d5a38c6f7a0f2c80": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 235.15000000000003,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 7, edited: true } },
+        "rotation.x": {
+          "0": { value: 0, edited: true },
+          "2500": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "3100": { value: 1.5708, edited: true },
+          "7100": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "7700": { value: 0, edited: true }
         }
-        if(color.value.h != undefined && color.value.s != undefined && color.value.l != undefined){
-          this.color.hsl = {
-            h: color.value.h,
-            s: color.value.s,
-            l: color.value.l
-          }
+      },
+      "haiku:-7-2194f3c8f584e591": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 270.24,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 8, edited: true } },
+        "rotation.x": {
+          "0": { value: 0, edited: true },
+          "2800": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "3400": { value: 1.5708, edited: true },
+          "7400": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "8000": { value: 0, edited: true }
         }
-      }
-
-    }
-    else if(color.value == 'random'){
-      this.color.rgb = {
-        r: (Math.floor(Math.random() * (255 - 0 + 1)) + 0),
-        g: (Math.floor(Math.random() * (255 - 0 + 1)) + 0),
-        b: (Math.floor(Math.random() * (255 - 0 + 1)) + 0)
-      }
-    }
-    else if(typeof(color.value) == 'string'){
-      this.color = color;
-      this.color.rgb = hexToRgb(this.color.value);
-    }
-
-    /* opacity */
-    this.opacity = (pJS.particles.opacity.random ? Math.random() : 1) * pJS.particles.opacity.value;
-    if(pJS.particles.opacity.anim.enable){
-      this.opacity_status = false;
-      this.vo = pJS.particles.opacity.anim.speed / 100;
-      if(!pJS.particles.opacity.anim.sync){
-        this.vo = this.vo * Math.random();
-      }
-    }
-
-    /* animation - velocity for speed */
-    var velbase = {}
-    switch(pJS.particles.move.direction){
-      case 'top':
-        velbase = { x:0, y:-1 };
-      break;
-      case 'top-right':
-        velbase = { x:0.5, y:-0.5 };
-      break;
-      case 'right':
-        velbase = { x:1, y:-0 };
-      break;
-      case 'bottom-right':
-        velbase = { x:0.5, y:0.5 };
-      break;
-      case 'bottom':
-        velbase = { x:0, y:1 };
-      break;
-      case 'bottom-left':
-        velbase = { x:-0.5, y:1 };
-      break;
-      case 'left':
-        velbase = { x:-1, y:0 };
-      break;
-      case 'top-left':
-        velbase = { x:-0.5, y:-0.5 };
-      break;
-      default:
-        velbase = { x:0, y:0 };
-      break;
-    }
-
-    if(pJS.particles.move.straight){
-      this.vx = velbase.x;
-      this.vy = velbase.y;
-      if(pJS.particles.move.random){
-        this.vx = this.vx * (Math.random());
-        this.vy = this.vy * (Math.random());
-      }
-    }else{
-      this.vx = velbase.x + Math.random()-0.5;
-      this.vy = velbase.y + Math.random()-0.5;
-    }
-
-    // var theta = 2.0 * Math.PI * Math.random();
-    // this.vx = Math.cos(theta);
-    // this.vy = Math.sin(theta);
-
-    this.vx_i = this.vx;
-    this.vy_i = this.vy;
-
-    
-
-    /* if shape is image */
-
-    var shape_type = pJS.particles.shape.type;
-    if(typeof(shape_type) == 'object'){
-      if(shape_type instanceof Array){
-        var shape_selected = shape_type[Math.floor(Math.random() * shape_type.length)];
-        this.shape = shape_selected;
-      }
-    }else{
-      this.shape = shape_type;
-    }
-
-    if(this.shape == 'image'){
-      var sh = pJS.particles.shape;
-      this.img = {
-        src: sh.image.src,
-        ratio: sh.image.width / sh.image.height
-      }
-      if(!this.img.ratio) this.img.ratio = 1;
-      if(pJS.tmp.img_type == 'svg' && pJS.tmp.source_svg != undefined){
-        pJS.fn.vendors.createSvgImg(this);
-        if(pJS.tmp.pushing){
-          this.img.loaded = false;
+      },
+      "haiku:-8-f74c840c9ce01173": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 330.212,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 9, edited: true } },
+        "rotation.x": {
+          "0": { value: 0, edited: true },
+          "1000": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "1600": { value: 1.5708, edited: true },
+          "5600": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "6200": { value: 0, edited: true }
         }
-      }
-    }
-
-    
-
-  };
-
-
-  pJS.fn.particle.prototype.draw = function() {
-
-    var p = this;
-
-    if(p.radius_bubble != undefined){
-      var radius = p.radius_bubble; 
-    }else{
-      var radius = p.radius;
-    }
-
-    if(p.opacity_bubble != undefined){
-      var opacity = p.opacity_bubble;
-    }else{
-      var opacity = p.opacity;
-    }
-
-    if(p.color.rgb){
-      var color_value = 'rgba('+p.color.rgb.r+','+p.color.rgb.g+','+p.color.rgb.b+','+opacity+')';
-    }else{
-      var color_value = 'hsla('+p.color.hsl.h+','+p.color.hsl.s+'%,'+p.color.hsl.l+'%,'+opacity+')';
-    }
-
-    pJS.canvas.ctx.fillStyle = color_value;
-    pJS.canvas.ctx.beginPath();
-
-    switch(p.shape){
-
-      case 'circle':
-        pJS.canvas.ctx.arc(p.x, p.y, radius, 0, Math.PI * 2, false);
-      break;
-
-      case 'edge':
-        pJS.canvas.ctx.rect(p.x-radius, p.y-radius, radius*2, radius*2);
-      break;
-
-      case 'triangle':
-        pJS.fn.vendors.drawShape(pJS.canvas.ctx, p.x-radius, p.y+radius / 1.66, radius*2, 3, 2);
-      break;
-
-      case 'polygon':
-        pJS.fn.vendors.drawShape(
-          pJS.canvas.ctx,
-          p.x - radius / (pJS.particles.shape.polygon.nb_sides/3.5), // startX
-          p.y - radius / (2.66/3.5), // startY
-          radius*2.66 / (pJS.particles.shape.polygon.nb_sides/3), // sideLength
-          pJS.particles.shape.polygon.nb_sides, // sideCountNumerator
-          1 // sideCountDenominator
-        );
-      break;
-
-      case 'star':
-        pJS.fn.vendors.drawShape(
-          pJS.canvas.ctx,
-          p.x - radius*2 / (pJS.particles.shape.polygon.nb_sides/4), // startX
-          p.y - radius / (2*2.66/3.5), // startY
-          radius*2*2.66 / (pJS.particles.shape.polygon.nb_sides/3), // sideLength
-          pJS.particles.shape.polygon.nb_sides, // sideCountNumerator
-          2 // sideCountDenominator
-        );
-      break;
-
-      case 'image':
-
-        function draw(){
-          pJS.canvas.ctx.drawImage(
-            img_obj,
-            p.x-radius,
-            p.y-radius,
-            radius*2,
-            radius*2 / p.img.ratio
-          );
+      },
+      "haiku:-9-8d553d1c29aeb367": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 365.14116666666666,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 10, edited: true } },
+        "rotation.x": {
+          "0": { value: 0, edited: true },
+          "1300": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "1900": { value: 1.5708, edited: true },
+          "5900": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "6500": { value: 0, edited: true }
         }
-
-        if(pJS.tmp.img_type == 'svg'){
-          var img_obj = p.img.obj;
-        }else{
-          var img_obj = pJS.tmp.img_obj;
+      },
+      "haiku:-10-3ec3b2c4b955164a": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 400.07033333333334,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 11, edited: true } },
+        "rotation.x": {
+          "0": { value: 0, edited: true },
+          "1600": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "2200": { value: 1.5708, edited: true },
+          "6200": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "6800": { value: 0, edited: true }
         }
-
-        if(img_obj){
-          draw();
+      },
+      "haiku:-11-a900932280d9f20a": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 434.9995,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 12, edited: true } },
+        "rotation.x": {
+          "0": { value: 0, edited: true },
+          "1900": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "2500": { value: 1.5708, edited: true },
+          "6500": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "7100": { value: 0, edited: true }
         }
-
-      break;
-
-    }
-
-    pJS.canvas.ctx.closePath();
-
-    if(pJS.particles.shape.stroke.width > 0){
-      pJS.canvas.ctx.strokeStyle = pJS.particles.shape.stroke.color;
-      pJS.canvas.ctx.lineWidth = pJS.particles.shape.stroke.width;
-      pJS.canvas.ctx.stroke();
-    }
-    
-    pJS.canvas.ctx.fill();
-    
-  };
-
-
-  pJS.fn.particlesCreate = function(){
-    for(var i = 0; i < pJS.particles.number.value; i++) {
-      pJS.particles.array.push(new pJS.fn.particle(pJS.particles.color, pJS.particles.opacity.value));
-    }
-  };
-
-  pJS.fn.particlesUpdate = function(){
-
-    for(var i = 0; i < pJS.particles.array.length; i++){
-
-      /* the particle */
-      var p = pJS.particles.array[i];
-
-      // var d = ( dx = pJS.interactivity.mouse.click_pos_x - p.x ) * dx + ( dy = pJS.interactivity.mouse.click_pos_y - p.y ) * dy;
-      // var f = -BANG_SIZE / d;
-      // if ( d < BANG_SIZE ) {
-      //     var t = Math.atan2( dy, dx );
-      //     p.vx = f * Math.cos(t);
-      //     p.vy = f * Math.sin(t);
-      // }
-
-      /* move the particle */
-      if(pJS.particles.move.enable){
-        var ms = pJS.particles.move.speed/2;
-        p.x += p.vx * ms;
-        p.y += p.vy * ms;
-      }
-
-      /* change opacity status */
-      if(pJS.particles.opacity.anim.enable) {
-        if(p.opacity_status == true) {
-          if(p.opacity >= pJS.particles.opacity.value) p.opacity_status = false;
-          p.opacity += p.vo;
-        }else {
-          if(p.opacity <= pJS.particles.opacity.anim.opacity_min) p.opacity_status = true;
-          p.opacity -= p.vo;
+      },
+      "haiku:-12-f10ffb366db6fdff": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 469.9286666666667,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 13, edited: true } },
+        "rotation.x": {
+          "0": { value: 0, edited: true },
+          "2200": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "2800": { value: 1.5708, edited: true },
+          "6800": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "7400": { value: 0, edited: true }
         }
-        if(p.opacity < 0) p.opacity = 0;
-      }
-
-      /* change size */
-      if(pJS.particles.size.anim.enable){
-        if(p.size_status == true){
-          if(p.radius >= pJS.particles.size.value) p.size_status = false;
-          p.radius += p.vs;
-        }else{
-          if(p.radius <= pJS.particles.size.anim.size_min) p.size_status = true;
-          p.radius -= p.vs;
+      },
+      "haiku:-13-9cc2e4adff8c0931": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 504.8578333333334,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 14, edited: true } },
+        "rotation.x": {
+          "0": { value: 0, edited: true },
+          "2500": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "3100": { value: 1.5708, edited: true },
+          "7100": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "7700": { value: 0, edited: true }
         }
-        if(p.radius < 0) p.radius = 0;
-      }
-
-      /* change particle position if it is out of canvas */
-      if(pJS.particles.move.out_mode == 'bounce'){
-        var new_pos = {
-          x_left: p.radius,
-          x_right:  pJS.canvas.w,
-          y_top: p.radius,
-          y_bottom: pJS.canvas.h
+      },
+      "haiku:Frame-c326586f9d322be8": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 521,
+        fill: "none",
+        "sizeAbsolute.y": 51,
+        "sizeMode.y": 1,
+        "translation.x": 300,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 1, edited: true } },
+        opacity: 1
+      },
+      "haiku:-14-9cba244a1d72fbd8": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 539.787,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 15, edited: true } },
+        "rotation.x": {
+          "0": { value: 0, edited: true },
+          "2800": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "3400": { value: 1.5708, edited: true },
+          "7400": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "8000": { value: 0, edited: true }
         }
-      }else{
-        var new_pos = {
-          x_left: -p.radius,
-          x_right: pJS.canvas.w + p.radius,
-          y_top: -p.radius,
-          y_bottom: pJS.canvas.h + p.radius
+      },
+      "haiku:-21-e6e0300d73a8c9cf": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 59.70001220703125,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 16, edited: true } },
+        "rotation.x": {
+          "0": { value: 1.5708, edited: true },
+          "1600": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "2200": { value: 0, edited: true },
+          "5000": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "5600": { value: 1.5708, edited: true }
         }
-      }
-
-      if(p.x - p.radius > pJS.canvas.w){
-        p.x = new_pos.x_left;
-        p.y = Math.random() * pJS.canvas.h;
-      }
-      else if(p.x + p.radius < 0){
-        p.x = new_pos.x_right;
-        p.y = Math.random() * pJS.canvas.h;
-      }
-      if(p.y - p.radius > pJS.canvas.h){
-        p.y = new_pos.y_top;
-        p.x = Math.random() * pJS.canvas.w;
-      }
-      else if(p.y + p.radius < 0){
-        p.y = new_pos.y_bottom;
-        p.x = Math.random() * pJS.canvas.w;
-      }
-
-      /* out of canvas modes */
-      switch(pJS.particles.move.out_mode){
-        case 'bounce':
-          if (p.x + p.radius > pJS.canvas.w) p.vx = -p.vx;
-          else if (p.x - p.radius < 0) p.vx = -p.vx;
-          if (p.y + p.radius > pJS.canvas.h) p.vy = -p.vy;
-          else if (p.y - p.radius < 0) p.vy = -p.vy;
-        break;
-      }
-
-      /* events */
-      if(isInArray('grab', pJS.interactivity.events.onhover.mode)){
-        pJS.fn.modes.grabParticle(p);
-      }
-
-      if(isInArray('bubble', pJS.interactivity.events.onhover.mode) || isInArray('bubble', pJS.interactivity.events.onclick.mode)){
-        pJS.fn.modes.bubbleParticle(p);
-      }
-
-      if(isInArray('repulse', pJS.interactivity.events.onhover.mode) || isInArray('repulse', pJS.interactivity.events.onclick.mode)){
-        pJS.fn.modes.repulseParticle(p);
-      }
-
-      /* interaction auto between particles */
-      if(pJS.particles.line_linked.enable || pJS.particles.move.attract.enable){
-        for(var j = i + 1; j < pJS.particles.array.length; j++){
-          var p2 = pJS.particles.array[j];
-
-          /* link particles */
-          if(pJS.particles.line_linked.enable){
-            pJS.fn.interact.linkParticles(p,p2);
-          }
-
-          /* attract particles */
-          if(pJS.particles.move.attract.enable){
-            pJS.fn.interact.attractParticles(p,p2);
-          }
-
-          /* bounce particles */
-          if(pJS.particles.move.bounce){
-            pJS.fn.interact.bounceParticles(p,p2);
-          }
-
+      },
+      "haiku:-22-51d86f55165e91a1": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 94.78997802734375,
+        "translation.y": 50.00000000000001,
+        "style.zIndex": { "0": { value: 17, edited: true } },
+        "rotation.x": {
+          "0": { value: 1.5708, edited: true },
+          "1900": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "2500": { value: 0, edited: true },
+          "5300": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "5900": { value: 1.5708, edited: true }
         }
+      },
+      "haiku:-23-c86bfba517cb006b": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 129.8800048828125,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 18, edited: true } },
+        "rotation.x": {
+          "0": { value: 1.5708, edited: true },
+          "2200": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "2800": { value: 0, edited: true },
+          "5600": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "6200": { value: 1.5708, edited: true }
+        }
+      },
+      "haiku:-24-1887ad97a526b0fb": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 164.969970703125,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 19, edited: true } },
+        "rotation.x": {
+          "0": { value: 1.5708, edited: true },
+          "2500": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "3100": { value: 0, edited: true },
+          "5900": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "6500": { value: 1.5708, edited: true }
+        }
+      },
+      "haiku:-25-14f7e117853a4784": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 200.05999755859375,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 20, edited: true } },
+        "rotation.x": {
+          "0": { value: 1.5708, edited: true },
+          "2800": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "3400": { value: 0, edited: true },
+          "6200": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "6800": { value: 1.5708, edited: true }
+        }
+      },
+      "haiku:-26-f6f4c796f8b4358b": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 235.1500244140625,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 21, edited: true } },
+        "rotation.x": {
+          "0": { value: 1.5708, edited: true },
+          "3100": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "3700": { value: 0, edited: true },
+          "6500": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "7100": { value: 1.5708, edited: true }
+        }
+      },
+      "haiku:-27-527d63db5c29ea0a": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 270.239990234375,
+        "translation.y": 49.99999999999999,
+        "style.zIndex": { "0": { value: 22, edited: true } },
+        "rotation.x": {
+          "0": { value: 1.5708, edited: true },
+          "3400": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "4000": { value: 0, edited: true },
+          "6800": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "7400": { value: 1.5708, edited: true }
+        }
+      },
+      "haiku:-28-5d2d4068a5a7cc3a": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 330.2120361328125,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 23, edited: true } },
+        "rotation.x": {
+          "0": { value: 1.5708, edited: true },
+          "1600": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "2200": { value: 0, edited: true },
+          "5000": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "5600": { value: 1.5708, edited: true }
+        }
+      },
+      "haiku:-29-642432f722f700dd": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 365.14111328125,
+        "translation.y": 50.00000000000001,
+        "style.zIndex": { "0": { value: 24, edited: true } },
+        "rotation.x": {
+          "0": { value: 1.5708, edited: true },
+          "1900": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "2500": { value: 0, edited: true },
+          "5300": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "5900": { value: 1.5708, edited: true }
+        }
+      },
+      "haiku:-31-523c5b60ffb169f0": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 400.0703125,
+        "translation.y": 49.99999999999999,
+        "style.zIndex": { "0": { value: 25, edited: true } },
+        "rotation.x": {
+          "0": { value: 1.5708, edited: true },
+          "2200": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "2800": { value: 0, edited: true },
+          "5600": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "6200": { value: 1.5708, edited: true }
+        }
+      },
+      "haiku:-32-681e83e73e382ba6": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 434.99951171875,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 26, edited: true } },
+        "rotation.x": {
+          "0": { value: 1.5708, edited: true },
+          "2500": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "3100": { value: 0, edited: true },
+          "5900": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "6500": { value: 1.5708, edited: true }
+        }
+      },
+      "haiku:-33-85213d8dc258be13": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 469.9287109375,
+        "translation.y": 50.00000000000001,
+        "style.zIndex": { "0": { value: 27, edited: true } },
+        "rotation.x": {
+          "0": { value: 1.5708, edited: true },
+          "2800": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "3400": { value: 0, edited: true },
+          "6200": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "6800": { value: 1.5708, edited: true }
+        }
+      },
+      "haiku:34-0018d8c0ee4e0ef6": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 504.85791015625,
+        "translation.y": 50.00000000000001,
+        "style.zIndex": { "0": { value: 28, edited: true } },
+        "rotation.x": {
+          "0": { value: 1.5708, edited: true },
+          "3100": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "3700": { value: 0, edited: true },
+          "6500": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "7100": { value: 1.5708, edited: true }
+        }
+      },
+      "haiku:35-7b5e5f108691ca6b": {
+        "style.position": "absolute",
+        "sizeMode.x": 1,
+        "style.margin": "0",
+        "style.padding": "0",
+        "style.border": "0",
+        "sizeAbsolute.x": 30,
+        fill: "none",
+        "sizeAbsolute.y": 40,
+        "sizeMode.y": 1,
+        "translation.x": 539.7869873046875,
+        "translation.y": 50,
+        "style.zIndex": { "0": { value: 29, edited: true } },
+        "rotation.x": {
+          "0": { value: 1.5708, edited: true },
+          "3400": { value: 1.5708, edited: true, curve: "easeInOutQuad" },
+          "4000": { value: 0, edited: true },
+          "6800": { value: 0, edited: true, curve: "easeInOutQuad" },
+          "7400": { value: 1.5708, edited: true }
+        }
+      },
+      "haiku:0-10525d47cc281bec": { d: "M30 0H0V40H30V0Z", fill: "white" },
+      "haiku:0-1425b8c7e85cdbc2": { d: "M30 0H0V40H30V0Z", fill: "white" },
+      "haiku:Rectangle-56-c0bb7ad005857c5c": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-fd7a6a8d9a9ea5f6": {
+        d:
+          "M17.8255 22.536L14.9275 15.408L10.2835 27H8.86151L14.2075 13.86H15.6835L21.1555 27H19.6255L18.3295 23.796H12.2995L12.7855 22.536H17.8255Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-49-b924501f3fb82ab1": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-6b243cbdc8ad099c": {
+        d:
+          "M16.9086 13.86C18.8646 13.86 19.8426 14.856 19.8426 16.848V18.072C19.8426 18.636 19.7226 19.11 19.4826 19.494C19.2546 19.878 18.9006 20.166 18.4206 20.358C19.4406 20.718 19.9506 21.51 19.9506 22.734V24.156C19.9506 26.052 18.9666 27 16.9986 27H10.4826V13.86H16.9086ZM11.8506 25.65H16.7646C17.9766 25.65 18.5826 25.08 18.5826 23.94V22.554C18.5826 21.474 17.9346 20.934 16.6386 20.934H12.5706V19.728H16.6386C17.8866 19.728 18.5106 19.224 18.5106 18.216V17.064C18.5106 15.828 17.9046 15.21 16.6926 15.21H11.8506V25.65Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-71-5ab97fa5013e5746": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-ae8f48c792a85c6c": {
+        d: "M19.3732 13.86V15.21H12.6592V27H11.2912V13.86H19.3732Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-58-f41f1d2bbe39ab34": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-ae8d7dcc1c89bb6e": {
+        d:
+          "M9.46605 25.65C10.1021 25.65 10.6061 25.446 10.9781 25.038C11.3621 24.618 11.6261 23.952 11.7701 23.04L13.1921 13.86H19.8341V25.65H21.4001V30.186H20.2121V27H9.77205V30.186H8.58405V25.65H9.46605ZM18.4661 25.65V15.21H14.2721L12.9941 23.31C12.8261 24.318 12.5621 25.098 12.2021 25.65H18.4661Z",
+        fill: "black"
+      },
+      "haiku:Frame-68f3f49c9e5aed05": { stroke: "white" },
+      "haiku:-a1e6b847f0e59062": {
+        d:
+          "M19.2259 13.86V15.21H12.4219V19.674H19.1179V20.97H12.4219V25.65H19.2979V27H11.0539V13.86H19.2259Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-57-ae483f6d04ed02f4": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-d7cc3d1ae8093ec3": {
+        d:
+          "M19.2259 13.86V15.21H12.4219V19.674H19.1179V20.97H12.4219V25.65H19.2979V27H11.0539V13.86H19.2259Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-70-7681f3ed3bc6591e": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-2dcca4d4a27edc4f": {
+        d:
+          "M19.2259 13.86V15.21H12.4219V19.674H19.1179V20.97H12.4219V25.65H19.2979V27H11.0539V13.86H19.2259Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-61-848c9c3e6648b915": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-aa25dc69253fb87a": {
+        d:
+          "M11.6661 13.86V24.606L18.3261 13.86H19.6941V27H18.3261V16.272L11.6661 27H10.2981V13.86H11.6661Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-62-7bba05d93260479f": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-5a6bbc847bef5a78": {
+        d:
+          "M12.3252 13.86V19.656H12.7752L18.0492 13.86H19.6512L13.9272 20.106L19.9212 27H18.2652L12.7752 20.79H12.3252V27H10.9572V13.86H12.3252Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-72-643ffb9aa53424f6": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-22616611a5f1dba8": {
+        d:
+          "M20.0533 13.86V27H18.6853V15.21H14.4913L13.2133 23.31C13.0093 24.57 12.6373 25.494 12.0973 26.082C11.5573 26.67 10.8193 26.97 9.88329 26.982L9.27129 27V25.65H9.68529C10.3213 25.65 10.8253 25.446 11.1973 25.038C11.5813 24.618 11.8453 23.952 11.9893 23.04L13.4113 13.86H20.0533Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-65-2fc4fdda14fbed0f": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-36bd65cb19db3bbf": {
+        d:
+          "M20.0533 13.86V27H18.6853V15.21H14.4913L13.2133 23.31C13.0093 24.57 12.6373 25.494 12.0973 26.082C11.5573 26.67 10.8193 26.97 9.88329 26.982L9.27129 27V25.65H9.68529C10.3213 25.65 10.8253 25.446 11.1973 25.038C11.5813 24.618 11.8453 23.952 11.9893 23.04L13.4113 13.86H20.0533Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-59-11f1f2eeb11b1b48": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-844afdf1fc2bf8e3": {
+        d:
+          "M10.5206 13.86L15.0386 25.506L19.5026 13.86H21.1046V27H19.8266V16.398L15.6866 27H14.3726L10.1606 16.38V27H8.9006V13.86H10.5206Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-53-0c62c51eb138bd7a": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-b8f4dea3d8233f2c": {
+        d:
+          "M11.6661 13.86V19.602H18.3261V13.86H19.6941V27H18.3261V20.88H11.6661V27H10.2981V13.86H11.6661Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-66-78add28aaf1a64e7": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-78a15a457ebb7d79": {
+        d:
+          "M11.6661 13.86V19.602H18.3261V13.86H19.6941V27H18.3261V20.88H11.6661V27H10.2981V13.86H11.6661Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-52-fb82611e01ba6f43": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-865bf16d8ad05a4c": {
+        d:
+          "M11.6661 13.86V19.602H18.3261V13.86H19.6941V27H18.3261V20.88H11.6661V27H10.2981V13.86H11.6661Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-74-407f3b027beeefbb": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-cbaa0b52a53b7109": {
+        d:
+          "M17.0975 13.86C19.0535 13.86 20.0315 14.856 20.0315 16.848V24.012C20.0315 26.004 19.0535 27 17.0975 27H12.9215C10.9655 27 9.98749 26.004 9.98749 24.012V16.848C9.98749 14.856 10.9655 13.86 12.9215 13.86H17.0975ZM11.3555 23.796C11.3555 25.032 11.9615 25.65 13.1735 25.65H16.8275C18.0395 25.65 18.6455 25.032 18.6455 23.796V17.064C18.6455 15.828 18.0395 15.21 16.8275 15.21H13.1735C11.9615 15.21 11.3555 15.828 11.3555 17.064V23.796Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-50-4020fd7d3ca45df6": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-91b8a223299d1c5f": {
+        d:
+          "M17.0975 13.86C19.0535 13.86 20.0315 14.856 20.0315 16.848V24.012C20.0315 26.004 19.0535 27 17.0975 27H12.9215C10.9655 27 9.98749 26.004 9.98749 24.012V16.848C9.98749 14.856 10.9655 13.86 12.9215 13.86H17.0975ZM11.3555 23.796C11.3555 25.032 11.9615 25.65 13.1735 25.65H16.8275C18.0395 25.65 18.6455 25.032 18.6455 23.796V17.064C18.6455 15.828 18.0395 15.21 16.8275 15.21H13.1735C11.9615 15.21 11.3555 15.828 11.3555 17.064V23.796Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-60-7179b00ab7585190": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-e484edff737b2c41": {
+        d:
+          "M17.0975 13.86C19.0535 13.86 20.0315 14.856 20.0315 16.848V24.012C20.0315 26.004 19.0535 27 17.0975 27H12.9215C10.9655 27 9.98749 26.004 9.98749 24.012V16.848C9.98749 14.856 10.9655 13.86 12.9215 13.86H17.0975ZM11.3555 23.796C11.3555 25.032 11.9615 25.65 13.1735 25.65H16.8275C18.0395 25.65 18.6455 25.032 18.6455 23.796V17.064C18.6455 15.828 18.0395 15.21 16.8275 15.21H13.1735C11.9615 15.21 11.3555 15.828 11.3555 17.064V23.796Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-48-12dc6f87c468e94a": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-6d202143cbaf9f91": {
+        d: "M19.6941 13.86V27H18.3261V15.21H11.6481V27H10.2981V13.86H19.6941Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-64-85f687e3b91571b7": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-3e1786c03f94be1a": {
+        d: "M19.6941 13.86V27H18.3261V15.21H11.6481V27H10.2981V13.86H19.6941Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-54-11be9e3d8626c646": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-d3df3e7ed3ee2bd9": {
+        d:
+          "M17.2594 13.86C19.2154 13.86 20.1934 14.862 20.1934 16.866V18.144C20.1934 20.148 19.2154 21.15 17.2594 21.15H12.5794V19.872H17.1334C18.2614 19.872 18.8254 19.29 18.8254 18.126V16.956C18.8254 15.792 18.2614 15.21 17.1334 15.21H11.8594V27H10.4914V13.86H17.2594Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-55-44edd93bbc6cfcd4": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-db0100ee65527283": {
+        d:
+          "M17.2594 13.86C19.2154 13.86 20.1934 14.862 20.1934 16.866V18.144C20.1934 20.148 19.2154 21.15 17.2594 21.15H12.5794V19.872H17.1334C18.2614 19.872 18.8254 19.29 18.8254 18.126V16.956C18.8254 15.792 18.2614 15.21 17.1334 15.21H11.8594V27H10.4914V13.86H17.2594Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-69-14f6013071ed9258": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-0bd9472ab8810e8e": {
+        d:
+          "M19.2716 13.86V15.21H14.0876C12.8756 15.21 12.2696 15.828 12.2696 17.064V23.796C12.2696 25.032 12.8756 25.65 14.0876 25.65H19.2716V27H13.8356C11.8796 27 10.9016 26.004 10.9016 24.012V16.848C10.9016 14.856 11.8796 13.86 13.8356 13.86H19.2716Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-68-ec1ab8da752edad3": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-4e116dc75eb44610": {
+        d:
+          "M10.9523 13.86L15.0383 22.122L19.0703 13.86H20.5463L15.4163 24.3C15.1643 24.804 14.9123 25.23 14.6603 25.578C14.4203 25.914 14.1503 26.19 13.8503 26.406C13.5503 26.622 13.2203 26.778 12.8603 26.874C12.5003 26.958 12.0803 27 11.6003 27H10.7723V25.65H11.7083C12.0323 25.65 12.3083 25.62 12.5363 25.56C12.7763 25.5 12.9863 25.404 13.1663 25.272C13.3583 25.128 13.5323 24.942 13.6883 24.714C13.8563 24.486 14.0243 24.198 14.1923 23.85L14.3543 23.526L9.45832 13.86H10.9523Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-63-c3d53232fe1b6ccf": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-bcf391a90fd8f3b3": {
+        d:
+          "M10.9523 13.86L15.0383 22.122L19.0703 13.86H20.5463L15.4163 24.3C15.1643 24.804 14.9123 25.23 14.6603 25.578C14.4203 25.914 14.1503 26.19 13.8503 26.406C13.5503 26.622 13.2203 26.778 12.8603 26.874C12.5003 26.958 12.0803 27 11.6003 27H10.7723V25.65H11.7083C12.0323 25.65 12.3083 25.62 12.5363 25.56C12.7763 25.5 12.9863 25.404 13.1663 25.272C13.3583 25.128 13.5323 24.942 13.6883 24.714C13.8563 24.486 14.0243 24.198 14.1923 23.85L14.3543 23.526L9.45832 13.86H10.9523Z",
+        fill: "black"
+      },
+      "haiku:Rectangle-73-714402e46b8ad93b": {
+        d: "M30 0H0V40H30V0Z",
+        fill: "white"
+      },
+      "haiku:-8c2eb40784c8974f": {
+        d:
+          "M10.9523 13.86L15.0383 22.122L19.0703 13.86H20.5463L15.4163 24.3C15.1643 24.804 14.9123 25.23 14.6603 25.578C14.4203 25.914 14.1503 26.19 13.8503 26.406C13.5503 26.622 13.2203 26.778 12.8603 26.874C12.5003 26.958 12.0803 27 11.6003 27H10.7723V25.65H11.7083C12.0323 25.65 12.3083 25.62 12.5363 25.56C12.7763 25.5 12.9863 25.404 13.1663 25.272C13.3583 25.128 13.5323 24.942 13.6883 24.714C13.8563 24.486 14.0243 24.198 14.1923 23.85L14.3543 23.526L9.45832 13.86H10.9523Z",
+        fill: "black"
       }
-
-
     }
-
-  };
-
-  pJS.fn.particlesDraw = function(){
-
-    /* clear canvas */
-    pJS.canvas.ctx.clearRect(0, 0, pJS.canvas.w, pJS.canvas.h);
-
-    /* update each particles param */
-    pJS.fn.particlesUpdate();
-
-    /* draw each particle */
-    for(var i = 0; i < pJS.particles.array.length; i++){
-      var p = pJS.particles.array[i];
-      p.draw();
-    }
-
-  };
-
-  pJS.fn.particlesEmpty = function(){
-    pJS.particles.array = [];
-  };
-
-  pJS.fn.particlesRefresh = function(){
-
-    /* init all */
-    cancelRequestAnimFrame(pJS.fn.checkAnimFrame);
-    cancelRequestAnimFrame(pJS.fn.drawAnimFrame);
-    pJS.tmp.source_svg = undefined;
-    pJS.tmp.img_obj = undefined;
-    pJS.tmp.count_svg = 0;
-    pJS.fn.particlesEmpty();
-    pJS.fn.canvasClear();
-    
-    /* restart */
-    pJS.fn.vendors.start();
-
-  };
-
-
-  /* ---------- pJS functions - particles interaction ------------ */
-
-  pJS.fn.interact.linkParticles = function(p1, p2){
-
-    var dx = p1.x - p2.x,
-        dy = p1.y - p2.y,
-        dist = Math.sqrt(dx*dx + dy*dy);
-
-    /* draw a line between p1 and p2 if the distance between them is under the config distance */
-    if(dist <= pJS.particles.line_linked.distance){
-
-      var opacity_line = pJS.particles.line_linked.opacity - (dist / (1/pJS.particles.line_linked.opacity)) / pJS.particles.line_linked.distance;
-
-      if(opacity_line > 0){        
-        
-        /* style */
-        var color_line = pJS.particles.line_linked.color_rgb_line;
-        pJS.canvas.ctx.strokeStyle = 'rgba('+color_line.r+','+color_line.g+','+color_line.b+','+opacity_line+')';
-        pJS.canvas.ctx.lineWidth = pJS.particles.line_linked.width;
-        //pJS.canvas.ctx.lineCap = 'round'; /* performance issue */
-        
-        /* path */
-        pJS.canvas.ctx.beginPath();
-        pJS.canvas.ctx.moveTo(p1.x, p1.y);
-        pJS.canvas.ctx.lineTo(p2.x, p2.y);
-        pJS.canvas.ctx.stroke();
-        pJS.canvas.ctx.closePath();
-
-      }
-
-    }
-
-  };
-
-
-  pJS.fn.interact.attractParticles  = function(p1, p2){
-
-    /* condensed particles */
-    var dx = p1.x - p2.x,
-        dy = p1.y - p2.y,
-        dist = Math.sqrt(dx*dx + dy*dy);
-
-    if(dist <= pJS.particles.line_linked.distance){
-
-      var ax = dx/(pJS.particles.move.attract.rotateX*1000),
-          ay = dy/(pJS.particles.move.attract.rotateY*1000);
-
-      p1.vx -= ax;
-      p1.vy -= ay;
-
-      p2.vx += ax;
-      p2.vy += ay;
-
-    }
-    
-
-  }
-
-
-  pJS.fn.interact.bounceParticles = function(p1, p2){
-
-    var dx = p1.x - p2.x,
-        dy = p1.y - p2.y,
-        dist = Math.sqrt(dx*dx + dy*dy),
-        dist_p = p1.radius+p2.radius;
-
-    if(dist <= dist_p){
-      p1.vx = -p1.vx;
-      p1.vy = -p1.vy;
-
-      p2.vx = -p2.vx;
-      p2.vy = -p2.vy;
-    }
-
-  }
-
-
-  /* ---------- pJS functions - modes events ------------ */
-
-  pJS.fn.modes.pushParticles = function(nb, pos){
-
-    pJS.tmp.pushing = true;
-
-    for(var i = 0; i < nb; i++){
-      pJS.particles.array.push(
-        new pJS.fn.particle(
-          pJS.particles.color,
-          pJS.particles.opacity.value,
+  },
+  template: {
+    elementName: "div",
+    attributes: { "haiku-id": "Main-03757d2ca1026e0a", "haiku-title": "Main" },
+    children: [
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "35-7b5e5f108691ca6b",
+          "haiku-title": "35",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/35.svg"
+        },
+        children: [
           {
-            'x': pos ? pos.pos_x : Math.random() * pJS.canvas.w,
-            'y': pos ? pos.pos_y : Math.random() * pJS.canvas.h
-          }
-        )
-      )
-      if(i == nb-1){
-        if(!pJS.particles.move.enable){
-          pJS.fn.particlesDraw();
-        }
-        pJS.tmp.pushing = false;
-      }
-    }
-
-  };
-
-
-  pJS.fn.modes.removeParticles = function(nb){
-
-    pJS.particles.array.splice(0, nb);
-    if(!pJS.particles.move.enable){
-      pJS.fn.particlesDraw();
-    }
-
-  };
-
-
-  pJS.fn.modes.bubbleParticle = function(p){
-
-    /* on hover event */
-    if(pJS.interactivity.events.onhover.enable && isInArray('bubble', pJS.interactivity.events.onhover.mode)){
-
-      var dx_mouse = p.x - pJS.interactivity.mouse.pos_x,
-          dy_mouse = p.y - pJS.interactivity.mouse.pos_y,
-          dist_mouse = Math.sqrt(dx_mouse*dx_mouse + dy_mouse*dy_mouse),
-          ratio = 1 - dist_mouse / pJS.interactivity.modes.bubble.distance;
-
-      function init(){
-        p.opacity_bubble = p.opacity;
-        p.radius_bubble = p.radius;
-      }
-
-      /* mousemove - check ratio */
-      if(dist_mouse <= pJS.interactivity.modes.bubble.distance){
-
-        if(ratio >= 0 && pJS.interactivity.status == 'mousemove'){
-          
-          /* size */
-          if(pJS.interactivity.modes.bubble.size != pJS.particles.size.value){
-
-            if(pJS.interactivity.modes.bubble.size > pJS.particles.size.value){
-              var size = p.radius + (pJS.interactivity.modes.bubble.size*ratio);
-              if(size >= 0){
-                p.radius_bubble = size;
+            elementName: "g",
+            attributes: { "haiku-id": "35-b962ddf8f16d7a36", id: "35" },
+            children: [
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "0-1425b8c7e85cdbc2", id: "0" },
+                children: []
               }
-            }else{
-              var dif = p.radius - pJS.interactivity.modes.bubble.size,
-                  size = p.radius - (dif*ratio);
-              if(size > 0){
-                p.radius_bubble = size;
-              }else{
-                p.radius_bubble = 0;
-              }
-            }
-
+            ]
           }
-
-          /* opacity */
-          if(pJS.interactivity.modes.bubble.opacity != pJS.particles.opacity.value){
-
-            if(pJS.interactivity.modes.bubble.opacity > pJS.particles.opacity.value){
-              var opacity = pJS.interactivity.modes.bubble.opacity*ratio;
-              if(opacity > p.opacity && opacity <= pJS.interactivity.modes.bubble.opacity){
-                p.opacity_bubble = opacity;
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "34-0018d8c0ee4e0ef6",
+          "haiku-title": "34",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/34.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "34-d8ec2d90ff54944a", id: "34" },
+            children: [
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "0-10525d47cc281bec", id: "0" },
+                children: []
               }
-            }else{
-              var opacity = p.opacity - (pJS.particles.opacity.value-pJS.interactivity.modes.bubble.opacity)*ratio;
-              if(opacity < p.opacity && opacity >= pJS.interactivity.modes.bubble.opacity){
-                p.opacity_bubble = opacity;
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-33-85213d8dc258be13",
+          "haiku-title": "Г33",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/Г33.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-33-98b5ebe0105fecc4", id: "Ð33" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-71-5ab97fa5013e5746",
+                  id: "Rectangle 71"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-ae8f48c792a85c6c", id: "Ð" },
+                children: []
               }
-            }
-
+            ]
           }
-
-        }
-
-      }else{
-        init();
-      }
-
-
-      /* mouseleave */
-      if(pJS.interactivity.status == 'mouseleave'){
-        init();
-      }
-    
-    }
-
-    /* on click event */
-    else if(pJS.interactivity.events.onclick.enable && isInArray('bubble', pJS.interactivity.events.onclick.mode)){
-
-
-      if(pJS.tmp.bubble_clicking){
-        var dx_mouse = p.x - pJS.interactivity.mouse.click_pos_x,
-            dy_mouse = p.y - pJS.interactivity.mouse.click_pos_y,
-            dist_mouse = Math.sqrt(dx_mouse*dx_mouse + dy_mouse*dy_mouse),
-            time_spent = (new Date().getTime() - pJS.interactivity.mouse.click_time)/1000;
-
-        if(time_spent > pJS.interactivity.modes.bubble.duration){
-          pJS.tmp.bubble_duration_end = true;
-        }
-
-        if(time_spent > pJS.interactivity.modes.bubble.duration*2){
-          pJS.tmp.bubble_clicking = false;
-          pJS.tmp.bubble_duration_end = false;
-        }
-      }
-
-
-      function process(bubble_param, particles_param, p_obj_bubble, p_obj, id){
-
-        if(bubble_param != particles_param){
-
-          if(!pJS.tmp.bubble_duration_end){
-            if(dist_mouse <= pJS.interactivity.modes.bubble.distance){
-              if(p_obj_bubble != undefined) var obj = p_obj_bubble;
-              else var obj = p_obj;
-              if(obj != bubble_param){
-                var value = p_obj - (time_spent * (p_obj - bubble_param) / pJS.interactivity.modes.bubble.duration);
-                if(id == 'size') p.radius_bubble = value;
-                if(id == 'opacity') p.opacity_bubble = value;
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-32-681e83e73e382ba6",
+          "haiku-title": "У32",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/У32.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-32-7d335a4e7f4025c4", id: "Ð£32" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-73-714402e46b8ad93b",
+                  id: "Rectangle 73"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-8c2eb40784c8974f", id: "Ð£" },
+                children: []
               }
-            }else{
-              if(id == 'size') p.radius_bubble = undefined;
-              if(id == 'opacity') p.opacity_bubble = undefined;
-            }
-          }else{
-            if(p_obj_bubble != undefined){
-              var value_tmp = p_obj - (time_spent * (p_obj - bubble_param) / pJS.interactivity.modes.bubble.duration),
-                  dif = bubble_param - value_tmp;
-                  value = bubble_param + dif;
-              if(id == 'size') p.radius_bubble = value;
-              if(id == 'opacity') p.opacity_bubble = value;
-            }
+            ]
           }
-
-        }
-
-      }
-
-      if(pJS.tmp.bubble_clicking){
-        /* size */
-        process(pJS.interactivity.modes.bubble.size, pJS.particles.size.value, p.radius_bubble, p.radius, 'size');
-        /* opacity */
-        process(pJS.interactivity.modes.bubble.opacity, pJS.particles.opacity.value, p.opacity_bubble, p.opacity, 'opacity');
-      }
-
-    }
-
-  };
-
-
-  pJS.fn.modes.repulseParticle = function(p){
-
-    if(pJS.interactivity.events.onhover.enable && isInArray('repulse', pJS.interactivity.events.onhover.mode) && pJS.interactivity.status == 'mousemove') {
-
-      var dx_mouse = p.x - pJS.interactivity.mouse.pos_x,
-          dy_mouse = p.y - pJS.interactivity.mouse.pos_y,
-          dist_mouse = Math.sqrt(dx_mouse*dx_mouse + dy_mouse*dy_mouse);
-
-      var normVec = {x: dx_mouse/dist_mouse, y: dy_mouse/dist_mouse},
-          repulseRadius = pJS.interactivity.modes.repulse.distance,
-          velocity = 100,
-          repulseFactor = clamp((1/repulseRadius)*(-1*Math.pow(dist_mouse/repulseRadius,2)+1)*repulseRadius*velocity, 0, 50);
-      
-      var pos = {
-        x: p.x + normVec.x * repulseFactor,
-        y: p.y + normVec.y * repulseFactor
-      }
-
-      if(pJS.particles.move.out_mode == 'bounce'){
-        if(pos.x - p.radius > 0 && pos.x + p.radius < pJS.canvas.w) p.x = pos.x;
-        if(pos.y - p.radius > 0 && pos.y + p.radius < pJS.canvas.h) p.y = pos.y;
-      }else{
-        p.x = pos.x;
-        p.y = pos.y;
-      }
-    
-    }
-
-
-    else if(pJS.interactivity.events.onclick.enable && isInArray('repulse', pJS.interactivity.events.onclick.mode)) {
-
-      if(!pJS.tmp.repulse_finish){
-        pJS.tmp.repulse_count++;
-        if(pJS.tmp.repulse_count == pJS.particles.array.length){
-          pJS.tmp.repulse_finish = true;
-        }
-      }
-
-      if(pJS.tmp.repulse_clicking){
-
-        var repulseRadius = Math.pow(pJS.interactivity.modes.repulse.distance/6, 3);
-
-        var dx = pJS.interactivity.mouse.click_pos_x - p.x,
-            dy = pJS.interactivity.mouse.click_pos_y - p.y,
-            d = dx*dx + dy*dy;
-
-        var force = -repulseRadius / d * 1;
-
-        function process(){
-
-          var f = Math.atan2(dy,dx);
-          p.vx = force * Math.cos(f);
-          p.vy = force * Math.sin(f);
-
-          if(pJS.particles.move.out_mode == 'bounce'){
-            var pos = {
-              x: p.x + p.vx,
-              y: p.y + p.vy
-            }
-            if (pos.x + p.radius > pJS.canvas.w) p.vx = -p.vx;
-            else if (pos.x - p.radius < 0) p.vx = -p.vx;
-            if (pos.y + p.radius > pJS.canvas.h) p.vy = -p.vy;
-            else if (pos.y - p.radius < 0) p.vy = -p.vy;
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-31-523c5b60ffb169f0",
+          "haiku-title": "Л31",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/Л31.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-31-fb59398a227bbee1", id: "Ð31" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-65-2fc4fdda14fbed0f",
+                  id: "Rectangle 65"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-36bd65cb19db3bbf", id: "Ð" },
+                children: []
+              }
+            ]
           }
-
-        }
-
-        // default
-        if(d <= repulseRadius){
-          process();
-        }
-
-        // bang - slow motion mode
-        // if(!pJS.tmp.repulse_finish){
-        //   if(d <= repulseRadius){
-        //     process();
-        //   }
-        // }else{
-        //   process();
-        // }
-        
-
-      }else{
-
-        if(pJS.tmp.repulse_clicking == false){
-
-          p.vx = p.vx_i;
-          p.vy = p.vy_i;
-        
-        }
-
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-29-642432f722f700dd",
+          "haiku-title": "С29",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/С29.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-29-f57fb1659901b3f1", id: "Ð¡29" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-69-14f6013071ed9258",
+                  id: "Rectangle 69"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-0bd9472ab8810e8e", id: "Ð¡" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-28-5d2d4068a5a7cc3a",
+          "haiku-title": "У28",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/У28.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-28-1c8a76216741caf4", id: "Ð£28" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-63-c3d53232fe1b6ccf",
+                  id: "Rectangle 63"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-bcf391a90fd8f3b3", id: "Ð£" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-27-527d63db5c29ea0a",
+          "haiku-title": "О27",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/О27.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-27-59877ead1041d1b2", id: "Ð27" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-74-407f3b027beeefbb",
+                  id: "Rectangle 74"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-cbaa0b52a53b7109", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-26-f6f4c796f8b4358b",
+          "haiku-title": "Н26",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/Н26.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-26-35aa28ff595b20ba", id: "Ð26" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-66-78add28aaf1a64e7",
+                  id: "Rectangle 66"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-78a15a457ebb7d79", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-25-14f7e117853a4784",
+          "haiku-title": "Е25",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/Е25.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-25-b9d4ca82f8f23341", id: "Ð25" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-70-7681f3ed3bc6591e",
+                  id: "Rectangle 70"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-2dcca4d4a27edc4f", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-24-1887ad97a526b0fb",
+          "haiku-title": "Л24",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/Л24.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-24-f5cd6b24b26787d1", id: "Ð24" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-72-643ffb9aa53424f6",
+                  id: "Rectangle 72"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-22616611a5f1dba8", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-23-c86bfba517cb006b",
+          "haiku-title": "П23",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/П23.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-23-eb451a7f3100227f", id: "Ð23" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-64-85f687e3b91571b7",
+                  id: "Rectangle 64"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-3e1786c03f94be1a", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-22-51d86f55165e91a1",
+          "haiku-title": "У22",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/У22.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-22-f7cd7015f8b48c53", id: "Ð£22" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-68-ec1ab8da752edad3",
+                  id: "Rectangle 68"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-4e116dc75eb44610", id: "Ð£" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-21-e6e0300d73a8c9cf",
+          "haiku-title": "К21",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/К21.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-21-deec56df2835ad22", id: "Ð21" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-62-7bba05d93260479f",
+                  id: "Rectangle 62"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-5a6bbc847bef5a78", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-14-9cba244a1d72fbd8",
+          "haiku-title": "И14",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/И14.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-14-4ab388da973dce17", id: "Ð14" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-61-848c9c3e6648b915",
+                  id: "Rectangle 61"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-aa25dc69253fb87a", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-13-9cc2e4adff8c0931",
+          "haiku-title": "Н13",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/Н13.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-13-9375ee1548fad5b4", id: "Ð13" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-53-0c62c51eb138bd7a",
+                  id: "Rectangle 53"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-b8f4dea3d8233f2c", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-12-f10ffb366db6fdff",
+          "haiku-title": "Е12",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/Е12.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-12-c1afd4f677c06c33", id: "Ð12" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-57-ae483f6d04ed02f4",
+                  id: "Rectangle 57"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-d7cc3d1ae8093ec3", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-11-a900932280d9f20a",
+          "haiku-title": "М11",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/М11.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-11-af882e71ae0411f8", id: "Ð11" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-59-11f1f2eeb11b1b48",
+                  id: "Rectangle 59"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-844afdf1fc2bf8e3", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-10-3ec3b2c4b955164a",
+          "haiku-title": "Е10",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/Е10.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-10-aaaaa1b2c32d789a", id: "Ð10" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-51-a893063764e24aea",
+                  id: "Rectangle 51"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-a1e6b847f0e59062", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-9-8d553d1c29aeb367",
+          "haiku-title": "Р9",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/Р9.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-9-4b1a3025cfe3a087", id: "Ð 9" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-55-44edd93bbc6cfcd4",
+                  id: "Rectangle 55"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-db0100ee65527283", id: "Ð " },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-8-f74c840c9ce01173",
+          "haiku-title": "В8",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/В8.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-8-83ca226d7aff0e87", id: "Ð8" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-49-b924501f3fb82ab1",
+                  id: "Rectangle 49"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-6b243cbdc8ad099c", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-7-2194f3c8f584e591",
+          "haiku-title": "О7",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/О7.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-7-78fafea0203b0b9b", id: "Ð7" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-60-7179b00ab7585190",
+                  id: "Rectangle 60"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-e484edff737b2c41", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-6-d5a38c6f7a0f2c80",
+          "haiku-title": "Н6",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/Н6.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-6-d973640f7e8d0c2d", id: "Ð6" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-52-fb82611e01ba6f43",
+                  id: "Rectangle 52"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-865bf16d8ad05a4c", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-5-d47107f5f706cede",
+          "haiku-title": "А5",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/А5.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-5-dea391f3bfa416bb", id: "Ð5" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-56-c0bb7ad005857c5c",
+                  id: "Rectangle 56"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-fd7a6a8d9a9ea5f6", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-4-d2cbad6e186f171a",
+          "haiku-title": "Д4",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/Д4.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-4-faa1f142046c24ca", id: "Ð4" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-58-f41f1d2bbe39ab34",
+                  id: "Rectangle 58"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-ae8d7dcc1c89bb6e", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-3-f3d75393cfa4bef6",
+          "haiku-title": "О3",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/О3.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-3-4bb4d4ff17bd217f", id: "Ð3" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-50-4020fd7d3ca45df6",
+                  id: "Rectangle 50"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-91b8a223299d1c5f", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-2-d7282cef4d01c399",
+          "haiku-title": "Р2",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/Р2.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-2-a0bd30a643ceb189", id: "Ð 2" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-54-11be9e3d8626c646",
+                  id: "Rectangle 54"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-d3df3e7ed3ee2bd9", id: "Ð " },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "-1-9de0e6c605f7c63c",
+          "haiku-title": "П1",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/П1.svg"
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "-1-b00443caa6872f06", id: "Ð1" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-48-12dc6f87c468e94a",
+                  id: "Rectangle 48"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: { "haiku-id": "-6d202143cbaf9f91", id: "Ð" },
+                children: []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        elementName: "svg",
+        attributes: {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          "xmlns:xlink": "http://www.w3.org/1999/xlink",
+          "haiku-id": "Frame-c326586f9d322be8",
+          "haiku-title": "frame",
+          "haiku-source":
+            "designs/xvruXBGUey9lf9rRBisJUl-Untitled.figma.contents/groups/frame.svg",
+          "haiku-locked": true
+        },
+        children: [
+          {
+            elementName: "g",
+            attributes: { "haiku-id": "Frame-68f3f49c9e5aed05", id: "frame" },
+            children: [
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-46-91109e5334bb60e1",
+                  id: "Rectangle 46"
+                },
+                children: []
+              },
+              {
+                elementName: "path",
+                attributes: {
+                  "haiku-id": "Rectangle-47-f252e403dd1677a0",
+                  id: "Rectangle 47"
+                },
+                children: []
+              },
+              {
+                elementName: "line",
+                attributes: {
+                  "haiku-id": "Line-1-b14c3bf66f716824",
+                  id: "Line 1"
+                },
+                children: []
+              }
+            ]
+          }
+        ]
       }
-
-    }
-
+    ]
   }
-
-
-  pJS.fn.modes.grabParticle = function(p){
-
-    if(pJS.interactivity.events.onhover.enable && pJS.interactivity.status == 'mousemove'){
-
-      var dx_mouse = p.x - pJS.interactivity.mouse.pos_x,
-          dy_mouse = p.y - pJS.interactivity.mouse.pos_y,
-          dist_mouse = Math.sqrt(dx_mouse*dx_mouse + dy_mouse*dy_mouse);
-
-      /* draw a line between the cursor and the particle if the distance between them is under the config distance */
-      if(dist_mouse <= pJS.interactivity.modes.grab.distance){
-
-        var opacity_line = pJS.interactivity.modes.grab.line_linked.opacity - (dist_mouse / (1/pJS.interactivity.modes.grab.line_linked.opacity)) / pJS.interactivity.modes.grab.distance;
-
-        if(opacity_line > 0){
-
-          /* style */
-          var color_line = pJS.particles.line_linked.color_rgb_line;
-          pJS.canvas.ctx.strokeStyle = 'rgba('+color_line.r+','+color_line.g+','+color_line.b+','+opacity_line+')';
-          pJS.canvas.ctx.lineWidth = pJS.particles.line_linked.width;
-          //pJS.canvas.ctx.lineCap = 'round'; /* performance issue */
-          
-          /* path */
-          pJS.canvas.ctx.beginPath();
-          pJS.canvas.ctx.moveTo(p.x, p.y);
-          pJS.canvas.ctx.lineTo(pJS.interactivity.mouse.pos_x, pJS.interactivity.mouse.pos_y);
-          pJS.canvas.ctx.stroke();
-          pJS.canvas.ctx.closePath();
-
-        }
-
-      }
-
-    }
-
-  };
-
-
-
-  /* ---------- pJS functions - vendors ------------ */
-
-  pJS.fn.vendors.eventsListeners = function(){
-
-    /* events target element */
-    if(pJS.interactivity.detect_on == 'window'){
-      pJS.interactivity.el = window;
-    }else{
-      pJS.interactivity.el = pJS.canvas.el;
-    }
-
-
-    /* detect mouse pos - on hover / click event */
-    if(pJS.interactivity.events.onhover.enable || pJS.interactivity.events.onclick.enable){
-
-      /* el on mousemove */
-      pJS.interactivity.el.addEventListener('mousemove', function(e){
-
-        if(pJS.interactivity.el == window){
-          var pos_x = e.clientX,
-              pos_y = e.clientY;
-        }
-        else{
-          var pos_x = e.offsetX || e.clientX,
-              pos_y = e.offsetY || e.clientY;
-        }
-
-        pJS.interactivity.mouse.pos_x = pos_x;
-        pJS.interactivity.mouse.pos_y = pos_y;
-
-        if(pJS.tmp.retina){
-          pJS.interactivity.mouse.pos_x *= pJS.canvas.pxratio;
-          pJS.interactivity.mouse.pos_y *= pJS.canvas.pxratio;
-        }
-
-        pJS.interactivity.status = 'mousemove';
-
-      });
-
-      /* el on onmouseleave */
-      pJS.interactivity.el.addEventListener('mouseleave', function(e){
-
-        pJS.interactivity.mouse.pos_x = null;
-        pJS.interactivity.mouse.pos_y = null;
-        pJS.interactivity.status = 'mouseleave';
-
-      });
-
-    }
-
-    /* on click event */
-    if(pJS.interactivity.events.onclick.enable){
-
-      pJS.interactivity.el.addEventListener('click', function(){
-
-        pJS.interactivity.mouse.click_pos_x = pJS.interactivity.mouse.pos_x;
-        pJS.interactivity.mouse.click_pos_y = pJS.interactivity.mouse.pos_y;
-        pJS.interactivity.mouse.click_time = new Date().getTime();
-
-        if(pJS.interactivity.events.onclick.enable){
-
-          switch(pJS.interactivity.events.onclick.mode){
-
-            case 'push':
-              if(pJS.particles.move.enable){
-                pJS.fn.modes.pushParticles(pJS.interactivity.modes.push.particles_nb, pJS.interactivity.mouse);
-              }else{
-                if(pJS.interactivity.modes.push.particles_nb == 1){
-                  pJS.fn.modes.pushParticles(pJS.interactivity.modes.push.particles_nb, pJS.interactivity.mouse);
-                }
-                else if(pJS.interactivity.modes.push.particles_nb > 1){
-                  pJS.fn.modes.pushParticles(pJS.interactivity.modes.push.particles_nb);
-                }
-              }
-            break;
-
-            case 'remove':
-              pJS.fn.modes.removeParticles(pJS.interactivity.modes.remove.particles_nb);
-            break;
-
-            case 'bubble':
-              pJS.tmp.bubble_clicking = true;
-            break;
-
-            case 'repulse':
-              pJS.tmp.repulse_clicking = true;
-              pJS.tmp.repulse_count = 0;
-              pJS.tmp.repulse_finish = false;
-              setTimeout(function(){
-                pJS.tmp.repulse_clicking = false;
-              }, pJS.interactivity.modes.repulse.duration*1000)
-            break;
-
-          }
-
-        }
-
-      });
-        
-    }
-
-
-  };
-
-  pJS.fn.vendors.densityAutoParticles = function(){
-
-    if(pJS.particles.number.density.enable){
-
-      /* calc area */
-      var area = pJS.canvas.el.width * pJS.canvas.el.height / 1000;
-      if(pJS.tmp.retina){
-        area = area/(pJS.canvas.pxratio*2);
-      }
-
-      /* calc number of particles based on density area */
-      var nb_particles = area * pJS.particles.number.value / pJS.particles.number.density.value_area;
-
-      /* add or remove X particles */
-      var missing_particles = pJS.particles.array.length - nb_particles;
-      if(missing_particles < 0) pJS.fn.modes.pushParticles(Math.abs(missing_particles));
-      else pJS.fn.modes.removeParticles(missing_particles);
-
-    }
-
-  };
-
-
-  pJS.fn.vendors.checkOverlap = function(p1, position){
-    for(var i = 0; i < pJS.particles.array.length; i++){
-      var p2 = pJS.particles.array[i];
-
-      var dx = p1.x - p2.x,
-          dy = p1.y - p2.y,
-          dist = Math.sqrt(dx*dx + dy*dy);
-
-      if(dist <= p1.radius + p2.radius){
-        p1.x = position ? position.x : Math.random() * pJS.canvas.w;
-        p1.y = position ? position.y : Math.random() * pJS.canvas.h;
-        pJS.fn.vendors.checkOverlap(p1);
-      }
-    }
-  };
-
-
-  pJS.fn.vendors.createSvgImg = function(p){
-
-    /* set color to svg element */
-    var svgXml = pJS.tmp.source_svg,
-        rgbHex = /#([0-9A-F]{3,6})/gi,
-        coloredSvgXml = svgXml.replace(rgbHex, function (m, r, g, b) {
-          if(p.color.rgb){
-            var color_value = 'rgba('+p.color.rgb.r+','+p.color.rgb.g+','+p.color.rgb.b+','+p.opacity+')';
-          }else{
-            var color_value = 'hsla('+p.color.hsl.h+','+p.color.hsl.s+'%,'+p.color.hsl.l+'%,'+p.opacity+')';
-          }
-          return color_value;
-        });
-
-    /* prepare to create img with colored svg */
-    var svg = new Blob([coloredSvgXml], {type: 'image/svg+xml;charset=utf-8'}),
-        DOMURL = window.URL || window.webkitURL || window,
-        url = DOMURL.createObjectURL(svg);
-
-    /* create particle img obj */
-    var img = new Image();
-    img.addEventListener('load', function(){
-      p.img.obj = img;
-      p.img.loaded = true;
-      DOMURL.revokeObjectURL(url);
-      pJS.tmp.count_svg++;
-    });
-    img.src = url;
-
-  };
-
-
-  pJS.fn.vendors.destroypJS = function(){
-    cancelAnimationFrame(pJS.fn.drawAnimFrame);
-    canvas_el.remove();
-    pJSDom = null;
-  };
-
-
-  pJS.fn.vendors.drawShape = function(c, startX, startY, sideLength, sideCountNumerator, sideCountDenominator){
-
-    // By Programming Thomas - https://programmingthomas.wordpress.com/2013/04/03/n-sided-shapes/
-    var sideCount = sideCountNumerator * sideCountDenominator;
-    var decimalSides = sideCountNumerator / sideCountDenominator;
-    var interiorAngleDegrees = (180 * (decimalSides - 2)) / decimalSides;
-    var interiorAngle = Math.PI - Math.PI * interiorAngleDegrees / 180; // convert to radians
-    c.save();
-    c.beginPath();
-    c.translate(startX, startY);
-    c.moveTo(0,0);
-    for (var i = 0; i < sideCount; i++) {
-      c.lineTo(sideLength,0);
-      c.translate(sideLength,0);
-      c.rotate(interiorAngle);
-    }
-    //c.stroke();
-    c.fill();
-    c.restore();
-
-  };
-
-  pJS.fn.vendors.exportImg = function(){
-    window.open(pJS.canvas.el.toDataURL('image/png'), '_blank');
-  };
-
-
-  pJS.fn.vendors.loadImg = function(type){
-
-    pJS.tmp.img_error = undefined;
-
-    if(pJS.particles.shape.image.src != ''){
-
-      if(type == 'svg'){
-
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', pJS.particles.shape.image.src);
-        xhr.onreadystatechange = function (data) {
-          if(xhr.readyState == 4){
-            if(xhr.status == 200){
-              pJS.tmp.source_svg = data.currentTarget.response;
-              pJS.fn.vendors.checkBeforeDraw();
-            }else{
-              console.log('Error pJS - Image not found');
-              pJS.tmp.img_error = true;
-            }
-          }
-        }
-        xhr.send();
-
-      }else{
-
-        var img = new Image();
-        img.addEventListener('load', function(){
-          pJS.tmp.img_obj = img;
-          pJS.fn.vendors.checkBeforeDraw();
-        });
-        img.src = pJS.particles.shape.image.src;
-
-      }
-
-    }else{
-      console.log('Error pJS - No image.src');
-      pJS.tmp.img_error = true;
-    }
-
-  };
-
-
-  pJS.fn.vendors.draw = function(){
-
-    if(pJS.particles.shape.type == 'image'){
-
-      if(pJS.tmp.img_type == 'svg'){
-
-        if(pJS.tmp.count_svg >= pJS.particles.number.value){
-          pJS.fn.particlesDraw();
-          if(!pJS.particles.move.enable) cancelRequestAnimFrame(pJS.fn.drawAnimFrame);
-          else pJS.fn.drawAnimFrame = requestAnimFrame(pJS.fn.vendors.draw);
-        }else{
-          //console.log('still loading...');
-          if(!pJS.tmp.img_error) pJS.fn.drawAnimFrame = requestAnimFrame(pJS.fn.vendors.draw);
-        }
-
-      }else{
-
-        if(pJS.tmp.img_obj != undefined){
-          pJS.fn.particlesDraw();
-          if(!pJS.particles.move.enable) cancelRequestAnimFrame(pJS.fn.drawAnimFrame);
-          else pJS.fn.drawAnimFrame = requestAnimFrame(pJS.fn.vendors.draw);
-        }else{
-          if(!pJS.tmp.img_error) pJS.fn.drawAnimFrame = requestAnimFrame(pJS.fn.vendors.draw);
-        }
-
-      }
-
-    }else{
-      pJS.fn.particlesDraw();
-      if(!pJS.particles.move.enable) cancelRequestAnimFrame(pJS.fn.drawAnimFrame);
-      else pJS.fn.drawAnimFrame = requestAnimFrame(pJS.fn.vendors.draw);
-    }
-
-  };
-
-
-  pJS.fn.vendors.checkBeforeDraw = function(){
-
-    // if shape is image
-    if(pJS.particles.shape.type == 'image'){
-
-      if(pJS.tmp.img_type == 'svg' && pJS.tmp.source_svg == undefined){
-        pJS.tmp.checkAnimFrame = requestAnimFrame(check);
-      }else{
-        //console.log('images loaded! cancel check');
-        cancelRequestAnimFrame(pJS.tmp.checkAnimFrame);
-        if(!pJS.tmp.img_error){
-          pJS.fn.vendors.init();
-          pJS.fn.vendors.draw();
-        }
-        
-      }
-
-    }else{
-      pJS.fn.vendors.init();
-      pJS.fn.vendors.draw();
-    }
-
-  };
-
-
-  pJS.fn.vendors.init = function(){
-
-    /* init canvas + particles */
-    pJS.fn.retinaInit();
-    pJS.fn.canvasInit();
-    pJS.fn.canvasSize();
-    pJS.fn.canvasPaint();
-    pJS.fn.particlesCreate();
-    pJS.fn.vendors.densityAutoParticles();
-
-    /* particles.line_linked - convert hex colors to rgb */
-    pJS.particles.line_linked.color_rgb_line = hexToRgb(pJS.particles.line_linked.color);
-
-  };
-
-
-  pJS.fn.vendors.start = function(){
-
-    if(isInArray('image', pJS.particles.shape.type)){
-      pJS.tmp.img_type = pJS.particles.shape.image.src.substr(pJS.particles.shape.image.src.length - 3);
-      pJS.fn.vendors.loadImg(pJS.tmp.img_type);
-    }else{
-      pJS.fn.vendors.checkBeforeDraw();
-    }
-
-  };
-
-
-
-
-  /* ---------- pJS - start ------------ */
-
-
-  pJS.fn.vendors.eventsListeners();
-
-  pJS.fn.vendors.start();
-  
-
-
 };
 
-/* ---------- global functions - vendors ------------ */
 
-Object.deepExtend = function(destination, source) {
-  for (var property in source) {
-    if (source[property] && source[property].constructor &&
-     source[property].constructor === Object) {
-      destination[property] = destination[property] || {};
-      arguments.callee(destination[property], source[property]);
-    } else {
-      destination[property] = source[property];
-    }
-  }
-  return destination;
-};
+/***/ }),
 
-window.requestAnimFrame = (function(){
-  return  window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame    ||
-    window.oRequestAnimationFrame      ||
-    window.msRequestAnimationFrame     ||
-    function(callback){
-      window.setTimeout(callback, 1000 / 60);
-    };
-})();
+/***/ "./node_modules/@haiku/burf-title/code/main/dom.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@haiku/burf-title/code/main/dom.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-window.cancelRequestAnimFrame = ( function() {
-  return window.cancelAnimationFrame         ||
-    window.webkitCancelRequestAnimationFrame ||
-    window.mozCancelRequestAnimationFrame    ||
-    window.oCancelRequestAnimationFrame      ||
-    window.msCancelRequestAnimationFrame     ||
-    clearTimeout
-} )();
+var HaikuDOMAdapter = __webpack_require__(/*! @haiku/core/dom */ "./node_modules/@haiku/core/dom/index.js")
+module.exports = HaikuDOMAdapter(__webpack_require__(/*! ./code */ "./node_modules/@haiku/burf-title/code/main/code.js"))
 
-function hexToRgb(hex){
-  // By Tim Down - http://stackoverflow.com/a/5624139/3493650
-  // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
-  var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-  hex = hex.replace(shorthandRegex, function(m, r, g, b) {
-     return r + r + g + g + b + b;
-  });
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16)
-  } : null;
-};
+/***/ }),
 
-function clamp(number, min, max) {
-  return Math.min(Math.max(number, min), max);
-};
+/***/ "./node_modules/@haiku/burf-title/code/main/vue-dom.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@haiku/burf-title/code/main/vue-dom.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-function isInArray(value, array) {
-  return array.indexOf(value) > -1;
-}
+var HaikuVueAdapter = __webpack_require__(/*! @haiku/core/dom/vue */ "./node_modules/@haiku/core/dom/vue/index.js")
+var HaikuVueComponent = HaikuVueAdapter(__webpack_require__(/*! ./dom */ "./node_modules/@haiku/burf-title/code/main/dom.js"))
+if (HaikuVueComponent.default) HaikuVueComponent = HaikuVueComponent.default
+module.exports = HaikuVueComponent
 
+/***/ }),
 
-/* ---------- particles.js functions - start ------------ */
+/***/ "./node_modules/@haiku/burf-title/vue.js":
+/*!***********************************************!*\
+  !*** ./node_modules/@haiku/burf-title/vue.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-window.pJSDom = [];
-
-window.particlesJS = function(tag_id, params){
-
-  //console.log(params);
-
-  /* no string id? so it's object params, and set the id with default id */
-  if(typeof(tag_id) != 'string'){
-    params = tag_id;
-    tag_id = 'particles-js';
-  }
-
-  /* no id? set the id to default id */
-  if(!tag_id){
-    tag_id = 'particles-js';
-  }
-
-  /* pJS elements */
-  var pJS_tag = document.getElementById(tag_id),
-      pJS_canvas_class = 'particles-js-canvas-el',
-      exist_canvas = pJS_tag.getElementsByClassName(pJS_canvas_class);
-
-  /* remove canvas if exists into the pJS target tag */
-  if(exist_canvas.length){
-    while(exist_canvas.length > 0){
-      pJS_tag.removeChild(exist_canvas[0]);
-    }
-  }
-
-  /* create canvas element */
-  var canvas_el = document.createElement('canvas');
-  canvas_el.className = pJS_canvas_class;
-
-  /* set size canvas */
-  canvas_el.style.width = "100%";
-  canvas_el.style.height = "100%";
-
-  /* append canvas */
-  var canvas = document.getElementById(tag_id).appendChild(canvas_el);
-
-  /* launch particle.js */
-  if(canvas != null){
-    pJSDom.push(new pJS(tag_id, params));
-  }
-
-};
-
-window.particlesJS.load = function(tag_id, path_config_json, callback){
-
-  /* load json config */
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', path_config_json);
-  xhr.onreadystatechange = function (data) {
-    if(xhr.readyState == 4){
-      if(xhr.status == 200){
-        var params = JSON.parse(data.currentTarget.response);
-        window.particlesJS(tag_id, params);
-        if(callback) callback();
-      }else{
-        console.log('Error pJS - XMLHttpRequest status: '+xhr.status);
-        console.log('Error pJS - File config not found');
-      }
-    }
-  };
-  xhr.send();
-
-};
+// By default, a vue-dom module is exported; see code/main/* for other options
+module.exports = __webpack_require__(/*! ./code/main/vue-dom */ "./node_modules/@haiku/burf-title/code/main/vue-dom.js")
 
 /***/ })
 

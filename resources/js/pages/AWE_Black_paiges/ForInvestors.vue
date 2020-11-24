@@ -1,9 +1,6 @@
 <template>
   <div class="investors">
     <div class="investors__title">
-<!--      <button class="investors__back-button" @click="$router.push('/home')">-->
-<!--        Back-->
-<!--      </button>-->
       <div class="title--small">
         For
       </div>

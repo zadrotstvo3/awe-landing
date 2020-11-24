@@ -83,7 +83,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapGetters"])(['getArticlesList', 'getStatus'])),
   mounted: function mounted() {
-    this.getArticles();
+    return window.Laravel.isLoggedin ? this.getArticles() : this.$router.push('/admin');
   },
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapActions"])(['deleteArticle', 'getArticles'])), {}, {
     showPreviewItem: function showPreviewItem(item) {
@@ -339,6 +339,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_components_admin_warningModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/components/admin/warningModal */ "./resources/js/components/admin/warningModal.vue");
+//
 //
 //
 //
@@ -718,7 +719,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "panel", attrs: { id: "page-wrap" } },
+        { staticClass: "panel" },
         [
           _vm._l(_vm.getArticlesList, function(item, index) {
             return index === _vm.$i18n.locale
@@ -992,7 +993,7 @@ var render = function() {
             },
             [
               _c("div", [
-                _c("p", [
+                _c("p", { style: [item.title ? "" : { color: "red" }] }, [
                   _vm._v(
                     _vm._s(
                       "" +
@@ -1000,7 +1001,7 @@ var render = function() {
                           1 +
                           ")" +
                           " " +
-                          (item.title ? item.title : "Tranlation needed"))
+                          (item.title ? item.title : "Translation needed"))
                     )
                   )
                 ]),

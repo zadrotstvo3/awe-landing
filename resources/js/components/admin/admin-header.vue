@@ -1,7 +1,8 @@
 <template>
 <header class="header">
-  <ScaleDown
+  <Slide
       @click="openSideBar = !openSideBar"
+      :closeOnNavigation="true"
   >
     <router-link class="link" to="/home">
       <img src="@/js/assets/home.svg" alt="home icon">
@@ -15,7 +16,7 @@
       <img src="@/js/assets/group.svg" alt="blog icon">
       <span>Out Team</span>
     </router-link>
-  </ScaleDown>
+  </Slide>
   <button class="header__button" @click="closeAdminPanel()">
     Log Out
   </button>
@@ -24,11 +25,11 @@
 
 <script>
 import {mapActions} from 'vuex'
-import { ScaleDown } from 'vue-burger-menu'
+import { Slide } from 'vue-burger-menu'
 export default {
   name: "admin-header",
   components: {
-    ScaleDown
+      Slide
   },
   data(){
     return {

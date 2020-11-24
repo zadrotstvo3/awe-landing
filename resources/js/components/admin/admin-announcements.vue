@@ -1,6 +1,6 @@
 <template>
     <div>
-        <adminHeader></adminHeader>
+        <adminHeader/>
         <div class="language-panel">
             <ul class="language-panel__list">
                 <li
@@ -14,7 +14,7 @@
                 </li>
             </ul>
         </div>
-        <div class="panel" id="page-wrap">
+        <div class="panel">
             <blogList
                 v-for="(item, index) in getArticlesList"
                 :key="index"
@@ -64,7 +64,8 @@ export default {
         ...mapGetters(['getArticlesList', 'getStatus']),
     },
     mounted(){
-        this.getArticles()
+        return window.Laravel.isLoggedin ?
+        this.getArticles() : this.$router.push('/admin')
     },
     methods: {
         ...mapActions(['deleteArticle', 'getArticles']),

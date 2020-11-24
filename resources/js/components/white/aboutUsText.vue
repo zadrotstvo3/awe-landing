@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="content__image">
-      <img src="/resources/js/assets/announceImg.png" alt="blank">
+      <img src="@/js/assets/announceImg.png" alt="blank">
     </div>
     <div class="content__text">
       <div class="content__subtitle">
@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="content__image-text">
-      <img src="/resources/js/assets/sideImgFull.png" alt="blank">
+      <img src="@/js/assets/sideImgFull.png" alt="blank">
       <p class="content__image-description">
         {{$t('aboutUsImageBlock')}}
       </p>

@@ -2,7 +2,7 @@
     <div>
         <adminHeader/>
         <div class="panel">
-            <div class="team-list" id="page-wrap">
+            <div class="team-list">
                 <ul class="list">
                     <li
                         class="list__item"
@@ -52,12 +52,16 @@
                             </div>
                         </div>
                         <div class="item" v-else>
-                            <div class="item__video">
-                                <div class="item__play">
-                                    <svg width="36" height="42" viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M35 19.268C36.3333 20.0378 36.3333 21.9623 35 22.7321L3.5 40.9186C2.16667 41.6884 0.500002 40.7261 0.500002 39.1865L0.500004 2.81347C0.500004 1.27387 2.16667 0.311614 3.5 1.08142L35 19.268Z" fill="white"/>
-                                    </svg>
-                                </div>
+                            <div class="item__video" v-if="!editVideo">
+                                <iframe
+                                    class="item__video--content"
+                                    :src="activeVideoLink"
+                                ></iframe>
+                                <img class="item__edit" src="@/js/assets/edit-white.svg" alt="edit icon" @click="editVideo = !editVideo">
+                            </div>
+                            <div class="item__video--edit" v-else>
+                                <input type="text" placeholder="Insert link" v-model="videoLink">
+                                <input type="submit" value="Save" @click="addNewVideo">
                             </div>
                         </div>
                     </li>
@@ -87,11 +91,15 @@ export default {
             teamList: [],
             modal: false,
             currentItem: '',
-            uploadedImage: ''
+            uploadedImage: '',
+            editVideo: false,
+            videoLink: '',
+            activeVideoLink: ''
         }
     },
     created(){
-        this.createList()
+        return window.Laravel.isLoggedin ?
+            this.createList() : this.$router.push('/admin')
     },
     mounted() {
         this.getTeamList()
@@ -100,12 +108,20 @@ export default {
                     this.createList()
                 }
             })
+        this.activeVideoLink = this.getVideo
     },
     computed: {
-      ...mapGetters(['getMembersList'])
+      ...mapGetters(['getMembersList', 'getVideo'])
     },
     methods: {
-        ...mapActions(['uploadImage', 'getTeamList', 'addTeamMember', 'editCurrentMember', 'deleteMember']),
+        ...mapActions([
+            'uploadImage',
+            'getTeamList',
+            'addTeamMember',
+            'editCurrentMember',
+            'deleteMember',
+            'setNewVideo'
+        ]),
         createList(){
             const array = new Array(9)
                 .fill()
@@ -127,6 +143,12 @@ export default {
                     }
                 })
             return this.teamList = [...array]
+        },
+        addNewVideo(){
+            this.setNewVideo(this.videoLink)
+            this.activeVideoLink = this.videoLink
+            this.editVideo = !this.editVideo
+            this.videoLink = ''
         },
         toggleModal(item){
             this.currentItem = item
@@ -427,6 +449,26 @@ export default {
         justify-content: center;
         align-items: center;
         background-color: black;
+
+        &--content {
+            height: 100%;
+        }
+        &--edit {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            input {
+                margin: 10px 0;
+                padding: 15px;
+            }
+        }
+    }
+    &__edit {
+        width: 45px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
     }
     &__hover {
         padding: 15px 35px;
