@@ -1,0 +1,769 @@
+{
+  "headerMenu": [
+    {
+      "title": "Анонсы",
+      "to": "/announcements"
+    },
+    {
+      "title": "AWE?",
+      "to": "/"
+    },
+    {
+      "title": "Рекомендации",
+      "to": "/recommendations"
+    }
+  ],
+  "headerSubtitleText": [
+    {
+      "text": "AWE - децентрализованная платформа монетизации нормо часов, реализованных в результате физической или интеллектуальной деятельности. С целью получения дохода, удовлетворение потребностей (решении проблем) бытового или бизнес формата."
+    },
+    {
+      "text": "Автоматическая синхронизация всех процессов (поиска, коммуникации, фиксации: договоренностей, результатов, оплаты) в одной среде. Полный бесконтактный дистанционный цикл. "
+    }
+  ],
+  "galleryOne": [
+    {
+      "title": "Создавай ",
+      "showList": false,
+      "list": [
+        {
+          "text": "Задачи.  Предложения"
+        },
+        {
+          "text": "События. Услуги"
+        },
+        {
+          "text": "Инвестиционний портфель времени"
+        }
+      ],
+      "colorImage": "1-image.png"
+    },
+    {
+      "title": "Контролируй",
+      "showList": false,
+      "list": [
+        {
+          "text": "Процессы удаленно"
+        },
+        {
+          "text": "Финансы автоматизировано"
+        },
+        {
+          "text": "Исполнителей/Заказчика децентрализовано"
+        },
+        {
+          "text": "Єтапы безконтактно"
+        },
+        {
+          "text": "Фиксируй результат инновационно"
+        }
+      ],
+      "colorImage": "controll.png"
+    },
+    {
+      "title": "Получай",
+      "showList": false,
+      "list": [
+        {
+          "text": "Доход / заработок."
+        },
+        {
+          "text": "Задания / Результат"
+        },
+        {
+          "text": "Решение задач ефективно"
+        },
+        {
+          "text": "Экономию ресурсов"
+        },
+        {
+          "text": "Монетизируй контент, чат, стрим"
+        },
+        {
+          "text": "Максимальную вигоду"
+        }
+      ],
+      "colorImage": "earn.png"
+    }
+  ],
+  "galleryTwo": [
+    {
+      "title": "Доступность",
+      "showList": false,
+      "list": [
+        {
+          "text": "24/7 - 365"
+        },
+        {
+          "text": "Где угодно"
+        },
+        {
+          "text": "Когда угодно"
+        },
+        {
+          "text": "Как угодно"
+        },
+        {
+          "text": "Инвестиционний портфель времени"
+        }
+      ],
+      "colorImage": "world.png"
+    },
+    {
+      "title": "No",
+      "showList": false,
+      "list": [
+        {
+          "text": "Без ограничений:"
+        },
+        {
+          "text": "По возрасту"
+        },
+        {
+          "text": "Полу"
+        },
+        {
+          "text": "Рассе"
+        },
+        {
+          "text": "Вероисповеданию"
+        },
+        {
+          "text": "Языкового барьера"
+        }
+      ],
+      "colorImage": "pink-bg.png"
+    },
+    {
+      "title": "Исполнитель",
+      "showList": false,
+      "list": [
+        {
+          "text": "Приобретай время/ услуги"
+        }
+      ],
+      "colorImage": "worck.png"
+    },
+    {
+      "title": "Заказчик",
+      "showList": false,
+      "list": [
+        {
+          "text": "Продавай время /услуги"
+        }
+      ],
+      "colorImage": "happy.png"
+    }
+  ],
+  "Capabilities": "Возможности",
+  "guarantiesName": "Гарантии",
+  "guaranties": [
+    {
+      "text": "100% оплата при исполнении. Холдинг платежа до исполнения обязательств"
+    },
+    {
+      "text": "Фиксация, неизменность оговоренных обязательст"
+    },
+    {
+      "text": "Децентрализованный арбитраж, рейтинг (исполнителя/заказчика), компетентность исполнителя"
+    }
+  ],
+  "valuesName": "Выгода",
+  "values": [
+    {
+      "text": "Лучшее предложение цена/качество/скорость. Экономия ресурсов время/деньги"
+    },
+    {
+      "text": "Без посредников. Без комисий. Без переплат"
+    },
+    {
+      "text": "Максимально быстрое решение проблем (доход/удовлетворение потребности)"
+    }
+  ],
+  "comfortName": "Комфорт",
+  "comfort": [
+    {
+      "text": "Дистанционное, бесконтактное решение любых потребностей, (интеллектуальных, физических)"
+    },
+    {
+      "text": "Автоматизация всех процессов поиска, коммуникации, контроля, подтверждения, верификации событий оплат"
+    },
+    {
+      "text": "Синхронизация лучших инструментов в одном рабочем пространстве. Полный цикл реализации. 100% дистанционный контроль."
+    }
+  ],
+  "ourTeamBig": "AWE",
+  "ourTeamSmall": "Команда",
+  "teamList": [
+    {
+      "name": "John Doe",
+      "position": "Менеджер",
+      "avatar": "1-person.png"
+    },
+    {
+      "name": "John Doe",
+      "position": "Розроботчик",
+      "avatar": "2-person.png"
+    },
+    {
+      "name": "John Doe",
+      "position": "Розроботчик",
+      "avatar": "3-person.png"
+    },
+    {
+      "name": "John Doe",
+      "position": "Дизайнер",
+      "avatar": "8-person.png"
+    },
+    {
+      "name": "John Doe",
+      "position": "Розроботчик",
+      "video": "#"
+    },
+    {
+      "name": "John Doe",
+      "position": "Менеджер",
+      "avatar": "5-person.png"
+    },
+    {
+      "name": "John Doe",
+      "position": "Менеджер",
+      "avatar": "6-person.png"
+    },
+    {
+      "name": "John Doe",
+      "position": "Розроботчик",
+      "avatar": "7-person.png"
+    },
+    {
+      "name": "John Doe",
+      "position": "Розроботчик",
+      "avatar": "4-person.png"
+    }
+  ],
+  "aboutUsBig": "НАС",
+  "aboutUsSmall": "О",
+  "aboutUsTextBlock": {
+    "title": "О нас",
+    "textBold": "Смысл использования Lorem Ipsum заключается в том, что он более или менее нормальное распределение букв, в отличие от использования \"Содержание здесь, содержание здесь\", что делает его похожим на читабельную английский.",
+    "textBlockOne": "Доступно много вариантов отрывков Lorem Ipsum, но большинство были изменены в той или иной форме путем влитый юмора или рандомизированных слов, которые не выглядят даже немного правдоподобными. Если вы собираетесь использовать отрывок Lorem Ipsum, вам следует быть уверенным, что в середине текста нет ничего неудобного. Все генераторы Lorem Ipsum в Интернете, как правило, повторяют заранее определенные фрагменты, делает это первым настоящим генератором в Интернете.",
+    "textBlockTwo": "Это давно установленный факт, что читатель будет отвлекаться на читаемый содержание страницы при просмотре ее макета. Суть использования Lorem Ipsum заключается в том, что он более или менее нормальное распределение букв, в отличие от использования \"Содержание здесь, содержание здесь\", что делает его похожим на читабельную английский. Многие настольных издательских пакетов и редакторы веб-страниц теперь используют Lorem Ipsum в качестве текста своей модели по умолчанию, и поиск по \"lorem ipsum\" обнаружит много сайтов, которые еще находятся в зачаточном состоянии."
+  },
+  "aboutUsImageBlock": "Многие настольных издательских пакетов и редакторы веб-страниц теперь используют Lorem Ipsum как стандартный текст модели.",
+  "announcementsTitleSmall": "Анонсы",
+  "announcementsTitleBig": "2020",
+  "announcementsTitle": "ближайшие анонсы",
+  "announcementsList": [
+    {
+      "imgPath": "announceImg.png",
+      "step": "1-й квартал",
+      "title": "Многие настольных издательских пакетов и редакторов веб-страниц",
+      "description": "Доступно много вариантов отрывков Lorem Ipsum, но большинство были изменены в той или иной форме путем влитый юмора или рандомизированных слов, которые не выглядят даже немного правдоподобными. Если вы собираетесь использовать отрывок Lorem Ipsum, вам следует быть уверенным, что в середине текста нет ничего неудобного. Все генераторы Lorem Ipsum в Интернете, как правило, повторяют заранее определенные фрагменты, делает это первым настоящим генератором в Интернете."
+    },
+    {
+      "imgPath": "announceImg.png",
+      "step": "2-й квартал",
+      "title": "Многие настольных издательских пакетов и редакторов веб-страниц",
+      "description": "Доступно много вариантов отрывков Lorem Ipsum, но большинство были изменены в той или иной форме путем влитый юмора или рандомизированных слов, которые не выглядят даже немного правдоподобными. Если вы собираетесь использовать отрывок Lorem Ipsum, вам следует быть уверенным, что в середине текста нет ничего неудобного. Все генераторы Lorem Ipsum в Интернете, как правило, повторяют заранее определенные фрагменты, делает это первым настоящим генератором в Интернете."
+    },
+    {
+      "imgPath": "announceImg.png",
+      "step": "3-й квартал",
+      "title": "Многие настольных издательских пакетов и редакторов веб-страниц",
+      "description": "Доступно много вариантов отрывков Lorem Ipsum, но большинство были изменены в той или иной форме путем влитый юмора или рандомизированных слов, которые не выглядят даже немного правдоподобными. Если вы собираетесь использовать отрывок Lorem Ipsum, вам следует быть уверенным, что в середине текста нет ничего неудобного. Все генераторы Lorem Ipsum в Интернете, как правило, повторяют заранее определенные фрагменты, делает это первым настоящим генератором в Интернете."
+    }
+  ],
+  "blockText": "яркий год на негативные события. Этнические военные конфликты, миграция, пандемия COVID-19, локдауны государств, финансовые кризисы, катаклизмы, изоляция. Полный паралич сферы услуг, отсутствие возможности решения бытовых проблем, падения качества уровня жизни.\n          Как вернутся к привычному образу жизни. Ведь технологии не стоят на месте и наверное именно это побудило нас разработать продукт который минимизировал бы последствия вышеперечисленных событий. АДАПТАЦИЯ.",
+  "blockTextScoreTitle": "Цель.",
+  "blockTextScoreText": "создать сервис который сможет обеспечить для участников взаимоотношений решение их проблем адаптировавшись под наступившие обстоятельства с возможностью исключить последствия негативных тенденций в перспективе при наступлении более радикальных ограничительных мер.",
+  "blockTextAWETitle": "Получилась AWE",
+  "blockTextAWEText": "децентралізованая платформа оцифрованной инфраструктуры. Бесконтактного, автоматического, дистанционного выполнения заданий как физического так и интеллектуального действия, для удовлетворения потребностей сторон ДОХОД/РЕШЕНИЕ ПРОБЛЕМ . Полного цикла в одном пространстве.",
+  "blockTextPriorities": "Наши приоритеты:  БЕСКОНТАКТНОСТЬ. КОМФОРТ. ПОВЫШЕНИЕ КАЧЕСТВА ЖИЗНИ. БЕЗОПАСНОСТЬ.  МАКСИМАЛЬНАЯ ЭФФЕКТИВНОСТЬ...",
+  "blockTextPrioritiesUnderlinedText": "Пространство без негатива, фейков, мошенничества",
+  "blockTextPrioritiesText": "Возможность получать доход/услугу независимо от ограничительных действий связанных с внешними факторами, обстоятельствами…",
+  "blockEndText": "Жызнь продолжается...",
+  "footerNavigation": [
+    {
+      "title": "ДНК команды",
+      "path": "/our-team"
+    },
+    {
+      "title": "О нас",
+      "path": "/about-us"
+    },
+    {
+      "title": "Цели и приоритеты",
+      "path": "/announcements"
+    },
+    {
+      "title": "Политика конфиденцыальности",
+      "path": "/privat-policy"
+    },
+    {
+      "title": "Наши реквизиты",
+      "path": "/"
+    },
+    {
+      "title": "Рекомендации",
+      "path": "/"
+    }
+  ],
+  "offersTitleBig": "Вас",
+  "offersTitleSmall": "Для",
+  "offersProfiles": "Профили",
+  "offersButton": "Подробнее",
+  "offersList": [
+    {
+      "plan": "BASE",
+      "price": "Бестплатно",
+      "backgroundImage": "SVG/base.svg",
+      "bgSmall":"SVG/base1.svg",
+      "avatar": "SVG/Emoji_base.svg",
+      "values": [
+        {
+          "text": "Создание / участие публичного"
+        },
+        {
+          "text": "Задачи / предложения"
+        },
+        {
+          "text": "Галерея достижений"
+        },
+        {
+          "text": "Рейтинг"
+        },
+        {
+          "text": "Отзывы"
+        }
+      ]
+    },
+    {
+      "plan": "PRO",
+      "price": "5$ /в год",
+      "backgroundImage": "SVG/pro.svg",
+      "bgSmall":"SVG/pro1.svg",
+      "avatar": "SVG/Emoji_pro.svg",
+      "values": [
+        {
+          "text": "Внутренний кошелек"
+        },
+        {
+          "text": "Автоматизированная платежная система"
+        },
+        {
+          "text": "Децентрализованный арбитраж"
+        },
+        {
+          "text": "Ценообразование задачи / предложения"
+        },
+        {
+          "text": "Монетизация чате / консультаций"
+        }
+      ]
+    },
+    {
+      "plan": "ULTRA",
+      "price": "25$ /в год",
+      "backgroundImage": "SVG/ultra.svg",
+      "bgSmall":"SVG/ultra1.svg",
+      "avatar": "SVG/Emoji_ultra.svg",
+      "values": [
+        {
+          "text": "Верификация профиля"
+        },
+        {
+          "text": "Персонализированные задачи / предложения"
+        },
+        {
+          "text": "Международные задачи"
+        },
+        {
+          "text": "Международный кошелек"
+        },
+        {
+          "text": "Смарт контракт"
+        },
+        {
+          "text": "Монетизация контента"
+        },
+        {
+          "text": "AI аналитика прогнозирования"
+        },
+        {
+          "text": "ML персональный помощник"
+        }
+      ]
+    }
+  ],
+  "offersListValues": {
+    "BASIC": [
+      {
+        "roleName": "Исполнитель",
+        "roleValues": {
+          "canCreateProfile": true,
+          "verification": false,
+          "canCreateTask": false,
+          "takeTaskOnMap": true,
+          "canSetTaskToSpecificSupplier": false,
+          "moreLess": "",
+          "arbitration": false,
+          "shareBonuses": false,
+          "smartContractTemplate": false,
+          "blackList": "",
+          "groupTask": true,
+          "createGroupTask": false,
+          "botHelp": false,
+          "digitalSignature": false,
+          "publicAgreement": "",
+          "createPrivatTask": false,
+          "workGallery": "",
+          "numberOfSimultaneousTasks": "",
+          "innerWallet": false,
+          "auction": false
+        }
+      },
+      {
+        "roleName": "Заказчик",
+        "roleValues": {
+          "canCreateProfile": true,
+          "verification": false,
+          "canCreateTask": true,
+          "takeTaskOnMap": false,
+          "canSetTaskToSpecificSupplier": true,
+          "moreLess": "",
+          "arbitration": false,
+          "shareBonuses": false,
+          "smartContractTemplate": false,
+          "blackList": "",
+          "groupTask": false,
+          "createGroupTask": false,
+          "botHelp": false,
+          "digitalSignature": false,
+          "publicAgreement": "",
+          "createPrivatTask": false,
+          "workGallery": "",
+          "numberOfSimultaneousTasks": "",
+          "innerWallet": false,
+          "auction": false
+        }
+      }
+    ],
+    "PRO": [
+      {
+        "roleName": "Исполнитель",
+        "roleValues": {
+          "canCreateProfile": true,
+          "verification": true,
+          "canCreateTask": false,
+          "takeTaskOnMap": true,
+          "canSetTaskToSpecificSupplier": false,
+          "moreLess": "",
+          "arbitration": true,
+          "shareBonuses": false,
+          "smartContractTemplate": "",
+          "blackList": "",
+          "groupTask": true,
+          "createGroupTask": false,
+          "botHelp": false,
+          "digitalSignature": "",
+          "publicAgreement": "",
+          "createPrivatTask": false,
+          "workGallery": "",
+          "numberOfSimultaneousTasks": "",
+          "innerWallet": true,
+          "auction": true
+        }
+      },
+      {
+        "roleName": "Заказчик",
+        "roleValues": {
+          "canCreateProfile": true,
+          "verification": true,
+          "canCreateTask": true,
+          "takeTaskOnMap": "",
+          "canSetTaskToSpecificSupplier": true,
+          "moreLess": "",
+          "arbitration": true,
+          "shareBonuses": false,
+          "smartContractTemplate": "",
+          "blackList": "",
+          "groupTask": false,
+          "createGroupTask": true,
+          "botHelp": false,
+          "digitalSignature": "",
+          "publicAgreement": "",
+          "createPrivatTask": false,
+          "workGallery": "",
+          "numberOfSimultaneousTasks": "",
+          "innerWallet": false,
+          "auction": false
+        }
+      }
+    ],
+    "ULTRA": [
+      {
+        "roleName": "Исполнитель",
+        "roleValues": {
+          "canCreateProfile": true,
+          "verification": true,
+          "canCreateTask": false,
+          "takeTaskOnMap": true,
+          "canSetTaskToSpecificSupplier": false,
+          "moreLess": "",
+          "arbitration": true,
+          "shareBonuses": true,
+          "smartContractTemplate": true,
+          "blackList": "",
+          "groupTask": true,
+          "createGroupTask": false,
+          "botHelp": true,
+          "digitalSignature": "",
+          "publicAgreement": "",
+          "createPrivatTask": false,
+          "workGallery": "",
+          "numberOfSimultaneousTasks": "",
+          "innerWallet": true,
+          "auction": true
+        }
+      },
+      {
+        "roleName": "Заказчик",
+        "roleValues": {
+          "canCreateProfile": true,
+          "verification": true,
+          "canCreateTask": true,
+          "takeTaskOnMap": "",
+          "canSetTaskToSpecificSupplier": true,
+          "moreLess": "",
+          "arbitration": true,
+          "shareBonuses": true,
+          "smartContractTemplate": true,
+          "blackList": "",
+          "groupTask": false,
+          "createGroupTask": true,
+          "botHelp": true,
+          "digitalSignature": "",
+          "publicAgreement": "",
+          "createPrivatTask": true,
+          "workGallery": "",
+          "numberOfSimultaneousTasks": "",
+          "innerWallet": false,
+          "auction": false
+        }
+      }
+    ]
+  },
+  "offersListConditions": [
+    "Profile creation",
+    "Verification",
+    "Create tasks",
+    "Take part in the task outlined on the map",
+    "Send the task to a specific performer",
+    "More / Less",
+    "Arbitration",
+    "Share bonuses",
+    "Smart contract template",
+    "Blocking participants (black / list)",
+    "Participation in a group task",
+    "Creating a group task",
+    "Risk pricing bot (AI) forecasting tips",
+    "Digital signature",
+    "Public agreement",
+    "Create a closed task",
+    "Gallery of works",
+    "Number of simultaneous tasks",
+    "Inner wallet",
+    "Auction"
+  ],
+  "blackMainHeaderTextOne": "Доступно",
+  "blackMainHeaderTextOneNumber": "1 500 000 000 00 N/h",
+  "blackMainHeaderTextTwo": "Реализовано",
+  "blackMainHeaderTextTwoNumber": "0 000 002 526 25 N/h",
+  "blackMainHeaderTextThree": "ТЕСТОВИЙ РЕЖИМ",
+  "blackMainHeaderTextThreeTime": "до 29.12.2020",
+  "blackMainHeaderListReserved": "Зарезервировано",
+  "blackMainHeaderList": [
+    {
+      "title": "Количество профлей",
+      "plan": "BASE",
+      "value": "Free",
+      "closeIcon": true,
+      "reserved": false
+    },
+    {
+      "title": "Сгенерировано профилей",
+      "plan": "PRO",
+      "value": "0002562",
+      "closeIcon": false,
+      "reserved": true
+    },
+    {
+      "title": "Сгенерировано профилей",
+      "plan": "ULTRA",
+      "value": "001251",
+      "closeIcon": false,
+      "reserved": true
+    }
+  ],
+  "blackValueList": [
+    {
+      "title": "BLOCKCHAIN",
+      "sublist": [
+        {
+          "text": "Это давно установившийся"
+        },
+        {
+          "text": "Действуй так, что читатель будет"
+        },
+        {
+          "text": "Содержание страницы, когда"
+        },
+        {
+          "text": "Глядя на его макет"
+        }
+      ]
+    },
+    {
+      "title": "AI",
+      "sublist": [
+        {
+          "text": "Это давно установившийся"
+        },
+        {
+          "text": "Действуй так, что читатель будет"
+        },
+        {
+          "text": "Содержание страницы, когда"
+        },
+        {
+          "text": "Глядя на его макет"
+        }
+      ]
+    },
+    {
+      "title": "SMART CONTRACT",
+      "sublist": [
+        {
+          "text": "Это давно установившийся"
+        },
+        {
+          "text": "Действуй так, что читатель будет"
+        },
+        {
+          "text": "Содержание страницы, когда"
+        },
+        {
+          "text": "Глядя на его макет"
+        }
+      ]
+    },
+    {
+      "title": "ML",
+      "sublist": [
+        {
+          "text": "Это давно установившийся"
+        },
+        {
+          "text": "Действуй так, что читатель будет"
+        },
+        {
+          "text": "Содержание страницы, когда"
+        },
+        {
+          "text": "Глядя на его макет"
+        }
+      ]
+    }
+  ],
+  "blackGallery": [
+    {
+      "title": "Доступність",
+      "showList": false,
+      "list": [
+        {
+          "text": "24/7 - 365"
+        },
+        {
+          "text": "Де завгодно"
+        },
+        {
+          "text": "Коли загодно"
+        },
+        {
+          "text": "Як завгодно"
+        },
+        {
+          "text": "Інвестиціїний рюкзак часу."
+        }
+      ],
+      "colorImage": "1.svg"
+    },
+    {
+      "title": "lorem",
+      "showList": false,
+      "list": [
+        {
+          "text": "Без обмежень:"
+        },
+        {
+          "text": "По віку"
+        },
+        {
+          "text": "Статі"
+        },
+        {
+          "text": "Расі"
+        },
+        {
+          "text": "Вірі"
+        },
+        {
+          "text": "Мовного барєру"
+        }
+      ],
+      "colorImage": "2.svg"
+    },
+    {
+      "title": "Виконавець",
+      "showList": false,
+      "list": [
+        {
+          "text": "Здобувай час/ послуги"
+        }
+      ],
+      "colorImage": "3.svg"
+    },
+    {
+      "title": "No",
+      "showList": false,
+      "list": [
+        {
+          "text": "Продавай час / послуги"
+        }
+      ],
+      "colorImage": "4-black.png"
+    },
+    {
+      "title": "Доступність",
+      "showList": false,
+      "list": [
+        {
+          "text": "24/7 - 365"
+        },
+        {
+          "text": "Де завгодно"
+        },
+        {
+          "text": "Коли загодно"
+        },
+        {
+          "text": "Як завгодно"
+        },
+        {
+          "text": "Інвестиціїний рюкзак часу."
+        }
+      ],
+      "colorImage": "5-black.png"
+    }
+  ]
+}
