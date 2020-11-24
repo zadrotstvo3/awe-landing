@@ -28,7 +28,7 @@ Route::group(['prefix' => 'article', 'as' => 'article.', 'middleware' => 'auth:a
 });
 
 //Teeam Routes
-Route::group(['prefix' => 'team', 'as' => 'team.'/*, 'middleware' => 'auth:airlock'*/], function () {
+Route::group(['prefix' => 'team', 'as' => 'team.', 'middleware' => 'auth:airlock'], function () {
     Route::group(['prefix' => 'member', 'as' => 'member.'], function () {
         Route::post('/', 'MemberController@store')->name('store');
         Route::get('/{member}', 'MemberController@show')->name('show');
@@ -37,6 +37,6 @@ Route::group(['prefix' => 'team', 'as' => 'team.'/*, 'middleware' => 'auth:airlo
     });
 });
 
-Route::group(['prefix' => 'file', 'as' => 'file.'/*, 'middleware' => 'auth:airlock'*/], function () {
+Route::group(['prefix' => 'file', 'as' => 'file.', 'middleware' => 'auth:airlock'], function () {
     Route::post('/upload', 'FileController@upload')->name('upload');
 });
