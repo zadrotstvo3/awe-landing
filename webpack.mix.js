@@ -8,7 +8,7 @@ mix.webpackConfig({
         }
     },
     output: {
-        chunkFilename: 'js/chunks/[name].js',
+        chunkFilename: 'js/build/[name].js',
     },
 });
 /*
