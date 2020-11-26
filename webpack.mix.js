@@ -6,7 +6,10 @@ mix.webpackConfig({
         alias:{
             '@':__dirname + '/resources'
         }
-    }
+    },
+    output: {
+        chunkFilename: 'js/build/[name].js',
+    },
 });
 /*
  |--------------------------------------------------------------------------
