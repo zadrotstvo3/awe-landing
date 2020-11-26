@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "js/chunks/" + ({}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -35131,8 +35131,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/vitalii/Work/laravel-vue-airlock/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/vitalii/Work/laravel-vue-airlock/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/rivo/Desktop/landing/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/rivo/Desktop/landing/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

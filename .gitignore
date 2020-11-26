@@ -3,6 +3,7 @@
 /public/storage
 /public/images
 /public/fonts
+/public/js/chunks/
 /storage/*.key
 /vendor
 .env
