@@ -33,7 +33,7 @@
 
 <script>
 import investorsActionModal from "@/js/components/black/modal/investorsActionModal";
-
+import axios from 'axios'
 export default {
   name: "countryList",
   components: {
@@ -46,8 +46,8 @@ export default {
       showActionModal: false
     }
   },
-  async created() {
-    const country = await this.$axios.get('https://restcountries.eu/rest/v2/all')
+  async mounted() {
+    const country = await this.axios.get('https://restcountries.eu/rest/v2/all')
         .then((resp)=> resp.data || '')
         .catch(error => console.log(error))
     this.createCountyList(country)

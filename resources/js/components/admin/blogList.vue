@@ -13,7 +13,11 @@
           @click="addActiveClass(item)"
           :class="{activeClass: item.isActive}"
       >
-        <p>{{item.title}}</p>
+          <div>
+            <p :style="[item.title ? '' : {color: 'red'}]"
+            >{{`${ index + 1 + ')' + ' ' + (item.title ? item.title : 'Translation needed')}`}}</p><br>
+              <p>Created at: {{item.date}}</p>
+          </div>
         <div class="blog-list__images">
           <img src="@/js/assets/enable.svg" alt="preview icon"  @click="sendPreviewItem(item)">
           <img src="@/js/assets/edit.svg" alt="edit icon" @click="sendEditItem(item)">
@@ -24,7 +28,7 @@
     <warningModal
         v-if="modal"
         @close="toggleModal"
-        @deleteItem="deleteArticle(currentItem)"
+        @deleteItem="deleteArticle(currentItem.id)"
     />
   </div>
 </template>
@@ -81,11 +85,14 @@ export default {
 .blog-list {
   width: 100%;
   max-width: 450px;
+
   margin: 50px;
   &__list {
-    height: 90%;
-    display: flex;
-    flex-direction: column;
+        height: 70%;
+        scroll-behavior: smooth;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
   }
   &__item {
     margin: 15px 0;
@@ -114,6 +121,7 @@ export default {
   &__button {
     width: 100%;
     max-width: 150px;
+      margin-bottom: 20px;
     .button {
       width: 100%;
       padding: 15px;

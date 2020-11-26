@@ -8,12 +8,12 @@
           </svg>
         </div>
         <div class="preview__step--name">
-          {{item.step}}
+          {{ item.date}}
         </div>
       </div>
       <div class="preview__announce">
         <div class="announce">
-          <img :src="item.imgPath" alt="" class="announce__img">
+          <img :src="item.full_image_url" alt="" class="announce__img">
           <div class="announce__text">
             <h3 class="announce__title">{{item.title}}</h3>
             <p class="announce__description">{{item.description}}</p>
@@ -44,7 +44,7 @@ export default {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
   }
   &__step {

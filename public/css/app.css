@@ -1,191 +1,12 @@
 var map = {
-	"./SVG/AppStore.svg": "./resources/js/assets/SVG/AppStore.svg",
-	"./SVG/Cog.png": "./resources/js/assets/SVG/Cog.png",
-	"./SVG/Cog.svg": "./resources/js/assets/SVG/Cog.svg",
-	"./SVG/DNA.svg": "./resources/js/assets/SVG/DNA.svg",
-	"./SVG/Emoji_base.svg": "./resources/js/assets/SVG/Emoji_base.svg",
-	"./SVG/Emoji_pro.svg": "./resources/js/assets/SVG/Emoji_pro.svg",
-	"./SVG/Emoji_ultra.svg": "./resources/js/assets/SVG/Emoji_ultra.svg",
-	"./SVG/GooglePlay.svg": "./resources/js/assets/SVG/GooglePlay.svg",
-	"./SVG/Group.svg": "./resources/js/assets/SVG/Group.svg",
-	"./SVG/Nh.svg": "./resources/js/assets/SVG/Nh.svg",
-	"./SVG/Vector.svg": "./resources/js/assets/SVG/Vector.svg",
-	"./SVG/_.svg": "./resources/js/assets/SVG/_.svg",
-	"./SVG/advantages.svg": "./resources/js/assets/SVG/advantages.svg",
-	"./SVG/arrow-down-sign-to-navigate.svg": "./resources/js/assets/SVG/arrow-down-sign-to-navigate.svg",
-	"./SVG/arrows.svg": "./resources/js/assets/SVG/arrows.svg",
-	"./SVG/atom.svg": "./resources/js/assets/SVG/atom.svg",
-	"./SVG/base-small.svg": "./resources/js/assets/SVG/base-small.svg",
-	"./SVG/base.svg": "./resources/js/assets/SVG/base.svg",
-	"./SVG/base1.svg": "./resources/js/assets/SVG/base1.svg",
-	"./SVG/cash.svg": "./resources/js/assets/SVG/cash.svg",
-	"./SVG/coin.svg": "./resources/js/assets/SVG/coin.svg",
-	"./SVG/counter.svg": "./resources/js/assets/SVG/counter.svg",
-	"./SVG/dott.svg": "./resources/js/assets/SVG/dott.svg",
-	"./SVG/left.svg": "./resources/js/assets/SVG/left.svg",
-	"./SVG/list.svg": "./resources/js/assets/SVG/list.svg",
-	"./SVG/lock.svg": "./resources/js/assets/SVG/lock.svg",
-	"./SVG/lockdown.svg": "./resources/js/assets/SVG/lockdown.svg",
-	"./SVG/logo-black.svg": "./resources/js/assets/SVG/logo-black.svg",
-	"./SVG/pay.svg": "./resources/js/assets/SVG/pay.svg",
-	"./SVG/photo.svg": "./resources/js/assets/SVG/photo.svg",
-	"./SVG/play.svg": "./resources/js/assets/SVG/play.svg",
-	"./SVG/pro-small.svg": "./resources/js/assets/SVG/pro-small.svg",
-	"./SVG/pro.svg": "./resources/js/assets/SVG/pro.svg",
-	"./SVG/pro1.svg": "./resources/js/assets/SVG/pro1.svg",
-	"./SVG/right.svg": "./resources/js/assets/SVG/right.svg",
-	"./SVG/roket.svg": "./resources/js/assets/SVG/roket.svg",
-	"./SVG/search.svg": "./resources/js/assets/SVG/search.svg",
-	"./SVG/tools.svg": "./resources/js/assets/SVG/tools.svg",
-	"./SVG/ultra-small.svg": "./resources/js/assets/SVG/ultra-small.svg",
-	"./SVG/ultra.svg": "./resources/js/assets/SVG/ultra.svg",
-	"./SVG/ultra1.svg": "./resources/js/assets/SVG/ultra1.svg",
-	"./SVG/unicorn.svg": "./resources/js/assets/SVG/unicorn.svg",
-	"./SVG/world.svg": "./resources/js/assets/SVG/world.svg",
-	"./announceImg.png": "./resources/js/assets/announceImg.png",
-	"./arrow-down-white.svg": "./resources/js/assets/arrow-down-white.svg",
-	"./blackSVGs/AppStore-green.svg": "./resources/js/assets/blackSVGs/AppStore-green.svg",
-	"./blackSVGs/AppStore.svg": "./resources/js/assets/blackSVGs/AppStore.svg",
-	"./blackSVGs/GooglePlay-green.svg": "./resources/js/assets/blackSVGs/GooglePlay-green.svg",
-	"./blackSVGs/GooglePlay.svg": "./resources/js/assets/blackSVGs/GooglePlay.svg",
-	"./blackSVGs/check.svg": "./resources/js/assets/blackSVGs/check.svg",
-	"./blackSVGs/close.svg": "./resources/js/assets/blackSVGs/close.svg",
-	"./blackSVGs/complete.svg": "./resources/js/assets/blackSVGs/complete.svg",
-	"./blackSVGs/coube-white.svg": "./resources/js/assets/blackSVGs/coube-white.svg",
-	"./blackSVGs/dots-horisontal.svg": "./resources/js/assets/blackSVGs/dots-horisontal.svg",
-	"./blackSVGs/dots-vertical.svg": "./resources/js/assets/blackSVGs/dots-vertical.svg",
-	"./blackSVGs/evolution.svg": "./resources/js/assets/blackSVGs/evolution.svg",
-	"./blackSVGs/faceboock-black.svg": "./resources/js/assets/blackSVGs/faceboock-black.svg",
-	"./blackSVGs/green-line.svg": "./resources/js/assets/blackSVGs/green-line.svg",
-	"./blackSVGs/help-circle.svg": "./resources/js/assets/blackSVGs/help-circle.svg",
-	"./blackSVGs/infinity.svg": "./resources/js/assets/blackSVGs/infinity.svg",
-	"./blackSVGs/instagram-black.svg": "./resources/js/assets/blackSVGs/instagram-black.svg",
-	"./blackSVGs/payment-black.svg": "./resources/js/assets/blackSVGs/payment-black.svg",
-	"./blackSVGs/youtube-black.svg": "./resources/js/assets/blackSVGs/youtube-black.svg",
-	"./change-image.svg": "./resources/js/assets/change-image.svg",
-	"./check-mark-black-outline.svg": "./resources/js/assets/check-mark-black-outline.svg",
-	"./check-mark.svg": "./resources/js/assets/check-mark.svg",
-	"./edit.svg": "./resources/js/assets/edit.svg",
-	"./enable.svg": "./resources/js/assets/enable.svg",
-	"./faceboock.svg": "./resources/js/assets/faceboock.svg",
-	"./fonts/Axiforma-Medium.woff": "./resources/js/assets/fonts/Axiforma-Medium.woff",
-	"./fonts/zekton/zekton-rg.woff": "./resources/js/assets/fonts/zekton/zekton-rg.woff",
-	"./gallery/1-image.png": "./resources/js/assets/gallery/1-image.png",
-	"./gallery/1.jpg": "./resources/js/assets/gallery/1.jpg",
-	"./gallery/2.jpg": "./resources/js/assets/gallery/2.jpg",
-	"./gallery/3.jpg": "./resources/js/assets/gallery/3.jpg",
-	"./gallery/4.jpg": "./resources/js/assets/gallery/4.jpg",
-	"./gallery/5.jpg": "./resources/js/assets/gallery/5.jpg",
-	"./gallery/clock.png": "./resources/js/assets/gallery/clock.png",
-	"./gallery/controll.png": "./resources/js/assets/gallery/controll.png",
-	"./gallery/earn.png": "./resources/js/assets/gallery/earn.png",
-	"./gallery/happy.png": "./resources/js/assets/gallery/happy.png",
-	"./gallery/map.png": "./resources/js/assets/gallery/map.png",
-	"./gallery/pink-bg.png": "./resources/js/assets/gallery/pink-bg.png",
-	"./gallery/worck.png": "./resources/js/assets/gallery/worck.png",
-	"./gallery/world.png": "./resources/js/assets/gallery/world.png",
-	"./galleryBlack/1.svg": "./resources/js/assets/galleryBlack/1.svg",
-	"./galleryBlack/2.svg": "./resources/js/assets/galleryBlack/2.svg",
-	"./galleryBlack/3.svg": "./resources/js/assets/galleryBlack/3.svg",
-	"./galleryBlack/4-black.png": "./resources/js/assets/galleryBlack/4-black.png",
-	"./galleryBlack/5-black.png": "./resources/js/assets/galleryBlack/5-black.png",
-	"./galleryBlack/play.svg": "./resources/js/assets/galleryBlack/play.svg",
-	"./group.svg": "./resources/js/assets/group.svg",
-	"./home.svg": "./resources/js/assets/home.svg",
-	"./instagram.svg": "./resources/js/assets/instagram.svg",
-	"./key.png": "./resources/js/assets/key.png",
-	"./logo.svg": "./resources/js/assets/logo.svg",
-	"./map_fon.jpg": "./resources/js/assets/map_fon.jpg",
-	"./phone_black.png": "./resources/js/assets/phone_black.png",
-	"./rocket.jpg": "./resources/js/assets/rocket.jpg",
-	"./screen.png": "./resources/js/assets/screen.png",
-	"./sideImg.png": "./resources/js/assets/sideImg.png",
-	"./sideImgFull.png": "./resources/js/assets/sideImgFull.png",
-	"./slider_images/category.png": "./resources/js/assets/slider_images/category.png",
-	"./slider_images/map.png": "./resources/js/assets/slider_images/map.png",
-	"./slider_images/my_profile.png": "./resources/js/assets/slider_images/my_profile.png",
-	"./smile.svg": "./resources/js/assets/smile.svg",
-	"./team_list/1-person.png": "./resources/js/assets/team_list/1-person.png",
-	"./team_list/2-person.png": "./resources/js/assets/team_list/2-person.png",
-	"./team_list/3-person.png": "./resources/js/assets/team_list/3-person.png",
-	"./team_list/4-person.png": "./resources/js/assets/team_list/4-person.png",
-	"./team_list/5-person.png": "./resources/js/assets/team_list/5-person.png",
-	"./team_list/6-person.png": "./resources/js/assets/team_list/6-person.png",
-	"./team_list/7-person.png": "./resources/js/assets/team_list/7-person.png",
-	"./team_list/8-person.png": "./resources/js/assets/team_list/8-person.png",
-	"./text.svg": "./resources/js/assets/text.svg",
-	"./unicorn1.png": "./resources/js/assets/unicorn1.png",
-	"./unicorn2.png": "./resources/js/assets/unicorn2.png",
-	"./unicorn_1.png": "./resources/js/assets/unicorn_1.png",
-	"./unicorn_2.png": "./resources/js/assets/unicorn_2.png",
-	"./world.svg": "./resources/js/assets/world.svg",
-	"./writing.svg": "./resources/js/assets/writing.svg",
-	"./x-mark.svg": "./resources/js/assets/x-mark.svg",
-	"./youtube.svg": "./resources/js/assets/youtube.svg"
-};
-
-
-function webpackContext(req) {
-	var id = webpackContextResolve(req);
-	return __webpack_require__(id);
-}
-function webpackContextResolve(req) {
-	if(!__webpack_require__.o(map, req)) {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	}
-	return map[req];
-}
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = "./resources/js/assets sync recursive ^\\.\\/.*$";var map = {
-	"./1-image.png": "./resources/js/assets/gallery/1-image.png",
-	"./1.jpg": "./resources/js/assets/gallery/1.jpg",
-	"./2.jpg": "./resources/js/assets/gallery/2.jpg",
-	"./3.jpg": "./resources/js/assets/gallery/3.jpg",
-	"./4.jpg": "./resources/js/assets/gallery/4.jpg",
-	"./5.jpg": "./resources/js/assets/gallery/5.jpg",
-	"./clock.png": "./resources/js/assets/gallery/clock.png",
-	"./controll.png": "./resources/js/assets/gallery/controll.png",
-	"./earn.png": "./resources/js/assets/gallery/earn.png",
-	"./happy.png": "./resources/js/assets/gallery/happy.png",
-	"./map.png": "./resources/js/assets/gallery/map.png",
-	"./pink-bg.png": "./resources/js/assets/gallery/pink-bg.png",
-	"./worck.png": "./resources/js/assets/gallery/worck.png",
-	"./world.png": "./resources/js/assets/gallery/world.png"
-};
-
-
-function webpackContext(req) {
-	var id = webpackContextResolve(req);
-	return __webpack_require__(id);
-}
-function webpackContextResolve(req) {
-	if(!__webpack_require__.o(map, req)) {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	}
-	return map[req];
-}
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = "./resources/js/assets/gallery sync recursive ^\\.\\/.*$";var map = {
-	"./assets/SVG/AppStore.svg": "./resources/js/assets/SVG/AppStore.svg",
+	"./assets/SVG/AppStoreWhite.svg": "./resources/js/assets/SVG/AppStoreWhite.svg",
 	"./assets/SVG/Cog.png": "./resources/js/assets/SVG/Cog.png",
 	"./assets/SVG/Cog.svg": "./resources/js/assets/SVG/Cog.svg",
 	"./assets/SVG/DNA.svg": "./resources/js/assets/SVG/DNA.svg",
 	"./assets/SVG/Emoji_base.svg": "./resources/js/assets/SVG/Emoji_base.svg",
 	"./assets/SVG/Emoji_pro.svg": "./resources/js/assets/SVG/Emoji_pro.svg",
 	"./assets/SVG/Emoji_ultra.svg": "./resources/js/assets/SVG/Emoji_ultra.svg",
-	"./assets/SVG/GooglePlay.svg": "./resources/js/assets/SVG/GooglePlay.svg",
+	"./assets/SVG/GooglePlayWhite.svg": "./resources/js/assets/SVG/GooglePlayWhite.svg",
 	"./assets/SVG/Group.svg": "./resources/js/assets/SVG/Group.svg",
 	"./assets/SVG/Nh.svg": "./resources/js/assets/SVG/Nh.svg",
 	"./assets/SVG/Vector.svg": "./resources/js/assets/SVG/Vector.svg",
@@ -244,6 +65,7 @@ webpackContext.id = "./resources/js/assets/gallery sync recursive ^\\.\\/.*$";va
 	"./assets/change-image.svg": "./resources/js/assets/change-image.svg",
 	"./assets/check-mark-black-outline.svg": "./resources/js/assets/check-mark-black-outline.svg",
 	"./assets/check-mark.svg": "./resources/js/assets/check-mark.svg",
+	"./assets/edit-white.svg": "./resources/js/assets/edit-white.svg",
 	"./assets/edit.svg": "./resources/js/assets/edit.svg",
 	"./assets/enable.svg": "./resources/js/assets/enable.svg",
 	"./assets/faceboock.svg": "./resources/js/assets/faceboock.svg",
@@ -275,14 +97,16 @@ webpackContext.id = "./resources/js/assets/gallery sync recursive ^\\.\\/.*$";va
 	"./assets/key.png": "./resources/js/assets/key.png",
 	"./assets/logo.svg": "./resources/js/assets/logo.svg",
 	"./assets/map_fon.jpg": "./resources/js/assets/map_fon.jpg",
+	"./assets/phone.png": "./resources/js/assets/phone.png",
 	"./assets/phone_black.png": "./resources/js/assets/phone_black.png",
+	"./assets/plus.svg": "./resources/js/assets/plus.svg",
 	"./assets/rocket.jpg": "./resources/js/assets/rocket.jpg",
 	"./assets/screen.png": "./resources/js/assets/screen.png",
 	"./assets/sideImg.png": "./resources/js/assets/sideImg.png",
 	"./assets/sideImgFull.png": "./resources/js/assets/sideImgFull.png",
 	"./assets/slider_images/category.png": "./resources/js/assets/slider_images/category.png",
-	"./assets/slider_images/map.png": "./resources/js/assets/slider_images/map.png",
 	"./assets/slider_images/my_profile.png": "./resources/js/assets/slider_images/my_profile.png",
+	"./assets/slider_images/sliderMap.png": "./resources/js/assets/slider_images/sliderMap.png",
 	"./assets/smile.svg": "./resources/js/assets/smile.svg",
 	"./assets/team_list/1-person.png": "./resources/js/assets/team_list/1-person.png",
 	"./assets/team_list/2-person.png": "./resources/js/assets/team_list/2-person.png",
@@ -293,6 +117,7 @@ webpackContext.id = "./resources/js/assets/gallery sync recursive ^\\.\\/.*$";va
 	"./assets/team_list/7-person.png": "./resources/js/assets/team_list/7-person.png",
 	"./assets/team_list/8-person.png": "./resources/js/assets/team_list/8-person.png",
 	"./assets/text.svg": "./resources/js/assets/text.svg",
+	"./assets/undo.svg": "./resources/js/assets/undo.svg",
 	"./assets/unicorn1.png": "./resources/js/assets/unicorn1.png",
 	"./assets/unicorn2.png": "./resources/js/assets/unicorn2.png",
 	"./assets/unicorn_1.png": "./resources/js/assets/unicorn_1.png",
@@ -322,6 +147,189 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = "./resources/js sync recursive ^\\.\\/assets.*$";var map = {
+	"./1-image.png": "./resources/js/assets/gallery/1-image.png",
+	"./1.jpg": "./resources/js/assets/gallery/1.jpg",
+	"./2.jpg": "./resources/js/assets/gallery/2.jpg",
+	"./3.jpg": "./resources/js/assets/gallery/3.jpg",
+	"./4.jpg": "./resources/js/assets/gallery/4.jpg",
+	"./5.jpg": "./resources/js/assets/gallery/5.jpg",
+	"./clock.png": "./resources/js/assets/gallery/clock.png",
+	"./controll.png": "./resources/js/assets/gallery/controll.png",
+	"./earn.png": "./resources/js/assets/gallery/earn.png",
+	"./happy.png": "./resources/js/assets/gallery/happy.png",
+	"./map.png": "./resources/js/assets/gallery/map.png",
+	"./pink-bg.png": "./resources/js/assets/gallery/pink-bg.png",
+	"./worck.png": "./resources/js/assets/gallery/worck.png",
+	"./world.png": "./resources/js/assets/gallery/world.png"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./resources/js/assets/gallery sync recursive ^\\.\\/.*$";var map = {
+	"./SVG/AppStoreWhite.svg": "./resources/js/assets/SVG/AppStoreWhite.svg",
+	"./SVG/Cog.png": "./resources/js/assets/SVG/Cog.png",
+	"./SVG/Cog.svg": "./resources/js/assets/SVG/Cog.svg",
+	"./SVG/DNA.svg": "./resources/js/assets/SVG/DNA.svg",
+	"./SVG/Emoji_base.svg": "./resources/js/assets/SVG/Emoji_base.svg",
+	"./SVG/Emoji_pro.svg": "./resources/js/assets/SVG/Emoji_pro.svg",
+	"./SVG/Emoji_ultra.svg": "./resources/js/assets/SVG/Emoji_ultra.svg",
+	"./SVG/GooglePlayWhite.svg": "./resources/js/assets/SVG/GooglePlayWhite.svg",
+	"./SVG/Group.svg": "./resources/js/assets/SVG/Group.svg",
+	"./SVG/Nh.svg": "./resources/js/assets/SVG/Nh.svg",
+	"./SVG/Vector.svg": "./resources/js/assets/SVG/Vector.svg",
+	"./SVG/_.svg": "./resources/js/assets/SVG/_.svg",
+	"./SVG/advantages.svg": "./resources/js/assets/SVG/advantages.svg",
+	"./SVG/arrow-down-sign-to-navigate.svg": "./resources/js/assets/SVG/arrow-down-sign-to-navigate.svg",
+	"./SVG/arrows.svg": "./resources/js/assets/SVG/arrows.svg",
+	"./SVG/atom.svg": "./resources/js/assets/SVG/atom.svg",
+	"./SVG/base-small.svg": "./resources/js/assets/SVG/base-small.svg",
+	"./SVG/base.svg": "./resources/js/assets/SVG/base.svg",
+	"./SVG/base1.svg": "./resources/js/assets/SVG/base1.svg",
+	"./SVG/cash.svg": "./resources/js/assets/SVG/cash.svg",
+	"./SVG/coin.svg": "./resources/js/assets/SVG/coin.svg",
+	"./SVG/counter.svg": "./resources/js/assets/SVG/counter.svg",
+	"./SVG/dott.svg": "./resources/js/assets/SVG/dott.svg",
+	"./SVG/left.svg": "./resources/js/assets/SVG/left.svg",
+	"./SVG/list.svg": "./resources/js/assets/SVG/list.svg",
+	"./SVG/lock.svg": "./resources/js/assets/SVG/lock.svg",
+	"./SVG/lockdown.svg": "./resources/js/assets/SVG/lockdown.svg",
+	"./SVG/logo-black.svg": "./resources/js/assets/SVG/logo-black.svg",
+	"./SVG/pay.svg": "./resources/js/assets/SVG/pay.svg",
+	"./SVG/photo.svg": "./resources/js/assets/SVG/photo.svg",
+	"./SVG/play.svg": "./resources/js/assets/SVG/play.svg",
+	"./SVG/pro-small.svg": "./resources/js/assets/SVG/pro-small.svg",
+	"./SVG/pro.svg": "./resources/js/assets/SVG/pro.svg",
+	"./SVG/pro1.svg": "./resources/js/assets/SVG/pro1.svg",
+	"./SVG/right.svg": "./resources/js/assets/SVG/right.svg",
+	"./SVG/roket.svg": "./resources/js/assets/SVG/roket.svg",
+	"./SVG/search.svg": "./resources/js/assets/SVG/search.svg",
+	"./SVG/tools.svg": "./resources/js/assets/SVG/tools.svg",
+	"./SVG/ultra-small.svg": "./resources/js/assets/SVG/ultra-small.svg",
+	"./SVG/ultra.svg": "./resources/js/assets/SVG/ultra.svg",
+	"./SVG/ultra1.svg": "./resources/js/assets/SVG/ultra1.svg",
+	"./SVG/unicorn.svg": "./resources/js/assets/SVG/unicorn.svg",
+	"./SVG/world.svg": "./resources/js/assets/SVG/world.svg",
+	"./announceImg.png": "./resources/js/assets/announceImg.png",
+	"./arrow-down-white.svg": "./resources/js/assets/arrow-down-white.svg",
+	"./blackSVGs/AppStore-green.svg": "./resources/js/assets/blackSVGs/AppStore-green.svg",
+	"./blackSVGs/AppStore.svg": "./resources/js/assets/blackSVGs/AppStore.svg",
+	"./blackSVGs/GooglePlay-green.svg": "./resources/js/assets/blackSVGs/GooglePlay-green.svg",
+	"./blackSVGs/GooglePlay.svg": "./resources/js/assets/blackSVGs/GooglePlay.svg",
+	"./blackSVGs/check.svg": "./resources/js/assets/blackSVGs/check.svg",
+	"./blackSVGs/close.svg": "./resources/js/assets/blackSVGs/close.svg",
+	"./blackSVGs/complete.svg": "./resources/js/assets/blackSVGs/complete.svg",
+	"./blackSVGs/coube-white.svg": "./resources/js/assets/blackSVGs/coube-white.svg",
+	"./blackSVGs/dots-horisontal.svg": "./resources/js/assets/blackSVGs/dots-horisontal.svg",
+	"./blackSVGs/dots-vertical.svg": "./resources/js/assets/blackSVGs/dots-vertical.svg",
+	"./blackSVGs/evolution.svg": "./resources/js/assets/blackSVGs/evolution.svg",
+	"./blackSVGs/faceboock-black.svg": "./resources/js/assets/blackSVGs/faceboock-black.svg",
+	"./blackSVGs/green-line.svg": "./resources/js/assets/blackSVGs/green-line.svg",
+	"./blackSVGs/help-circle.svg": "./resources/js/assets/blackSVGs/help-circle.svg",
+	"./blackSVGs/infinity.svg": "./resources/js/assets/blackSVGs/infinity.svg",
+	"./blackSVGs/instagram-black.svg": "./resources/js/assets/blackSVGs/instagram-black.svg",
+	"./blackSVGs/payment-black.svg": "./resources/js/assets/blackSVGs/payment-black.svg",
+	"./blackSVGs/youtube-black.svg": "./resources/js/assets/blackSVGs/youtube-black.svg",
+	"./change-image.svg": "./resources/js/assets/change-image.svg",
+	"./check-mark-black-outline.svg": "./resources/js/assets/check-mark-black-outline.svg",
+	"./check-mark.svg": "./resources/js/assets/check-mark.svg",
+	"./edit-white.svg": "./resources/js/assets/edit-white.svg",
+	"./edit.svg": "./resources/js/assets/edit.svg",
+	"./enable.svg": "./resources/js/assets/enable.svg",
+	"./faceboock.svg": "./resources/js/assets/faceboock.svg",
+	"./fonts/Axiforma-Medium.woff": "./resources/js/assets/fonts/Axiforma-Medium.woff",
+	"./fonts/zekton/zekton-rg.woff": "./resources/js/assets/fonts/zekton/zekton-rg.woff",
+	"./gallery/1-image.png": "./resources/js/assets/gallery/1-image.png",
+	"./gallery/1.jpg": "./resources/js/assets/gallery/1.jpg",
+	"./gallery/2.jpg": "./resources/js/assets/gallery/2.jpg",
+	"./gallery/3.jpg": "./resources/js/assets/gallery/3.jpg",
+	"./gallery/4.jpg": "./resources/js/assets/gallery/4.jpg",
+	"./gallery/5.jpg": "./resources/js/assets/gallery/5.jpg",
+	"./gallery/clock.png": "./resources/js/assets/gallery/clock.png",
+	"./gallery/controll.png": "./resources/js/assets/gallery/controll.png",
+	"./gallery/earn.png": "./resources/js/assets/gallery/earn.png",
+	"./gallery/happy.png": "./resources/js/assets/gallery/happy.png",
+	"./gallery/map.png": "./resources/js/assets/gallery/map.png",
+	"./gallery/pink-bg.png": "./resources/js/assets/gallery/pink-bg.png",
+	"./gallery/worck.png": "./resources/js/assets/gallery/worck.png",
+	"./gallery/world.png": "./resources/js/assets/gallery/world.png",
+	"./galleryBlack/1.svg": "./resources/js/assets/galleryBlack/1.svg",
+	"./galleryBlack/2.svg": "./resources/js/assets/galleryBlack/2.svg",
+	"./galleryBlack/3.svg": "./resources/js/assets/galleryBlack/3.svg",
+	"./galleryBlack/4-black.png": "./resources/js/assets/galleryBlack/4-black.png",
+	"./galleryBlack/5-black.png": "./resources/js/assets/galleryBlack/5-black.png",
+	"./galleryBlack/play.svg": "./resources/js/assets/galleryBlack/play.svg",
+	"./group.svg": "./resources/js/assets/group.svg",
+	"./home.svg": "./resources/js/assets/home.svg",
+	"./instagram.svg": "./resources/js/assets/instagram.svg",
+	"./key.png": "./resources/js/assets/key.png",
+	"./logo.svg": "./resources/js/assets/logo.svg",
+	"./map_fon.jpg": "./resources/js/assets/map_fon.jpg",
+	"./phone.png": "./resources/js/assets/phone.png",
+	"./phone_black.png": "./resources/js/assets/phone_black.png",
+	"./plus.svg": "./resources/js/assets/plus.svg",
+	"./rocket.jpg": "./resources/js/assets/rocket.jpg",
+	"./screen.png": "./resources/js/assets/screen.png",
+	"./sideImg.png": "./resources/js/assets/sideImg.png",
+	"./sideImgFull.png": "./resources/js/assets/sideImgFull.png",
+	"./slider_images/category.png": "./resources/js/assets/slider_images/category.png",
+	"./slider_images/my_profile.png": "./resources/js/assets/slider_images/my_profile.png",
+	"./slider_images/sliderMap.png": "./resources/js/assets/slider_images/sliderMap.png",
+	"./smile.svg": "./resources/js/assets/smile.svg",
+	"./team_list/1-person.png": "./resources/js/assets/team_list/1-person.png",
+	"./team_list/2-person.png": "./resources/js/assets/team_list/2-person.png",
+	"./team_list/3-person.png": "./resources/js/assets/team_list/3-person.png",
+	"./team_list/4-person.png": "./resources/js/assets/team_list/4-person.png",
+	"./team_list/5-person.png": "./resources/js/assets/team_list/5-person.png",
+	"./team_list/6-person.png": "./resources/js/assets/team_list/6-person.png",
+	"./team_list/7-person.png": "./resources/js/assets/team_list/7-person.png",
+	"./team_list/8-person.png": "./resources/js/assets/team_list/8-person.png",
+	"./text.svg": "./resources/js/assets/text.svg",
+	"./undo.svg": "./resources/js/assets/undo.svg",
+	"./unicorn1.png": "./resources/js/assets/unicorn1.png",
+	"./unicorn2.png": "./resources/js/assets/unicorn2.png",
+	"./unicorn_1.png": "./resources/js/assets/unicorn_1.png",
+	"./unicorn_2.png": "./resources/js/assets/unicorn_2.png",
+	"./world.svg": "./resources/js/assets/world.svg",
+	"./writing.svg": "./resources/js/assets/writing.svg",
+	"./x-mark.svg": "./resources/js/assets/x-mark.svg",
+	"./youtube.svg": "./resources/js/assets/youtube.svg"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./resources/js/assets sync recursive ^\\.\\/.*$";var map = {
 	"./1.svg": "./resources/js/assets/galleryBlack/1.svg",
 	"./2.svg": "./resources/js/assets/galleryBlack/2.svg",
 	"./3.svg": "./resources/js/assets/galleryBlack/3.svg",
@@ -348,33 +356,4 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = "./resources/js/assets/galleryBlack sync recursive ^\\.\\/.*$";var map = {
-	"./1-person.png": "./resources/js/assets/team_list/1-person.png",
-	"./2-person.png": "./resources/js/assets/team_list/2-person.png",
-	"./3-person.png": "./resources/js/assets/team_list/3-person.png",
-	"./4-person.png": "./resources/js/assets/team_list/4-person.png",
-	"./5-person.png": "./resources/js/assets/team_list/5-person.png",
-	"./6-person.png": "./resources/js/assets/team_list/6-person.png",
-	"./7-person.png": "./resources/js/assets/team_list/7-person.png",
-	"./8-person.png": "./resources/js/assets/team_list/8-person.png"
-};
-
-
-function webpackContext(req) {
-	var id = webpackContextResolve(req);
-	return __webpack_require__(id);
-}
-function webpackContextResolve(req) {
-	if(!__webpack_require__.o(map, req)) {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	}
-	return map[req];
-}
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = "./resources/js/assets/team_list sync recursive ^\\.\\/.*$";
+webpackContext.id = "./resources/js/assets/galleryBlack sync recursive ^\\.\\/.*$";

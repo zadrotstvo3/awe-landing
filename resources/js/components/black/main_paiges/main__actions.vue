@@ -7,7 +7,7 @@
       <p class="action">Купить Профиль</p>
     </div>
     <div class="actions__item actions__image">
-      <img src="@/js/assets/phone_black.png" alt="phone image">
+      <img src="@/js/assets/phone.png" alt="phone image">
     </div>
     <div
         class="actions__item actions__buy-token"

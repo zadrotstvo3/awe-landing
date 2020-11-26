@@ -9,9 +9,10 @@ Vue.use(VueI18n)
     uk,
     ru
 }
+console.log(navigator.language)
 const browserLanguage = navigator.language
 const i18n = new VueI18n({
-    locale: browserLanguage || '',
+    locale: browserLanguage.slice(0, 2) || 'en',
     messages,
     silentFallbackWarn: true,
 })

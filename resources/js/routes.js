@@ -50,18 +50,35 @@ const routes = [
         name: 'Admin-panel',
         meta: {layout: 'admin'},
         component: () => import('@/js/pages/Admin_paiges/AdminPanel'),
-        // beforeEnter: (to, from, next) => {
-        //     const token = localStorage.getItem('Token')
-        //     if(token){
-        //         next('/admin-panel')
-        //     }
-        // }
+    },
+    {
+        path: '/admin-announcements',
+        name: 'Admin-announcements',
+        meta: {layout: 'admin'},
+        component: () =>  import('@/js/components/admin/admin-announcements'),
+    },
+
+    {
+        path: '/admin-our-team',
+        name: 'Admin-Our-team',
+        meta: {layout: 'admin'},
+        component: () =>  import('@/js/components/admin/our-team'),
     },
     {
         path: '/for-investors',
         name: 'Investors',
         meta: {layout: 'black'},
         component: () => import('@/js/pages/AWE_Black_paiges/ForInvestors.vue')
+    },
+    {
+        path: '/page-not-found',
+        name: 'Error',
+        meta: {layout: 'white'},
+        component: () => import('@/js/pages/main_paiges/Error.vue')
+    },
+    {
+        path: '*',
+        redirect: '/page-not-found'
     }
 ]
 

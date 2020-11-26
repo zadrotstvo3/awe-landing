@@ -111,7 +111,7 @@ class ArticleService
      * @param array $relations
      * @return Article
      */
-    public function show(int $article_id, array $relations): Article
+    public function show(int $article_id, array $relations = []): Article
     {
         return $this->model->with($relations)->findOrFail($article_id);
     }

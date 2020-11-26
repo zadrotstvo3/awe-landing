@@ -1,39 +1,52 @@
 <template>
 <header class="header">
-  <ScaleDown
+  <Slide
       @click="openSideBar = !openSideBar"
+      :closeOnNavigation="true"
   >
     <router-link class="link" to="/home">
       <img src="@/js/assets/home.svg" alt="home icon">
       <span>Home</span>
     </router-link>
-    <router-link class="link" to="/admin-panel">
+    <router-link class="link" to="/admin-announcements">
       <img src="@/js/assets/writing.svg" alt="blog icon">
       <span>Announcements</span>
     </router-link>
-    <router-link class="link" to="/our-team">
+    <router-link class="link" to="/admin-Our-team">
       <img src="@/js/assets/group.svg" alt="blog icon">
       <span>Out Team</span>
     </router-link>
-  </ScaleDown>
-  <button class="header__button" @click="$router.push('/admin')">
+  </Slide>
+  <button class="header__button" @click="closeAdminPanel()">
     Log Out
   </button>
 </header>
 </template>
 
 <script>
-import { ScaleDown } from 'vue-burger-menu'
+import {mapActions} from 'vuex'
+import { Slide } from 'vue-burger-menu'
 export default {
   name: "admin-header",
   components: {
-    ScaleDown
+      Slide
   },
   data(){
     return {
-      openSideBar: false
+      openSideBar: false,
     }
-  }
+  },
+    methods: {
+      ...mapActions(['logOut']),
+        closeAdminPanel(){
+          this.logOut()
+            .then(()=>{
+                window.Laravel.isLoggedin = false
+                this.$router.push('/admin')
+            })
+        }
+
+    }
 }
 </script>
 

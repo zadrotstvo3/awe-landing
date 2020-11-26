@@ -19,6 +19,7 @@
   </div>
 </template>
 <script>
+import {mapActions, mapGetters} from 'vuex'
 export default {
   name: "logIn",
   data(){
@@ -28,16 +29,38 @@ export default {
       error: false
     }
   },
+    computed: {
+      ...mapGetters(['getStatus'])
+    },
   methods: {
-    submitLogIn(){
-      if(this.userName === 'admin' && this.userPassword === 'admin'){
-            this.$axios.get('/airlock/csrf-cookie').then(response => {console.log(response)})
-            this.$router.push('/admin-panel')
+      ...mapActions(['logIn', 'getArticles', 'getTeamList']),
+    async submitLogIn(){
+      if(this.userName && this.userPassword){
+          const data = {
+              email: this.userName,
+              password: this.userPassword
+          }
+           this.logIn(data)
+              .then(()=>{
+                  if(this.getStatus){
+                      window.Laravel.isLoggedin = true
+                      this.getArticles()
+                      this.getTeamList()
+                          .then(()=>{
+                            this.$router.push('/admin-panel')
+                          })
+                  }
+              })
       } else {
-            return  this.error = true
+          return  this.error = true
       }
     }
-  }
+  },
+    beforeEnter(from, to, next){
+        window.Laravel.isLoggedin
+            ? next('/admin-panel')
+            : next(false)
+    }
 }
 </script>
 

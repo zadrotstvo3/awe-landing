@@ -1,8 +1,10 @@
 <template>
     <div id="app">
-        <component :is="layout">
-            <router-view/>
-        </component>
+        <transition name="fade" mode="out-in">
+            <component :is="layout">
+                <router-view/>
+            </component>
+        </transition>
     </div>
 </template>
 <script>
@@ -45,7 +47,12 @@ export default {
     width: 100%;
     height: 100%;
 }
-
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+    opacity: 0;
+}
 @media only screen and (max-width: 820px) {
     .header {
         &__logo {

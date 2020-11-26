@@ -158,6 +158,7 @@ name: "offers",
 <style scoped lang="scss">
   .offers{
     padding: 300px 0 60px 0;
+      background-color: #F8F7F3;
 
     &__title {
       position: relative;

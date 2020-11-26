@@ -7,11 +7,16 @@ import axios from "axios";
 // axios.defaults.baseURL = process.env.baseURL || process.env.apiUrl || '';
 // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+axios.defaults.headers.post['X-Requested-With'] = 'XMLHttpRequest';
+axios.defaults.headers.get['X-Requested-With'] = 'XMLHttpRequest';
+axios.defaults.headers.delete['X-Requested-With'] = 'XMLHttpRequest';
+axios.defaults.headers.put['X-Requested-With'] = 'XMLHttpRequest';
+
 
 let config = {
   // baseURL: process.env.baseURL || process.env.apiUrl || ""
   // timeout: 60 * 1000, // Timeout
-  // withCredentials: true, // Check cross-site Access-Control
+  withCredentials: false, // Check cross-site Access-Control
 };
 
 const _axios = axios.create(config);

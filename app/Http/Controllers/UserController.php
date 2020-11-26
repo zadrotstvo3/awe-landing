@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -9,10 +10,10 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class UserController extends Controller
 {
-      /**
+    /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -44,5 +45,14 @@ class UserController extends Controller
     {
         Auth::logout();
         return response()->json(['message' => 'Logged Out'], 200);
+    }
+
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function me(Request $request)
+    {
+        return response()->json(Auth::user());
     }
 }

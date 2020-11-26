@@ -2,7 +2,9 @@
   <div id="white">
     <whiteHeader/>
     <main>
-      <router-view/>
+        <transition name="fade" mode="out-in">
+            <router-view/>
+        </transition>
     </main>
     <white__footer/>
   </div>

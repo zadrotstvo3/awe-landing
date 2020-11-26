@@ -1,57 +1,57 @@
 <template>
-<div class="edit">
-  <div class="edit__form">
-    <div class="edit__show">
-      <button class="show" @click="showPreview = !showPreview">
-        {{showPreview ? 'Hide' : 'Preview'}}
-      </button>
-    </div>
-    <div class="edit__form" v-if="!showPreview">
-      <div class="edit__box--image">
-        <div class="edit__image">
-          <label for="image">
-            Add/Change image
-            <img src="@/js/assets/change-image.svg" alt="image icon">
-          </label>
-          <input type="file" id="image" @change="changeImage($event)">
+    <div class="edit">
+      <div class="edit__form">
+        <div class="edit__show">
+          <button class="show" @click="showPreview = !showPreview">
+            {{showPreview ? 'Hide' : 'Preview'}}
+          </button>
         </div>
-        <div class="edit__image__preview">
-          <img
-              v-if="editedItem.imgPath"
-               :src="editedItem.imgPath"
-               class="announce__img"
-               alt="uploaded image">
+        <div class="edit__form" v-if="!showPreview">
+          <div class="edit__box--image">
+            <div class="edit__image">
+              <label for="image">
+                Add/Change image
+                <img src="@/js/assets/change-image.svg" alt="image icon">
+              </label>
+              <input type="file" id="image" @change="changeImage($event)">
+            </div>
+            <div class="edit__image__preview">
+              <img v-if="editedItem.full_image_url"
+                   :src="editedItem.full_image_url"
+                   class="announce__img"
+                   alt="uploaded image">
+                <div class="edit__image--field" v-else>
+                    <img src="@/js/assets/change-image.svg" alt="image icon">
+                </div>
+            </div>
+          </div>
+          <div class="edit__box">
+            <div class="edit__title">
+              <input type="text" v-model="editedItem.title">
+            </div>
+            <div class="edit__text">
+              <textarea v-model="editedItem.description"></textarea>
+            </div>
+          </div>
         </div>
-        <div class="edit__date">
-          <input type="text" placeholder="Enter date" v-model="editedItem.step">
+        <blog-preview v-else :item="editedItem"/>
+        <div class="edit__submit">
+          <button
+              class="submit"
+              @click="addItem"
+              :disabled="disableButton"
+              :class="{disabled: disableButton}"
+          >
+              {{ `${editedItem.article_id === null ? 'Create post' : 'Save'}` }}
+          </button>
         </div>
       </div>
-      <div class="edit__box">
-        <div class="edit__title">
-          <input type="text" v-model="editedItem.title">
-        </div>
-        <div class="edit__text">
-          <textarea v-model="editedItem.description"></textarea>
-        </div>
-      </div>
     </div>
-    <blog-preview v-else :item="editedItem"/>
-    <div class="edit__submit">
-      <button
-          class="submit"
-          @click="addItem"
-          :disabled="disableButton"
-          :class="{disabled: disableButton}"
-      >
-        Add post
-      </button>
-    </div>
-  </div>
-</div>
 </template>
 
 <script>
 import blogPreview from "@/js/components/admin/blogPreview";
+import {mapActions} from 'vuex'
 export default {
   name: "blogEdit",
   components: {
@@ -86,23 +86,82 @@ export default {
     }
   },
   methods: {
+      ...mapActions(['createArticle', 'getArticles', 'uploadImage', 'updateArticle']),
     changeImage(event){
-     const files = event.target.files || event.dataTransfer.files
-      if(!files.length){
-        return
-      }
-      this.createImage(files[0])
+         const files = event.target.files || event.dataTransfer.files
+          if(!files.length){
+            return
+          }
+          this.createImage(files[0])
     },
     createImage(file){
       const reader = new FileReader()
       reader.onload = (event) => {
-        this.editedItem.imgPath = event.target.result
+        this.uploadedImage = event.target.result
+        const data = {
+            image: this.uploadedImage
+        }
+        this.uploadImage(data)
+          .then((resp) => {
+              console.log(resp)
+              this.editedItem.image = resp.url
+              this.editedItem.full_image_url = resp.full_url
+          })
       }
       reader.readAsDataURL(file)
     },
-    addItem(){
-      const item = this.editedItem
-      this.$emit('addItem', item)
+    addItem() {
+        if (this.editedItem.article_id === null) {
+            this.createNewItem()
+        } else if(this.editedItem.article_id) {
+            this.updateItem()
+        } else {
+            this.createNewLangForItem()
+        }
+    },
+    createNewItem(){
+        const item = this.editedItem
+        this.createArticle(item)
+            .then(() => {
+                this.getArticles()
+                    .then(() => {
+                        this.$emit('addItem')
+                    })
+            })
+    },
+    updateItem(){
+        delete this.editedItem.isActive
+        const item = {
+            title: this.editedItem.title,
+            description: this.editedItem.description,
+            image: this.editedItem.image,
+            language: this.$i18n.locale,
+            article_id: this.editedItem.article_id
+        }
+        this.updateArticle(item)
+            .then(() => {
+                this.getArticles()
+                    .then(() => {
+                        this.$emit('addItem')
+                    })
+            })
+    },
+    createNewLangForItem(){
+        delete this.editedItem.isActive
+        const item = {
+            title: this.editedItem.title,
+            description: this.editedItem.description,
+            image: this.editedItem.image,
+            language: this.$i18n.locale,
+            article_id: this.editedItem.article_id || this.editedItem.id
+        }
+        this.createArticle(item)
+            .then(() => {
+                this.getArticles()
+                    .then(() => {
+                        this.$emit('addItem')
+                    })
+            })
     }
   }
 }
@@ -142,6 +201,18 @@ export default {
     .disabled {
       background-color: gray;
     }
+  }
+  &__image--field{
+      width: 100%;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #eaeaea;
+
+      img {
+          width: 100px;
+      }
   }
 
   &__form {

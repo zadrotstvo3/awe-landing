@@ -27,7 +27,7 @@ name: "ourTeam",
 <style scoped lang="scss">
 .team {
   padding:  160px 160px 0 160px;
-  background-image: url('/resources/js/assets/SVG/DNA.svg');
+  background-image: url('~@/js/assets/SVG/DNA.svg');
   background-position: top right;
   background-size: cover;
   background-repeat: no-repeat;

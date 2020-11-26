@@ -26,7 +26,6 @@ name: "aboutUsWhite",
 
 <style scoped lang="scss">
 .about {
-
   &__title {
     padding: 160px 160px 0 160px;
   }

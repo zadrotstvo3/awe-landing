@@ -15,12 +15,28 @@ use Illuminate\Http\Request;
 Route::post('/login', 'UserController@login');
 Route::post('/register', 'UserController@register');
 Route::get('/logout', 'UserController@logout');
+Route::get('me', 'UserController@me')->name('me')->middleware('auth:airlock');
 Route::get('article/', 'ArticleController@index')->name('article.index');
+Route::get('team/member', 'MemberController@index')->name('team.member.index');
 
 //Articles Routes
-Route::group(['prefix' => 'article', 'as' => 'article.', 'middleware'  => 'auth:airlock'], function () {
+Route::group(['prefix' => 'article', 'as' => 'article.', 'middleware' => 'auth:airlock'], function () {
     Route::post('/', 'ArticleController@store')->name('store');
     Route::get('/{article}', 'ArticleController@show')->name('show');
     Route::put('/{article}', 'ArticleController@update')->name('update');
     Route::delete('/{article}', 'ArticleController@delete')->name('delete');
+});
+
+//Teeam Routes
+Route::group(['prefix' => 'team', 'as' => 'team.', 'middleware' => 'auth:airlock'], function () {
+    Route::group(['prefix' => 'member', 'as' => 'member.'], function () {
+        Route::post('/', 'MemberController@store')->name('store');
+        Route::get('/{member}', 'MemberController@show')->name('show');
+        Route::put('/{member}', 'MemberController@update')->name('update');
+        Route::delete('/{member}', 'MemberController@delete')->name('delete');
+    });
+});
+
+Route::group(['prefix' => 'file', 'as' => 'file.', 'middleware' => 'auth:airlock'], function () {
+    Route::post('/upload', 'FileController@upload')->name('upload');
 });

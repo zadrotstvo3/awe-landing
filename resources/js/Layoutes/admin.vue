@@ -1,14 +1,16 @@
 <template>
   <div id="admin">
     <div class="main">
-      <router-view/>
+        <transition name="fade" mode="out-in">
+            <router-view/>
+        </transition>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "AWEAdmin",
+    name: "AWEAdmin",
 }
 </script>
 
