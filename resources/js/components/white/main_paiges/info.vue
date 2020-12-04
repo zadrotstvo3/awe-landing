@@ -47,8 +47,8 @@
         <img class="logo-box__logo" src="@/js/assets/logo.svg" alt="logo">
       </div>
       <div class="logo-box__bottom">
-        <img src="@/js/assets/SVG/GooglePlay.svg" alt="Google Store logo">
-        <img src="@/js/assets/SVG/AppStore.svg" alt="App Store logo">
+        <img src="@/js/assets/SVG/GooglePlayWhite.svg" alt="Google Store logo">
+        <img src="@/js/assets/SVG/AppStoreWhite.svg" alt="App Store logo">
       </div>
     </div>
     <div class="info__box info__bg">

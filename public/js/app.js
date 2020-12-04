@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "js/build/" + ({}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -36334,10 +36334,10 @@ __webpack_require__.r(__webpack_exports__);
 swiper__WEBPACK_IMPORTED_MODULE_4__["Swiper"].use([swiper__WEBPACK_IMPORTED_MODULE_4__["Autoplay"], swiper__WEBPACK_IMPORTED_MODULE_4__["Navigation"], swiper__WEBPACK_IMPORTED_MODULE_4__["Pagination"]]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.config.productionTip = false;
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('sandTime', function () {
-  return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(15)]).then(__webpack_require__.t.bind(null, /*! @haiku/burf-sandtime/vue.js */ "./node_modules/@haiku/burf-sandtime/vue.js", 7));
+  return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(16)]).then(__webpack_require__.t.bind(null, /*! @haiku/burf-sandtime/vue.js */ "./node_modules/@haiku/burf-sandtime/vue.js", 7));
 });
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('Title', function () {
-  return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(16)]).then(__webpack_require__.t.bind(null, /*! @haiku/burf-title/vue */ "./node_modules/@haiku/burf-title/vue.js", 7));
+  return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(17)]).then(__webpack_require__.t.bind(null, /*! @haiku/burf-title/vue */ "./node_modules/@haiku/burf-title/vue.js", 7));
 });
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   router: _js_routes__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -37021,7 +37021,7 @@ var routes = [{
     layout: 'white'
   },
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(17), __webpack_require__.e(3), __webpack_require__.e(19)]).then(__webpack_require__.bind(null, /*! @/js/pages/main_paiges/aweWhite.vue */ "./resources/js/pages/main_paiges/aweWhite.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(18), __webpack_require__.e(1), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! @/js/pages/main_paiges/aweWhite.vue */ "./resources/js/pages/main_paiges/aweWhite.vue"));
   }
 }, {
   path: '/home',
@@ -37030,7 +37030,7 @@ var routes = [{
     layout: 'black'
   },
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(18), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! @/js/pages/main_paiges/aweBlack.vue */ "./resources/js/pages/main_paiges/aweBlack.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(19), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! @/js/pages/main_paiges/aweBlack.vue */ "./resources/js/pages/main_paiges/aweBlack.vue"));
   }
 }, {
   path: '/privat-policy',
@@ -37039,7 +37039,7 @@ var routes = [{
     layout: 'white'
   },
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! @/js/pages/AWE_White_paiges/PrivatePolicy.vue */ "./resources/js/pages/AWE_White_paiges/PrivatePolicy.vue"));
+    return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! @/js/pages/AWE_White_paiges/PrivatePolicy.vue */ "./resources/js/pages/AWE_White_paiges/PrivatePolicy.vue"));
   }
 }, {
   path: '/our-team',
@@ -37048,7 +37048,7 @@ var routes = [{
     layout: 'white'
   },
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(3), __webpack_require__.e(20)]).then(__webpack_require__.bind(null, /*! @/js/pages/AWE_White_paiges/OurTeam.vue */ "./resources/js/pages/AWE_White_paiges/OurTeam.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(10)]).then(__webpack_require__.bind(null, /*! @/js/pages/AWE_White_paiges/OurTeam.vue */ "./resources/js/pages/AWE_White_paiges/OurTeam.vue"));
   }
 }, {
   path: '/about-us',
@@ -37075,7 +37075,7 @@ var routes = [{
     layout: 'admin'
   },
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! @/js/pages/Admin_paiges/logIn */ "./resources/js/pages/Admin_paiges/logIn.vue"));
+    return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! @/js/pages/Admin_paiges/logIn */ "./resources/js/pages/Admin_paiges/logIn.vue"));
   }
 }, {
   path: '/admin-panel',
@@ -37084,7 +37084,7 @@ var routes = [{
     layout: 'admin'
   },
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! @/js/pages/Admin_paiges/AdminPanel */ "./resources/js/pages/Admin_paiges/AdminPanel.vue"));
+    return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! @/js/pages/Admin_paiges/AdminPanel */ "./resources/js/pages/Admin_paiges/AdminPanel.vue"));
   }
 }, {
   path: '/admin-announcements',
@@ -37093,7 +37093,7 @@ var routes = [{
     layout: 'admin'
   },
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(7), __webpack_require__.e(1), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, /*! @/js/components/admin/admin-announcements */ "./resources/js/components/admin/admin-announcements.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(7)]).then(__webpack_require__.bind(null, /*! @/js/components/admin/admin-announcements */ "./resources/js/components/admin/admin-announcements.vue"));
   }
 }, {
   path: '/admin-our-team',
@@ -37102,7 +37102,7 @@ var routes = [{
     layout: 'admin'
   },
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(7), __webpack_require__.e(1), __webpack_require__.e(10)]).then(__webpack_require__.bind(null, /*! @/js/components/admin/our-team */ "./resources/js/components/admin/our-team.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(11)]).then(__webpack_require__.bind(null, /*! @/js/components/admin/our-team */ "./resources/js/components/admin/our-team.vue"));
   }
 }, {
   path: '/for-investors',
@@ -37111,7 +37111,7 @@ var routes = [{
     layout: 'black'
   },
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! @/js/pages/AWE_Black_paiges/ForInvestors.vue */ "./resources/js/pages/AWE_Black_paiges/ForInvestors.vue"));
+    return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! @/js/pages/AWE_Black_paiges/ForInvestors.vue */ "./resources/js/pages/AWE_Black_paiges/ForInvestors.vue"));
   }
 }, {
   path: '/page-not-found',
@@ -37120,7 +37120,7 @@ var routes = [{
     layout: 'white'
   },
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! @/js/pages/main_paiges/Error.vue */ "./resources/js/pages/main_paiges/Error.vue"));
+    return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! @/js/pages/main_paiges/Error.vue */ "./resources/js/pages/main_paiges/Error.vue"));
   }
 }, {
   path: '*',
@@ -37693,8 +37693,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/rivo/Desktop/AWELanding/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/rivo/Desktop/AWELanding/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/rivo/Desktop/landing/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/rivo/Desktop/landing/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
