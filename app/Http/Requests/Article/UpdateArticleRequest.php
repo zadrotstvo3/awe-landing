@@ -30,7 +30,7 @@ class UpdateArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            'description' => ['sometimes', 'string', 'max:255'],
+            'description' => ['sometimes', 'string', 'max:2555'],
             'title' => ['sometimes', 'string', 'max:255'],
             'image' => ['sometimes', 'string', 'max:255'],
             'language' => [

@@ -4,8 +4,11 @@
 /public/images
 /public/fonts
 /public/js/build/
+/public/css/app.css
+/public/js/app.js
 /storage/*.key
 /vendor
+package-lock.json
 .env
 .env.backup
 .phpunit.result.cache
